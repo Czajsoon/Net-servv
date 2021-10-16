@@ -1,0 +1,18 @@
+Temat: Aplikacja sklepu internetowego
+
+Role użytkowników:
+-gość
+-zalogowany użytkownik
+-pracownik/magazynier
+-administrator
+
+Technologie:
+Frontend: Angular CLI (TypeScript)
+Backend: Spring Boot (Java)
+Baza danych: MySQL
+
+Członkowie zespołu:
+Bartosz Kuta b.kuta1999@interia.pl 
+Jakub Czajkowski kubaczajkowski25@gmail.com
+Dawid Bodzon rdawid239@gmail.com
+Mateusz Borcuch mborcuchs090790@gmail.com
