@@ -1,0 +1,34 @@
+Temat: Szpital
+
+Technologie: Angular CLI (frontend) Spring Boot(backend) MySQL(baza danych)
+
+Role:
+a) Pacjent
+- Zmiana hasła
+- Dostęp do Recept
+- Dostęp do wyników badań
+- Dostęp do Terminarza badań, pobytów, i wizyt (działający także wstecz- historia)
+- Dostęp do kontaktu
+- Dostęp do skierowań/zwolnień
+
+b) Recepcjonista/Pielęgniarka
+- Dostęp do listy pacjentów
+- Dostęp do Terminarza
+-Edycja terminarza (anulowanie wizyt,przekładanie wizyt, dodawanie wizyt)
+-Dodawanie wyników badań
+
+
+
+c) Lekarz
+-Wystawianie recept
+-Podgląd karty pacjenta
+-Wystawianie skierowań
+-Wystawianie zwolnień lekarskich
+
+d) Administrator
+- Dodawanie/usuwanie/edycja kont pracowników,lekarzy i pacjentów
+- Zmiana uprawnień do kont
+
+e) Gość
+- Przegląd listy lekarzy i ich specjalności
+- Logowanie
