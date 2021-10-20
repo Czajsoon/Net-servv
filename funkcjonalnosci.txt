@@ -32,3 +32,16 @@ d) Administrator
 e) Gość
 - Przegląd listy lekarzy i ich specjalności
 - Logowanie
+
+Pomysły z zajęć: 
+-Apteka szpialna.
+-Operacje(sala lekarze,historia).
+-Rehabilitacja(rodzje).
+-Posiłaki 9karta pacjenta z dietą).
+-Wysłanie karetki na wskazany adres.
+-Izba porodowa + krematorium.
+-Program staży i szkoleń.
+-Prześwietlenia badania...
+-Laboratorium badań np. krwi
+-Konsultacje
+-Erecepty
