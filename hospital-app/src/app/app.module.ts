@@ -10,11 +10,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from "@angular/material/icon";
+import { DrugWarehouseComponent } from './drug-warehouse/drug-warehouse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogowanieComponent,
+    DrugWarehouseComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import {MatIconModule} from "@angular/material/icon";
     NgbModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
