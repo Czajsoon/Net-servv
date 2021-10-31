@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/drug")
 public class DrugController {
@@ -32,8 +33,8 @@ public class DrugController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> drugDELETE(@PathVariable Long id){
+    public ResponseEntity<List<Drug>> drugDELETE(@PathVariable Long id){
         drugRepository.deleteById(id);
-        return ResponseEntity.ok().body("Drug successfully deleted!");
+        return ResponseEntity.ok().body(drugRepository.findAll());
     }
 }

@@ -11,21 +11,30 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from "@angular/material/icon";
 import { DrugWarehouseComponent } from './drug-warehouse/drug-warehouse.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
+import { NewDrugComponent } from './new-drug/new-drug.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MaterialModule} from "./material/material.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     LogowanieComponent,
     DrugWarehouseComponent,
+    NewDrugComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

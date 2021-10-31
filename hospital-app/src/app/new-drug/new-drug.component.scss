@@ -1,0 +1,37 @@
+.new-drug{
+  width: 100%;
+}
+.drag-dialog{
+  display: flex;
+  position: center;
+  justify-content: center;
+  alignment: center;
+}
+
+.row{
+  position: center;
+  justify-content: center;
+}
+
+.col{
+  margin: 0 15px 0 15px;
+}
+
+form{
+  display: flex;
+  position: center;
+  justify-content: center;
+  alignment: center;
+}
+
+mat-dialog-actions{
+  justify-content: center;
+}
+
+h2{
+  margin-bottom: 40px;
+}
+
+button{
+  margin: 30px;
+}

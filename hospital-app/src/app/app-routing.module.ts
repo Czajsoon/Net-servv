@@ -4,11 +4,8 @@ import {LogowanieComponent} from "./logowanie/logowanie.component";
 import {DrugWarehouseComponent} from "./drug-warehouse/drug-warehouse.component";
 
 const routes: Routes = [
-  {path:'',pathMatch: "full",component:LogowanieComponent},
-  {path:'drug-warehouse',component:DrugWarehouseComponent}
-
-
-
+  {path:'',pathMatch: "full",component:DrugWarehouseComponent},
+  {path:'login',component:LogowanieComponent}
 ];
 
 @NgModule({
