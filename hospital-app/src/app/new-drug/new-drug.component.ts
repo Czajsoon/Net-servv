@@ -19,11 +19,17 @@ export class NewDrugComponent implements OnInit {
   }
 
   addDrug(){
-    let drug = {
-      drug_name:this.drugName.nativeElement.value,
-      amount_in_warehouse:this.drugNumber.nativeElement.value,
-      price:this.drugPrice.nativeElement.value
-    };
-    this.http.post('http://localhost:8080/drug',drug).subscribe().unsubscribe();
+    this.http.post(
+      'http://localhost:8080/drug',
+      {
+        drug_name:this.drugName.nativeElement.value,
+        amount_in_warehouse:this.drugNumber.nativeElement.value,
+        price:this.drugPrice.nativeElement.value
+      },
+      {responseType: 'text'}
+      )
+      .subscribe(data =>{
+        console.log(data);
+      });
   }
 }

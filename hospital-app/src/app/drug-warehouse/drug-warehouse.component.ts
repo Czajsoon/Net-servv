@@ -26,6 +26,7 @@ export class DrugWarehouseComponent implements OnInit {
   ngOnInit(): void {
     this.http.get('http://localhost:8080/drug').subscribe(data =>{
       this.updateTableDrugs(data)
+      console.log(data);
     });
   }
 
