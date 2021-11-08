@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {Drug} from "../models/drug";
 import {MatDialog} from "@angular/material/dialog";
 import {NewDrugComponent} from "../new-drug/new-drug.component";
+import {DrugServiceService} from "../services/drug-service.service";
+import {resolve} from "@angular/compiler-cli/src/ngtsc/file_system";
 
 let Drugs:Drug[] = [
 
@@ -16,17 +18,15 @@ let Drugs:Drug[] = [
 export class DrugWarehouseComponent implements OnInit {
   displayedColumns: string[] = ['id', 'drug_name', 'amount_in_warehouse', 'price','delete'];
   Drug_Table = [...Drugs];
-  response:any;
 
   constructor(private http: HttpClient,
-              private dialog: MatDialog) {
-
-  }
+              private dialog: MatDialog,
+              private drugService: DrugServiceService)
+  {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/drug').subscribe(data =>{
-      this.updateTableDrugs(data)
-      console.log(data);
+    this.drugService.getDrugs().then(data =>{
+      this.updateTableDrugs(data);
     });
   }
 
@@ -44,8 +44,7 @@ export class DrugWarehouseComponent implements OnInit {
   }
 
   deleteDrug(id:number){
-    let url = 'http://localhost:8080/drug/'+id;
-    this.http.delete(url).subscribe(data=>{
+    this.drugService.deleteDrug(id).then(data =>{
       this.updateTableDrugs(data);
     })
   }

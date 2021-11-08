@@ -10,3 +10,4 @@ public class DrugDTO {
     private Integer amount_in_warehouse;
     private Float price;
 }
+
