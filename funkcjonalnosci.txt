@@ -4,44 +4,44 @@ Technologie: Angular CLI (frontend) Spring Boot(backend) MySQL(baza danych)
 
 Role:
 a) Pacjent
-- Zmiana hasła
-- Dostęp do Recept
-- Dostęp do wyników badań
-- Dostęp do Terminarza badań, pobytów, i wizyt (działający także wstecz- historia)
-- Dostęp do kontaktu
-- Dostęp do skierowań/zwolnień
+- Zmiana hasła (B)
+- Dostęp do Recept (D)
+- Dostęp do wyników badań (M)
+- Dostęp do Terminarza badań, pobytów, i wizyt (działający także wstecz- historia) (K)
+- Dostęp do kontaktu (M)
+- Dostęp do skierowań/zwolnień (D)
 
 b) Recepcjonista/Pielęgniarka
-- Dostęp do listy pacjentów
-- Dostęp do Terminarza
--Edycja terminarza (anulowanie wizyt,przekładanie wizyt, dodawanie wizyt)
--Dodawanie wyników badań
+- Dostęp do listy pacjentów (B)
+- Dostęp do Terminarza (K)
+-Edycja terminarza (anulowanie wizyt,przekładanie wizyt, dodawanie wizyt) (K)
+-Dodawanie wyników badań (D)
 
 
 
 c) Lekarz
--Wystawianie recept
--Podgląd karty pacjenta
--Wystawianie skierowań
--Wystawianie zwolnień lekarskich
+-Wystawianie recept (M)
+-Podgląd karty pacjenta (D)
+-Wystawianie skierowań (B)
+-Wystawianie zwolnień lekarskich (B)
 
 d) Administrator
-- Dodawanie/usuwanie/edycja kont pracowników,lekarzy i pacjentów
-- Zmiana uprawnień do kont
+- Dodawanie/usuwanie/edycja kont pracowników,lekarzy i pacjentów (K)
+- Zmiana uprawnień do kont (K)
 
 e) Gość
-- Przegląd listy lekarzy i ich specjalności
-- Logowanie
+- Przegląd listy lekarzy i ich specjalności (D)
+- Logowanie (K)
 
 Pomysły z zajęć: 
--Apteka szpialna.
--Operacje(sala lekarze,historia).
+-Apteka szpialna. (K)
+-Operacje(sala lekarze,historia). (K)
 -Rehabilitacja(rodzje).
 -Posiłaki 9karta pacjenta z dietą).
--Wysłanie karetki na wskazany adres.
+-Wysłanie karetki na wskazany adres. (K)
 -Izba porodowa + krematorium.
 -Program staży i szkoleń.
 -Prześwietlenia badania...
 -Laboratorium badań np. krwi
 -Konsultacje
--Erecepty
+

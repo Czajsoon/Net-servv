@@ -1,11 +1,13 @@
 package hospital.hospital.Drug;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@ToString
 public class Drug {
 
     @Id
