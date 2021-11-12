@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LogowanieComponent } from './logowanie/logowanie.component';
+import { LoginComponent } from './login/login.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -22,7 +22,7 @@ import {MaterialModule} from "./material/material.module";
 @NgModule({
   declarations: [
     AppComponent,
-    LogowanieComponent,
+    LoginComponent,
     DrugWarehouseComponent,
     NewDrugComponent
   ],

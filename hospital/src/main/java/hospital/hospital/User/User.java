@@ -1,6 +1,7 @@
 package hospital.hospital.User;
 
 import hospital.hospital.Privilege.Privilege;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,8 +11,9 @@ import java.util.Date;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
+    private String username;
     @Column
     private String name;
     @Column
@@ -25,7 +27,8 @@ public class User {
 
     public static User of(UserDTO dto,Privilege privilege) {
         User user = new User();
-        //user.setId(dto.getId());
+        user.setId(dto.getId());
+        user.setUsername(dto.getId().toString());
         user.setName(dto.getName());
         user.setSurname(dto.getSurname());
         user.setBornDate(dto.getBornDate());

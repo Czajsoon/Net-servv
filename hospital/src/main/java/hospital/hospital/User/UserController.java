@@ -4,6 +4,7 @@ import hospital.hospital.Privilege.Privilege;
 import hospital.hospital.Privilege.PrivilegeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -52,7 +53,10 @@ public class UserController {
     }
 
     @PostConstruct()
-    private void init(){
+    void init(){
+        UserDTO user = UserDTO.builder().id(123456L).name("Jakub").surname("Czajkowski").password("123").build();
+        Optional<Privilege> priv  = privilegeRepository.findById(3L);
+        User uss = userRepository.save(User.of(user,priv.get()));
     }
 
 }

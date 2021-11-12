@@ -1,0 +1,30 @@
+.login-con{
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  position: relative;
+  transform: translateY(-50%);
+  top: 40%;
+  .login-card{
+    text-align: center;
+    width: 40%;
+  }
+}
+
+.login-input{
+  mat-form-field{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 50%;
+    text-align: center;
+  }
+  .row{
+    justify-content: center;
+  }
+}
+
+.login-button{
+  padding-left: 25%;
+  padding-right: 25%;
+  margin-bottom: 20px;
+}

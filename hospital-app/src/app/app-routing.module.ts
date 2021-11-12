@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LogowanieComponent} from "./logowanie/logowanie.component";
+import {LoginComponent} from "./login/login.component";
 import {DrugWarehouseComponent} from "./drug-warehouse/drug-warehouse.component";
 
 const routes: Routes = [
   {path:'',pathMatch: "full",component:DrugWarehouseComponent},
-  {path:'login',component:LogowanieComponent}
+  {path:'login',component:LoginComponent}
 ];
 
 @NgModule({

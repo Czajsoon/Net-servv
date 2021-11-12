@@ -14,7 +14,7 @@ public class Privilege {
     private Long id;
     @Column
     private String name;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany
     private List<User> users;
 
 
