@@ -41,7 +41,7 @@ public class JwtConfig extends WebSecurityConfigurerAdapter {
                 .cors()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/login","/h2-console/**","/register","/api/roles/**")//only allow this endpoint without authentication
+                .antMatchers("/login","/h2-console/**","/register")//only allow this endpoint without authentication
                 .permitAll()
                 .anyRequest()
                 .authenticated()//any other request , authentication should performed

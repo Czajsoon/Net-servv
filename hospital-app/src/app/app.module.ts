@@ -18,13 +18,15 @@ import { NewDrugComponent } from './new-drug/new-drug.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MaterialModule} from "./material/material.module";
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DrugWarehouseComponent,
-    NewDrugComponent
+    NewDrugComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
