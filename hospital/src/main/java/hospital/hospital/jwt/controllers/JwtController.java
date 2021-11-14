@@ -20,6 +20,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @RestController
+@CrossOrigin("*")
 public class JwtController {
 
     @Autowired

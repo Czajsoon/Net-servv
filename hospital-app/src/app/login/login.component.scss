@@ -13,13 +13,35 @@
   position: relative;
   transform: translateY(-50%);
   top: 45%;
+  mat-card{
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 30px;
+  }
   mat-card-title{
     font-size: 30px;
+    margin-top: 10px;
   }
   .login-card{
     text-align: center;
     width: 40%;
   }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(42, 142, 219) !important;
+}
+
+::ng-deep .mat-form-field-label{
+  color: rgb(42, 142, 219);
+}
+
+::ng-deep .mat-form-field-underline{
+  background-color: rgb(42, 142, 219);
+}
+
+.icon{
+  color: rgb(42, 142, 219);
 }
 
 .login-input{
@@ -39,6 +61,7 @@
   padding: 4px 25%;
   margin-bottom: 20px;
   font-size: 20px;
+  background-color: rgba(42, 142, 219,0.75);
 }
 
 .home-button {
@@ -46,4 +69,8 @@
   left: 50%;
   bottom: 5%;
   transform: translateX(-50%) scale(1.5) !important;
+
+  button{
+    background-color: rgba(42, 142, 219,0.75);
+  }
 }

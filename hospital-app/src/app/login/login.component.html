@@ -7,23 +7,23 @@
       <mat-card-content class="login-input">
         <div class="col">
           <div class="row">
-            <mat-form-field color="accent">
+            <mat-form-field>
               <mat-label>Login</mat-label>
-              <input matInput>
+              <input #login matInput>
             </mat-form-field>
           </div>
           <div class="row">
-            <mat-form-field color="accent">
+            <mat-form-field>
               <mat-label >Hasło</mat-label>
-              <input matInput  [type]="visibility? 'text' : 'password'" >
+              <input #password matInput  [type]="visibility? 'text' : 'password'" >
               <button  matSuffix mat-icon-button (click)="visibility_change()">
-                <mat-icon *ngIf="visibility" color="accent">visibility</mat-icon>
+                <mat-icon *ngIf="visibility" class="icon">visibility</mat-icon>
                 <mat-icon *ngIf="!visibility">visibility_off</mat-icon>
               </button>
             </mat-form-field>
           </div>
           <div class="row">
-            <button mat-raised-button color="accent" class="login-button">Zaloguj</button>
+            <button mat-raised-button color="accent" class="login-button" (click)="performLogin()">Zaloguj</button>
           </div>
         </div>
       </mat-card-content>

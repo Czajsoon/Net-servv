@@ -19,6 +19,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MaterialModule} from "./material/material.module";
 import { HomePageComponent } from './home-page/home-page.component';
+import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     LoginComponent,
     DrugWarehouseComponent,
     NewDrugComponent,
-    HomePageComponent
+    HomePageComponent,
+    NurseTimetableComponent
   ],
   imports: [
     BrowserModule,
