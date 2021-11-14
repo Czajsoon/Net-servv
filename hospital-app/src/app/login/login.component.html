@@ -1,0 +1,39 @@
+<div class="page">
+  <div class="login-con">
+    <mat-card class="login-card">
+      <mat-card-title>
+        ZALOGUJ SIĘ
+      </mat-card-title>
+      <mat-card-content class="login-input">
+        <div class="col">
+          <div class="row">
+            <mat-form-field>
+              <mat-label>Login</mat-label>
+              <input #login matInput>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field>
+              <mat-label >Hasło</mat-label>
+              <input #password matInput  [type]="visibility? 'text' : 'password'" >
+              <button  matSuffix mat-icon-button (click)="visibility_change()">
+                <mat-icon *ngIf="visibility" class="icon">visibility</mat-icon>
+                <mat-icon *ngIf="!visibility">visibility_off</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <button mat-raised-button color="accent" class="login-button" (click)="performLogin()">Zaloguj</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="home-button">
+    <button mat-fab color="accent" routerLink="/home">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+</div>
+
+

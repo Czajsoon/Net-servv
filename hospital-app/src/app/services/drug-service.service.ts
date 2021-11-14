@@ -10,7 +10,6 @@ import {Drug} from "../models/drug";
 export class DrugServiceService {
 
   private readonly configUrl:string;
-  public response:any = null;
 
   constructor(
     private backend:BackendConnectService,

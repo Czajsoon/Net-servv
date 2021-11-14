@@ -1,0 +1,76 @@
+.page{
+  background-image: url("../../assets/images/login-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+  width: 100%;
+}
+.login-con{
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  position: relative;
+  transform: translateY(-50%);
+  top: 45%;
+  mat-card{
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 30px;
+  }
+  mat-card-title{
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  .login-card{
+    text-align: center;
+    width: 40%;
+  }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(42, 142, 219) !important;
+}
+
+::ng-deep .mat-form-field-label{
+  color: rgb(42, 142, 219);
+}
+
+::ng-deep .mat-form-field-underline{
+  background-color: rgb(42, 142, 219);
+}
+
+.icon{
+  color: rgb(42, 142, 219);
+}
+
+.login-input{
+  mat-form-field{
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 50%;
+    text-align: center;
+  }
+  .row{
+    justify-content: center;
+  }
+}
+
+.login-button{
+  padding: 4px 25%;
+  margin-bottom: 20px;
+  font-size: 20px;
+  background-color: rgba(42, 142, 219,0.75);
+}
+
+.home-button {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%) scale(1.5) !important;
+
+  button{
+    background-color: rgba(42, 142, 219,0.75);
+  }
+}
