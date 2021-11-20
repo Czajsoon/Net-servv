@@ -20,6 +20,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MaterialModule} from "./material/material.module";
 import { HomePageComponent } from './home-page/home-page.component';
 import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.component';
+import { PasswordChangeComponent } from './password-change/password-change.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.compo
     DrugWarehouseComponent,
     NewDrugComponent,
     HomePageComponent,
-    NurseTimetableComponent
+    NurseTimetableComponent,
+    PasswordChangeComponent
   ],
   imports: [
     BrowserModule,

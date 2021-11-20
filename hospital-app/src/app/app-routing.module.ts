@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {DrugWarehouseComponent} from "./drug-warehouse/drug-warehouse.component";
 import {HomePageComponent} from "./home-page/home-page.component";
+import {PasswordChangeComponent} from "./password-change/password-change.component";
 
 const routes: Routes = [
   {path:'',pathMatch: "full",component:DrugWarehouseComponent},
   {path:'login',component:LoginComponent},
-  {path:'home',component:HomePageComponent}
+  {path:'home',component:HomePageComponent},
+  {path:'password-change',component:PasswordChangeComponent}
 ];
 
 @NgModule({
