@@ -21,6 +21,7 @@ import {MaterialModule} from "./material/material.module";
 import { HomePageComponent } from './home-page/home-page.component';
 import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.component';
 import { PasswordChangeComponent } from './password-change/password-change.component';
+import { PatientlistComponent } from './patientlist/patientlist.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PasswordChangeComponent } from './password-change/password-change.compo
     NewDrugComponent,
     HomePageComponent,
     NurseTimetableComponent,
-    PasswordChangeComponent
+    PasswordChangeComponent,
+    PatientlistComponent
   ],
   imports: [
     BrowserModule,
