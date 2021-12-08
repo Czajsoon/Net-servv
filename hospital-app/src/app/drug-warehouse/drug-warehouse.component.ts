@@ -4,7 +4,6 @@ import {Drug} from "../models/drug";
 import {MatDialog} from "@angular/material/dialog";
 import {NewDrugComponent} from "../new-drug/new-drug.component";
 import {DrugServiceService} from "../services/drug-service.service";
-import {resolve} from "@angular/compiler-cli/src/ngtsc/file_system";
 
 let Drugs:Drug[] = [
 
@@ -51,6 +50,10 @@ export class DrugWarehouseComponent implements OnInit {
 
   addFile(){
     this.dialog.open(NewDrugComponent);
+  }
+
+  showDetails(){
+
   }
 
 
