@@ -1,0 +1,20 @@
+<div>
+  <h1 class="text-center">{{event.type}}</h1>
+  <mat-dialog-content>
+    <div class="col">
+      <div class="row">
+        <h3><b>Data:</b> {{event.date | date}} <span *ngIf="event.dateEnd"> - {{event.dateEnd | date}}</span></h3>
+      </div>
+      <div class="row">
+        <h3><b>Lekarz:</b> {{event.doctor}} spec: {{event.spec}}</h3>
+      </div>
+      <div class="row">
+        <h3><b>Opis:</b> {{event.description}}</h3>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-card-actions class="text-center">
+    <button mat-raised-button color="warn" mat-dialog-close>Zamknij</button>
+  </mat-card-actions>
+</div>
+

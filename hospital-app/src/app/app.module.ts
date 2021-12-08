@@ -20,26 +20,37 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MaterialModule} from "./material/material.module";
 import { HomePageComponent } from './home-page/home-page.component';
 import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatGridListModule} from "@angular/material/grid-list";
+import { TimeTableHighlightDirective } from './directives/time-table-highlight.directive';
+import { EventTimetableComponent } from './event-timetable/event-timetable.component';
+import {MatSortModule} from "@angular/material/sort";
+import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    TimeTableHighlightDirective,
     DrugWarehouseComponent,
     NewDrugComponent,
     HomePageComponent,
-    NurseTimetableComponent
+    NurseTimetableComponent,
+    EventTimetableComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgbModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MaterialModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgbModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MaterialModule,
+        MatGridListModule,
+        MatSortModule,
+        MatRippleModule
+    ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

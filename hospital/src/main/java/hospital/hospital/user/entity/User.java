@@ -5,6 +5,7 @@ import hospital.hospital.user.models.UserDTO;
 import hospital.hospital.user.models.UserModel;
 import hospital.hospital.role.entity.Role;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@ToString
 @Entity
 public class User {
     @Id

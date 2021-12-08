@@ -57,20 +57,7 @@ public class JwtController {
 
     @PostConstruct
     private void init(){
-        UserDTO admin = new UserDTO();
-        admin.setName("Admin");
-        admin.setSurname("Admin");
-        admin.setUsername("admin");
-        admin.setPassword("admin");
-        Set<RoleDTO> roles = new HashSet<>();
-        RoleDTO role1 = RoleDTO.builder().id(1L).build();
-        RoleDTO role2 = RoleDTO.builder().id(2L).build();
-        RoleDTO role3 = RoleDTO.builder().id(3L).build();
-        roles.add(role1);
-        roles.add(role2);
-        roles.add(role3);
-        admin.setRoles(roles);
-        register(admin);
+
     }
 
 }
