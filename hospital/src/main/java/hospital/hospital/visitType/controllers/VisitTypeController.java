@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -35,5 +36,15 @@ public class VisitTypeController {
         else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostConstruct
+    public void init(){
+        VisitTypeREQ visitType = new VisitTypeREQ();
+        VisitTypeREQ visitType1 = new VisitTypeREQ();
+        visitType.setName("Teleporada");
+        visitType1.setName("Tradycyjna");
+        visitType(visitType);
+        visitType(visitType1);
     }
 }
