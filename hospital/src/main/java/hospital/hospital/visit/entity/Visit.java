@@ -2,6 +2,7 @@ package hospital.hospital.visit.entity;
 
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.recipe.entity.Recipe;
+import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
 import hospital.hospital.user.entity.User;
 import hospital.hospital.visit.models.VisitREQ;
 import hospital.hospital.visitType.entity.VisitType;
@@ -39,6 +40,9 @@ public class Visit {
     @OneToMany(mappedBy = "visit")
     private Set<Recipe> recipes;
 
+    @OneToMany(mappedBy = "visit")
+    private Set<RefferalAbsention> refferalAbsentions;
+
     public static Visit of(VisitREQ visitREQ, VisitType visitType, Doctor doctor,User user){
         Visit visit = new Visit();
         visit.setUser(user);
@@ -61,6 +65,11 @@ public class Visit {
             recipe.setDrugs(null);
             recipe.setUser(null);
             recipe.setDoctor(null);
+        });
+        if(visit.getRefferalAbsentions() != null) visit.getRefferalAbsentions().forEach(refferalAbsention -> {
+            refferalAbsention.setVisit(null);
+            refferalAbsention.setDoctor(null);
+            refferalAbsention.setUser(null);
         });
         return visit;
     }
