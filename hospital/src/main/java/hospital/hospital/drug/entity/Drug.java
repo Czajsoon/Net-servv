@@ -1,10 +1,13 @@
 package hospital.hospital.drug.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import hospital.hospital.drug.models.DrugDTO;
+import hospital.hospital.recipe.entity.Recipe;
 import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -23,6 +26,10 @@ public class Drug {
 
     @Column
     private Float price;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "drugs")
+    private Set<Recipe> recipes;
 
     public static Drug of(DrugDTO dto){
         Drug drug = new Drug();
