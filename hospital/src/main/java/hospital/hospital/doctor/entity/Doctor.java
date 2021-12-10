@@ -1,13 +1,17 @@
 package hospital.hospital.doctor.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.models.DoctorREQ;
+import hospital.hospital.recipe.entity.Recipe;
 import hospital.hospital.specialisation.entity.Specialisation;
+import hospital.hospital.visit.entity.Visit;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.print.Doc;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -28,6 +32,14 @@ public class Doctor {
     inverseJoinColumns = @JoinColumn(name = "spec_id"))
     private List<Specialisation> specialisation;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "doctor")
+    private Set<Visit> visits;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "doctor")
+    private Set<Recipe> recipes;
+
     public static Doctor of(DoctorREQ doctorREQ){
         Doctor doctor = new Doctor();
         doctor.setName(doctorREQ.getName());
@@ -36,7 +48,9 @@ public class Doctor {
     }
 
     public static Doctor response(Doctor doctor){
-        doctor.getSpecialisation().forEach(specialisation1 -> specialisation1.setDoctor(null));
+        if(doctor.getSpecialisation() != null)doctor.getSpecialisation().forEach(specialisation1 -> specialisation1.setDoctor(null));
+        if(doctor.getVisits() != null) doctor.getVisits().forEach(visit -> visit.setDoctor(null));
+        doctor.setRecipes(null);
         return doctor;
     }
 

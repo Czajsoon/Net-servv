@@ -1,9 +1,12 @@
 package hospital.hospital.user.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import hospital.hospital.recipe.entity.Recipe;
 import hospital.hospital.user.models.UserDTO;
 import hospital.hospital.user.models.UserModel;
 import hospital.hospital.role.entity.Role;
+import hospital.hospital.visit.entity.Visit;
 import lombok.Data;
 import lombok.ToString;
 
@@ -34,6 +37,24 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLE")
     private Set<Role> role = new HashSet<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<Visit> visits;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<Recipe> recipes;
+
+    public static User dto(User user){
+        if(user.getVisits() != null)user.getVisits().forEach(visit -> {
+            visit.setVisitType(null);
+            visit.setDoctor(null);
+            visit.setUser(null);
+        });
+        if(user.getRole() != null) user.getRole().forEach(role1 -> role1.setUsers(null));
+        return user;
+    }
 
     public static User of(UserDTO userDTO){
         User user = new User();
