@@ -60,6 +60,10 @@ public class Recipe {
         recipe.getVisit().setRecipes(null);
         recipe.getVisit().setDoctor(null);
         recipe.getVisit().setUser(null);
+        recipe.getVisit().setRefferalAbsentions(null);
+        recipe.getUser().setPassword(null);
+        recipe.getUser().setRefferalAbsentions(null);
+        recipe.getDoctor().setRefferalAbsentions(null);
         recipe.getDoctor().getSpecialisation().forEach(specialisation -> specialisation.setDoctor(null));
         return recipe;
     }

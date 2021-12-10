@@ -1,15 +1,16 @@
 package hospital.hospital.doctor.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import hospital.hospital.doctor.models.DoctorREQ;
+import hospital.hospital.operation.entity.Operation;
 import hospital.hospital.recipe.entity.Recipe;
+import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
 import hospital.hospital.specialisation.entity.Specialisation;
 import hospital.hospital.visit.entity.Visit;
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
-import javax.print.Doc;
 import java.util.List;
 import java.util.Set;
 
@@ -39,6 +40,17 @@ public class Doctor {
     @JsonIgnore
     @OneToMany(mappedBy = "doctor")
     private Set<Recipe> recipes;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "doctor")
+    private Set<RefferalAbsention> refferalAbsentions;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "DOC_OPER",
+    joinColumns = @JoinColumn(name = "doc_id"),
+    inverseJoinColumns = @JoinColumn(name = "operation_id"))
+    private Set<Operation> operations;
 
     public static Doctor of(DoctorREQ doctorREQ){
         Doctor doctor = new Doctor();

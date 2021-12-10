@@ -2,7 +2,11 @@ package hospital.hospital.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import hospital.hospital.blood.entity.Blood;
+import hospital.hospital.operation.entity.Operation;
 import hospital.hospital.recipe.entity.Recipe;
+import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
+import hospital.hospital.results.entity.Result;
 import hospital.hospital.user.models.UserDTO;
 import hospital.hospital.user.models.UserModel;
 import hospital.hospital.role.entity.Role;
@@ -45,6 +49,26 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private Set<Recipe> recipes;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<RefferalAbsention> refferalAbsentions;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<Blood> blood;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<Operation> inOperations;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "nurses")
+    private Set<Operation> takeOperations;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<Result> results;
 
     public static User dto(User user){
         if(user.getVisits() != null)user.getVisits().forEach(visit -> {
