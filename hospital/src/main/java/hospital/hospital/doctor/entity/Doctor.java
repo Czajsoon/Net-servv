@@ -1,7 +1,6 @@
 package hospital.hospital.doctor.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import hospital.hospital.doctor.models.DoctorREQ;
 import hospital.hospital.operation.entity.Operation;
 import hospital.hospital.recipe.entity.Recipe;
@@ -26,6 +25,9 @@ public class Doctor {
 
     @Column
     private String surname;
+
+    @Column
+    private Integer room;
 
     @ManyToMany
     @JoinTable(name = "DOC_SPEC",

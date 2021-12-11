@@ -7,6 +7,7 @@ import hospital.hospital.user.entity.User;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -15,6 +16,12 @@ public class Operation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
+    private Date date;
+
+    @Column
+    private String description;
 
     @ManyToMany(mappedBy = "operations")
     private Set<Doctor> doctors;

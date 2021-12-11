@@ -7,6 +7,7 @@ import hospital.hospital.operation.entity.Operation;
 import hospital.hospital.recipe.entity.Recipe;
 import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
 import hospital.hospital.results.entity.Result;
+import hospital.hospital.stay.entity.Stay;
 import hospital.hospital.user.models.UserDTO;
 import hospital.hospital.user.models.UserModel;
 import hospital.hospital.role.entity.Role;
@@ -69,6 +70,10 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private Set<Result> results;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private Set<Stay> stays;
 
     public static User dto(User user){
         if(user.getVisits() != null)user.getVisits().forEach(visit -> {
