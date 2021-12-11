@@ -3,6 +3,7 @@ package hospital.hospital.drug.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import hospital.hospital.drug.models.DrugDTO;
 import hospital.hospital.recipe.entity.Recipe;
+import hospital.hospital.stay.entity.Stay;
 import lombok.Data;
 import lombok.ToString;
 
@@ -30,6 +31,10 @@ public class Drug {
     @JsonIgnore
     @ManyToMany(mappedBy = "drugs")
     private Set<Recipe> recipes;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "doctor")
+    private Set<Stay> stays;
 
     public static Drug of(DrugDTO dto){
         Drug drug = new Drug();

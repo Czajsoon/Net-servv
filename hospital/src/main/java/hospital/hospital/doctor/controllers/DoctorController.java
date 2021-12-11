@@ -24,6 +24,7 @@ public class DoctorController{
     @Autowired
     private JwtController jwtController;
 
+
     @PostMapping
     public ResponseEntity<?> doctor(@RequestBody DoctorREQ doctorREQ){
         ResponseEntity<UserDTO> register = jwtController.register(doctorREQ);

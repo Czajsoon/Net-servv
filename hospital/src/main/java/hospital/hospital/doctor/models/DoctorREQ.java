@@ -14,4 +14,5 @@ public class DoctorREQ extends UserDTO {
     private String name;
     private String surname;
     private Set<Long> specialisations;
+    private Long room;
 }
