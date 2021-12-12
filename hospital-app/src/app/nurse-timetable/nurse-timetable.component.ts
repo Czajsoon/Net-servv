@@ -1,15 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {timetableEvent} from "../models/timetableEvent";
 import {MatDialog} from "@angular/material/dialog";
 import {EventTimetableComponent} from "../event-timetable/event-timetable.component";
-import {TimetableService} from "../services/timetable.service";
 import {BackendConnectService} from "../services/backend-connect.service";
 import {HttpClient} from "@angular/common/http";
-import {resolve} from "@angular/compiler-cli/src/ngtsc/file_system";
-import {ActivatedRoute, Resolve} from "@angular/router";
-import {subscribeToResult} from "rxjs/internal-compatibility";
-import {range} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-nurse-timetable',
@@ -72,14 +68,35 @@ export class NurseTimetableComponent implements OnInit{
   }
 
   doFilter(event:string){
-    //TODO sprawdzanie daty
-    console.log(this.range.get("start")?.value)
-    console.log(this.range.get("end")?.value)
-    if(this.range.get("start")?.value && this.range.get("end")?.value){
-      
+    if(this.range.get('start')?.value || this.range.get('end')?.value){
+      if(this.range.get('start')?.value && this.range.get('end')?.value){
+        this.eventOrigin = this.events.slice().filter(event => {
+          let startDate = new Date(event.activity.startDate);
+          if(this.range.get('start')?.value <= startDate){
+            if(event.activity.endDate){
+              let date = new Date(event.activity.endDate)
+              return this.range.get('end')?.value >= date;
+            }
+            else return this.range.get('end')?.value >= startDate;
+          }
+          else return false;
+        })
+      }
+      else{
+        if(this.range.get('start')?.value){
+          this.eventOrigin = this.events.slice().filter(event =>{
+            let startDate = new Date(event.activity.startDate);
+            if(event.activity.endDate) {
+              let date = new Date(event.activity.endDate);
+              return this.range.get('start')?.value <= startDate && this.range.get('start')?.value <= date
+            }
+            else return this.range.get('start')?.value <= startDate
+          })
+        }
+        else this.eventOrigin = this.events.slice().filter(event => this.range.get('end')?.value >= new Date(event.activity.startDate))
+      }
     }
-
-
+    else this.eventOrigin = this.events;
     switch (event){
       case "visit": this.visit = !this.visit; break;
       case "stay": this.stay = !this.stay; break;
@@ -97,7 +114,4 @@ export class NurseTimetableComponent implements OnInit{
       }
     }
   }
-
-
-
 }

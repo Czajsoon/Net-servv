@@ -4,8 +4,7 @@ import {LoginComponent} from "./login/login.component";
 import {DrugWarehouseComponent} from "./drug-warehouse/drug-warehouse.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {NurseTimetableComponent} from "./nurse-timetable/nurse-timetable.component";
-import {TimetableResolverService} from "./timetable-resolver.service";
-import {TimetableService} from "./services/timetable.service";
+import {TimetableResolverService} from "./services/timetable-resolver.service";
 
 const routes: Routes = [
   {path:'',pathMatch: "full",component:DrugWarehouseComponent},
