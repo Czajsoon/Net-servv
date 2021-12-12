@@ -2,6 +2,7 @@ package hospital.hospital.role.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.user.entity.User;
 import hospital.hospital.role.models.RoleDTO;
 import lombok.Data;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Data
 @Entity
 public class Role {

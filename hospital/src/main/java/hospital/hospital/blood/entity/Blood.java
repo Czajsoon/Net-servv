@@ -1,5 +1,6 @@
 package hospital.hospital.blood.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.blood.models.BloodREQ;
 import hospital.hospital.user.entity.User;
 import lombok.Data;
@@ -7,6 +8,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
 @Data
 public class Blood {
