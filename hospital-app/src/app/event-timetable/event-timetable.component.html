@@ -3,17 +3,23 @@
   <mat-dialog-content>
     <div class="col">
       <div class="row">
-        <h3><b>Data:</b> {{event.activity.startDate | date}} <span *ngIf="event.activity.endDate"> - {{event.activity.endDate | date}}</span></h3>
+        <h3><b>Data:</b> {{event.activity.startDate | date:"medium"}} <span *ngIf="event.activity.endDate"> - {{event.activity.endDate | date:"medium"}}</span></h3>
       </div>
       <div class="row">
         <h3><b>Lekarz:</b> {{event.activity.doctor.name}} {{event.activity.doctor.surname}}</h3>
       </div>
       <div class="row">
+        <h3><b>Specjalizacje: </b></h3>
+        <h3 *ngFor="let spec of event.activity.doctor.specialisation">{{spec.name }},</h3>
+      </div>
+      <div class="row">
         <h3><b>Opis:</b> {{event.activity.description}}</h3>
       </div>
+
     </div>
   </mat-dialog-content>
   <mat-card-actions class="text-center">
+    <button mat-raised-button color="accent" >Szczegóły</button>
     <button mat-raised-button color="warn" mat-dialog-close>Zamknij</button>
   </mat-card-actions>
 </div>

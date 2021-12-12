@@ -12,7 +12,6 @@ export class EventTimetableComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public event: timetableEvent) { }
 
   ngOnInit(): void {
-    console.log(this.event);
   }
 
 }

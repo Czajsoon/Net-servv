@@ -18,4 +18,9 @@ export interface VisitType{
 export interface Doctor{
   name:string;
   surname:string;
+  specialisation:[Specialisation]
+}
+
+export interface Specialisation{
+  name:string;
 }

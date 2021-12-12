@@ -28,7 +28,7 @@ export class NurseTimetableComponent implements OnInit{
               private http:HttpClient,
               private act:ActivatedRoute) {
     act.data.subscribe(result =>{
-      this.sortDates(result.time_table);
+      this.sortDates(result.time_table,"newest");
       this.events = [...result.time_table]
       console.log(result.time_table);
       this.eventOrigin = this.events
@@ -39,13 +39,21 @@ export class NurseTimetableComponent implements OnInit{
 
    }
 
-   sortDates(events:timetableEvent[]){
-     events.sort((x:timetableEvent,y:timetableEvent) =>{
-       let date = new Date(y.activity.startDate);
-       let date1 = new Date(x.activity.startDate);
-       return date1.getDate() - date.getDate();
-     })
-     console.log(events);
+   sortDates(events:timetableEvent[],option:string){
+    if(option == "oldest"){
+      events.sort((x:timetableEvent,y:timetableEvent) =>{
+        let date = new Date(y.activity.startDate);
+        let date1 = new Date(x.activity.startDate);
+        return date.getDate() - date1.getDate();
+      })
+    }
+    else if(option == "newest"){
+      events.sort((x:timetableEvent,y:timetableEvent) =>{
+        let date = new Date(y.activity.startDate);
+        let date1 = new Date(x.activity.startDate);
+        return date1.getDate() - date.getDate();
+      })
+    }
   }
 
   showDetails(event:timetableEvent){
@@ -68,6 +76,8 @@ export class NurseTimetableComponent implements OnInit{
   }
 
   doFilter(event:string){
+    if(event =="oldest" || event == "newest") this.sortDates(this.events,event);
+
     if(this.range.get('start')?.value || this.range.get('end')?.value){
       if(this.range.get('start')?.value && this.range.get('end')?.value){
         this.eventOrigin = this.events.slice().filter(event => {

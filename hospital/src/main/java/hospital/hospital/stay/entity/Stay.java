@@ -59,7 +59,7 @@ public class Stay {
         });
         stay.getDoctor().setVisits(null);
         stay.getDoctor().setRecipes(null);
-        stay.getDoctor().setSpecialisation(null);
+        stay.getDoctor().getSpecialisation().forEach(specialisation -> specialisation.setDoctor(null));
         stay.getDoctor().setRefferalAbsentions(null);
         stay.getDoctor().setOperations(null);
         stay.getUser().setRole(null);

@@ -26,6 +26,7 @@ import { TimeTableHighlightDirective } from './directives/time-table-highlight.d
 import { EventTimetableComponent } from './event-timetable/event-timetable.component';
 import {MatSortModule} from "@angular/material/sort";
 import {MatRippleModule} from "@angular/material/core";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {MatRippleModule} from "@angular/material/core";
         MaterialModule,
         MatGridListModule,
         MatSortModule,
-        MatRippleModule
+        MatRippleModule,
+
     ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -10,7 +10,7 @@
         <mat-card-content class="justify-content-center">
           <div class="col">
             <div class="row">
-              <p><b>Data: </b> {{event.activity.startDate | date}} <span *ngIf="event.activity.endDate"> - {{event.activity.endDate | date}}</span> </p>
+              <p><b>Data: </b> {{event.activity.startDate | date:"medium"}} <span *ngIf="event.activity.endDate"> - {{event.activity.endDate | date:"medium"}}</span> </p>
             </div>
             <div class="row">
               <p><b>Lekarz: </b> {{event.activity.doctor.name}} {{event.activity.doctor.surname}}</p>
@@ -68,6 +68,12 @@
         </div>
         <div class="row justify-content-center">
           <button mat-raised-button (click)="clearEvents()"> Wyczyść wydarzenia</button>
+        </div>
+        <div class="row justify-content-center">
+          <mat-button-toggle-group class="timeSelection" #group="matButtonToggleGroup">
+            <mat-button-toggle value="newest" checked (click)="doFilter(group.value)">Od najnowszysch</mat-button-toggle>
+            <mat-button-toggle value="oldest" (click)="doFilter(group.value)">Od najstarszych</mat-button-toggle>
+          </mat-button-toggle-group>
         </div>
       </div>
     </mat-card-content>
