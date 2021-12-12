@@ -9,10 +9,10 @@ import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-nurse-timetable',
-  templateUrl: './nurse-timetable.component.html',
-  styleUrls: ['./nurse-timetable.component.scss']
+  templateUrl: './timetable.component.html',
+  styleUrls: ['./timetable.component.scss']
 })
-export class NurseTimetableComponent implements OnInit{
+export class TimetableComponent implements OnInit{
   range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),

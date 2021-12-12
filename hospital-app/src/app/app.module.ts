@@ -19,7 +19,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MaterialModule} from "./material/material.module";
 import { HomePageComponent } from './home-page/home-page.component';
-import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.component';
+import { TimetableComponent } from './timetable/timetable.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { TimeTableHighlightDirective } from './directives/time-table-highlight.directive';
@@ -36,7 +36,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     DrugWarehouseComponent,
     NewDrugComponent,
     HomePageComponent,
-    NurseTimetableComponent,
+    TimetableComponent,
     EventTimetableComponent
   ],
     imports: [
