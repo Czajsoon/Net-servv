@@ -1,5 +1,6 @@
 package hospital.hospital.visit.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.recipe.entity.Recipe;
 import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
 @Data
 public class Visit {
@@ -56,10 +58,11 @@ public class Visit {
     public static Visit dto(Visit visit){
         if(visit.getVisitType() != null)visit.getVisitType().setVisits(null);
         if(visit.getDoctor() != null){
-            visit.getDoctor().setVisits(null);
             visit.getDoctor().getSpecialisation().forEach(specialisation -> specialisation.setDoctor(null));
         }
-        if(visit.getUser() != null) visit.getUser().setVisits(null);
+        if(visit.getUser() != null) {
+            visit.getUser().setRole(null);
+        }
         if(visit.getRecipes() != null) visit.getRecipes().forEach(recipe -> {
             recipe.setVisit(null);
             recipe.setDrugs(null);

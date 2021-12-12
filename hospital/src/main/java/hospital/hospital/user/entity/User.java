@@ -2,6 +2,7 @@ package hospital.hospital.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.blood.entity.Blood;
 import hospital.hospital.operation.entity.Operation;
 import hospital.hospital.recipe.entity.Recipe;
@@ -20,6 +21,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Data
 @ToString
 @Entity

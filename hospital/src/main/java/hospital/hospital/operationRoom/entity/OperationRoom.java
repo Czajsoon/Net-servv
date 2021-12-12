@@ -1,6 +1,7 @@
 package hospital.hospital.operationRoom.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.operation.entity.Operation;
 import hospital.hospital.operationRoom.models.OperationRoomREQ;
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
 @Data
 public class OperationRoom {
