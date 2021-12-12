@@ -23,6 +23,7 @@ import java.util.Set;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Data
+@Table(name = "USER")
 @ToString
 @Entity
 public class User {

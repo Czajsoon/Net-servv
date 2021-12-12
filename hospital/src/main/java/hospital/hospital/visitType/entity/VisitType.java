@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "VISIT_TYPE")
 @Data
 public class VisitType {
     @Id

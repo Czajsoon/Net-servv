@@ -12,6 +12,7 @@ import java.util.Date;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "REFFERAL_ABSENTION")
 @Data
 public class RefferalAbsention {
     @Id

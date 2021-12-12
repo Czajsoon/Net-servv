@@ -14,6 +14,7 @@ import java.util.Set;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "OPERATION")
 @Data
 public class Operation {
     @Id

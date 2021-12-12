@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
+@Table(name = "DOCTOR")
 @Entity
 @Data
 public class Doctor {

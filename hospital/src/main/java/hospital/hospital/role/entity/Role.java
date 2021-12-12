@@ -13,6 +13,7 @@ import java.util.Set;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Data
+@Table(name = "ROLE")
 @Entity
 public class Role {
     @Id

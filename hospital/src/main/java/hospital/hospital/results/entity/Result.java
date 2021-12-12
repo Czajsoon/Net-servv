@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "RESULT_TEST")
 @Data
 public class Result {
     @Id

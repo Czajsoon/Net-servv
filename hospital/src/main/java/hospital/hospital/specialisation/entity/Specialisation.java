@@ -10,6 +10,7 @@ import java.util.List;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "SPECIALISATION")
 @Data
 public class Specialisation {
     @Id

@@ -13,6 +13,7 @@ import java.util.Set;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "HOSPITALISATION")
 @Data
 public class Stay {
     @Id
