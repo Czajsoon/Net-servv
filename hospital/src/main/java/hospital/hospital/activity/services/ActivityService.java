@@ -26,13 +26,13 @@ public class ActivityService {
         visits.forEach(visit -> {
             Activity activity = new Activity();
             activity.setActivity(visit);
-            activity.setType("Visit");
+            activity.setType("Wizyta");
             activities.add(activity);
         });
         stays.forEach(stay -> {
             Activity activity = new Activity();
             activity.setActivity(stay);
-            activity.setType("Stay");
+            activity.setType("Pobyt");
             activities.add(activity);
         });
         return activities;

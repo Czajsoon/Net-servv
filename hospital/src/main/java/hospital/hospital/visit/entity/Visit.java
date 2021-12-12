@@ -23,7 +23,7 @@ public class Visit {
     private Long id;
 
     @Column
-    private Date date;
+    private Date startDate;
 
     @Column
     private String description;
@@ -50,7 +50,7 @@ public class Visit {
         Visit visit = new Visit();
         visit.setUser(user);
         visit.setDoctor(doctor);
-        visit.setDate(visitREQ.getDate());
+        visit.setStartDate(visitREQ.getDate());
         visit.setDescription(visitREQ.getDescription());
         visit.setVisitType(visitType);
         return visit;

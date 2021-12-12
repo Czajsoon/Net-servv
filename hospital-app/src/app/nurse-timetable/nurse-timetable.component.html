@@ -1,7 +1,6 @@
 <div class="content-cards" *ngIf="eventOrigin.length != 0">
   <mat-grid-list [cols]="3" rowHeight="2:1" >
     <mat-grid-tile *ngFor="let event of eventOrigin" [ngClass]="{
-       'test': event.type === 'Badanie',
        'visit' : event.type === 'Wizyta',
        'stay' : event.type === 'Pobyt'}">
       <mat-card class="action-card" (click)="showDetails(event)">
@@ -11,10 +10,10 @@
         <mat-card-content class="justify-content-center">
           <div class="col">
             <div class="row">
-              <p><b>Data: </b> {{event.date | date}} <span *ngIf="event.dateEnd"> - {{event.dateEnd | date}}</span> </p>
+              <p><b>Data: </b> {{event.activity.startDate | date}} <span *ngIf="event.activity.endDate"> - {{event.activity.endDate | date}}</span> </p>
             </div>
             <div class="row">
-              <p><b>Lekarz: </b> {{event.doctor}} (spec. {{event.spec}})</p>
+              <p><b>Lekarz: </b> {{event.activity.doctor.name}} {{event.activity.doctor.surname}}</p>
             </div>
           </div>
         </mat-card-content>
@@ -62,16 +61,10 @@
           Typ wydarzenia
         </div>
         <div class="row">
-          <mat-checkbox [checked]="test" (change)="doFilter('test')" >Badania</mat-checkbox>
-        </div>
-        <div class="row">
           <mat-checkbox [checked]="visit" (change)="doFilter('visit')">Wizyty</mat-checkbox>
         </div>
         <div class="row">
           <mat-checkbox [checked]="stay" (change)="doFilter('stay')">Pobyty w szpitalach</mat-checkbox>
-        </div>
-        <div class="row">
-          <mat-checkbox [checked]="operation" (change)="doFilter('operation')">Operacje</mat-checkbox>
         </div>
         <div class="row justify-content-center">
           <button mat-raised-button (click)="clearEvents()"> Wyczyść wydarzenia</button>
