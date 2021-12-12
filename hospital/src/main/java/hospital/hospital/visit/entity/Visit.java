@@ -1,5 +1,6 @@
 package hospital.hospital.visit.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.recipe.entity.Recipe;
 import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
@@ -12,7 +13,9 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "VISIT")
 @Data
 public class Visit {
     @Id
@@ -20,7 +23,7 @@ public class Visit {
     private Long id;
 
     @Column
-    private Date date;
+    private Date startDate;
 
     @Column
     private String description;
@@ -47,7 +50,7 @@ public class Visit {
         Visit visit = new Visit();
         visit.setUser(user);
         visit.setDoctor(doctor);
-        visit.setDate(visitREQ.getDate());
+        visit.setStartDate(visitREQ.getDate());
         visit.setDescription(visitREQ.getDescription());
         visit.setVisitType(visitType);
         return visit;
@@ -56,10 +59,11 @@ public class Visit {
     public static Visit dto(Visit visit){
         if(visit.getVisitType() != null)visit.getVisitType().setVisits(null);
         if(visit.getDoctor() != null){
-            visit.getDoctor().setVisits(null);
             visit.getDoctor().getSpecialisation().forEach(specialisation -> specialisation.setDoctor(null));
         }
-        if(visit.getUser() != null) visit.getUser().setVisits(null);
+        if(visit.getUser() != null) {
+            visit.getUser().setRole(null);
+        }
         if(visit.getRecipes() != null) visit.getRecipes().forEach(recipe -> {
             recipe.setVisit(null);
             recipe.setDrugs(null);

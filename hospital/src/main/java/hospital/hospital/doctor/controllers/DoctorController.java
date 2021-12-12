@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/doctors")
+@RequestMapping("/api/doctor")
 public class DoctorController{
     @Autowired
     private DoctorRepository doctorRepository;
@@ -34,11 +35,11 @@ public class DoctorController{
         doctorREQ.getSpecialisations().forEach(special -> specs.add(specialisationRepository.findById(special).get()));
         doctor.setSpecialisation(specs);
         Doctor save = doctorRepository.save(doctor);
-        return ResponseEntity.ok(Doctor.response(save));
+        return ResponseEntity.ok(Doctor.dto(save));
     }
 
     @GetMapping
-    public ResponseEntity<?> doctor(){
-        return ResponseEntity.ok(doctorRepository.findAll().stream().map(Doctor::response));
+    public ResponseEntity<List<Doctor>> doctor(){
+        return ResponseEntity.ok(doctorRepository.findAll().stream().map(Doctor::dto).collect(Collectors.toList()));
     }
 }

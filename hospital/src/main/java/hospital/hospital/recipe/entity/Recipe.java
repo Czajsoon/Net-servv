@@ -1,5 +1,6 @@
 package hospital.hospital.recipe.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.drug.entity.Drug;
 import hospital.hospital.recipe.models.RecipeREQ;
@@ -11,7 +12,9 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "RECIPE")
 @Data
 public class Recipe {
     @Id

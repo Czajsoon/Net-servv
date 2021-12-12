@@ -13,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -43,8 +45,10 @@ public class VisitController {
     }
 
     @GetMapping
-    public ResponseEntity<?> visits(){
-        return ResponseEntity.ok(visitRepository.findAll().stream().map(Visit::dto).collect(Collectors.toSet()));
+    public ResponseEntity<List<Visit>> visits(){
+        List<Visit> visits = visitRepository.findAll();
+        visits = visits.stream().map(Visit::dto).collect(Collectors.toList());
+        return ResponseEntity.ok(visits);
     }
 
 }

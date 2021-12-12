@@ -1,6 +1,7 @@
 package hospital.hospital.drug.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.drug.models.DrugDTO;
 import hospital.hospital.recipe.entity.Recipe;
 import hospital.hospital.stay.entity.Stay;
@@ -10,8 +11,10 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.util.Set;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
 @Data
+@Table(name = "DRUG")
 @ToString
 public class Drug {
 

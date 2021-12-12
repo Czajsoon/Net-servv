@@ -1,5 +1,6 @@
 package hospital.hospital.refferalAbsention.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.refferalAbsention.models.RefferalAbsentionREQ;
 import hospital.hospital.user.entity.User;
@@ -9,7 +10,9 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "REFFERAL_ABSENTION")
 @Data
 public class RefferalAbsention {
     @Id

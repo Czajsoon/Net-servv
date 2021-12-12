@@ -19,13 +19,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MaterialModule} from "./material/material.module";
 import { HomePageComponent } from './home-page/home-page.component';
-import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.component';
+import { TimetableComponent } from './timetable/timetable.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { TimeTableHighlightDirective } from './directives/time-table-highlight.directive';
 import { EventTimetableComponent } from './event-timetable/event-timetable.component';
 import {MatSortModule} from "@angular/material/sort";
 import {MatRippleModule} from "@angular/material/core";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {MatRippleModule} from "@angular/material/core";
     DrugWarehouseComponent,
     NewDrugComponent,
     HomePageComponent,
-    NurseTimetableComponent,
+    TimetableComponent,
     EventTimetableComponent
   ],
     imports: [
@@ -49,7 +50,8 @@ import {MatRippleModule} from "@angular/material/core";
         MaterialModule,
         MatGridListModule,
         MatSortModule,
-        MatRippleModule
+        MatRippleModule,
+
     ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

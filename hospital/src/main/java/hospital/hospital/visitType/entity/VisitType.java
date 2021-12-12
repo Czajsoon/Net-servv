@@ -1,5 +1,6 @@
 package hospital.hospital.visitType.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.visit.entity.Visit;
 import hospital.hospital.visitType.models.VisitTypeREQ;
 import lombok.Data;
@@ -9,7 +10,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
+@Table(name = "VISIT_TYPE")
 @Data
 public class VisitType {
     @Id
