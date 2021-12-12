@@ -9,6 +9,7 @@ import {HttpClient} from "@angular/common/http";
 import {resolve} from "@angular/compiler-cli/src/ngtsc/file_system";
 import {ActivatedRoute, Resolve} from "@angular/router";
 import {subscribeToResult} from "rxjs/internal-compatibility";
+import {range} from "rxjs";
 
 @Component({
   selector: 'app-nurse-timetable',
@@ -31,11 +32,8 @@ export class NurseTimetableComponent implements OnInit{
               private http:HttpClient,
               private act:ActivatedRoute) {
     act.data.subscribe(result =>{
+      this.sortDates(result.time_table);
       this.events = [...result.time_table]
-      //TODO dziłające sortowanie od najnowszej do najstarszej!!!
-      // this.events.sort((x,y)=>{
-      //   return y.activity.startDate.getTime() - x.activity.startDate.getTime();
-      // })
       console.log(result.time_table);
       this.eventOrigin = this.events
     })
@@ -45,6 +43,14 @@ export class NurseTimetableComponent implements OnInit{
 
    }
 
+   sortDates(events:timetableEvent[]){
+     events.sort((x:timetableEvent,y:timetableEvent) =>{
+       let date = new Date(y.activity.startDate);
+       let date1 = new Date(x.activity.startDate);
+       return date1.getDate() - date.getDate();
+     })
+     console.log(events);
+  }
 
   showDetails(event:timetableEvent){
     this.dialog.open(EventTimetableComponent,{
@@ -56,7 +62,7 @@ export class NurseTimetableComponent implements OnInit{
   clearEvents(){
     this.visit = false;
     this.stay = false;
-    this.doFilter("");
+    this.doFilter("1");
   }
 
   clearDates(){
@@ -67,6 +73,12 @@ export class NurseTimetableComponent implements OnInit{
 
   doFilter(event:string){
     //TODO sprawdzanie daty
+    console.log(this.range.get("start")?.value)
+    console.log(this.range.get("end")?.value)
+    if(this.range.get("start")?.value && this.range.get("end")?.value){
+      
+    }
+
 
     switch (event){
       case "visit": this.visit = !this.visit; break;
@@ -74,7 +86,7 @@ export class NurseTimetableComponent implements OnInit{
       default: break;
     }
     if(event){
-      if(this.visit && this.stay)
+      if((!this.visit && !this.stay) || (this.visit && this.stay))
         this.eventOrigin = this.events;
       else if(this.visit)
         this.eventOrigin = this.eventOrigin.slice().filter(event => event.type == "Wizyta");
