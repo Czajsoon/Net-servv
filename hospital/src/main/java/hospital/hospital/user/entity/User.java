@@ -37,6 +37,8 @@ public class User {
     @Column
     private String surname;
     @Column
+    private Long identification;
+    @Column
     private Date bornDate;
     @Column
     private String password;

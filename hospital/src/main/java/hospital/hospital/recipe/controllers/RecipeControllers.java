@@ -1,5 +1,9 @@
 package hospital.hospital.recipe.controllers;
 
+import hospital.hospital.RealisedRecipeDrugs.controllers.RealisedDrugController;
+import hospital.hospital.RealisedRecipeDrugs.entity.RealisedDrug;
+import hospital.hospital.RealisedRecipeDrugs.models.RealisedDrugREQ;
+import hospital.hospital.RealisedRecipeDrugs.repository.RealiseDrugRepository;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.doctor.repository.DoctorRepository;
 import hospital.hospital.drug.entity.Drug;
@@ -33,6 +37,8 @@ public class RecipeControllers {
     private DrugRepository drugRepository;
     @Autowired
     private VisitRepository visitRepository;
+    @Autowired
+    private RealiseDrugRepository realiseDrugRepository;
 
     @PostMapping
     public ResponseEntity<?> recipe(@RequestBody RecipeREQ req){
@@ -46,6 +52,13 @@ public class RecipeControllers {
         });
         if(user.isPresent() && doctor.isPresent() && visit.isPresent()){
             Recipe save = recipeRepository.save(Recipe.of(req, user.get(),doctor.get(),drugsList,visit.get()));
+            RealisedDrugREQ rdreq = RealisedDrugREQ.builder()
+                    .realised(false)
+                    .build();
+            save.getDrugs().forEach(drug -> {
+                rdreq.setDrug(drug.getId());
+                realiseDrugRepository.save(RealisedDrug.of(rdreq, save));
+            });
             return ResponseEntity.ok(Recipe.dto(save));
         }
         else return ResponseEntity.ok("error");

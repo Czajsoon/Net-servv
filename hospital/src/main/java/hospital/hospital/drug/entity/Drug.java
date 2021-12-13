@@ -31,19 +31,29 @@ public class Drug {
     @Column
     private Float price;
 
+    @Column
+    private Integer consumableDays;
+
     @JsonIgnore
     @ManyToMany(mappedBy = "drugs")
     private Set<Recipe> recipes;
 
     @JsonIgnore
     @OneToMany(mappedBy = "doctor")
-    private Set<Stay> stays;
+    private Set<Stay> stays;//TODO cos tutaj jest nie tak
 
     public static Drug of(DrugDTO dto){
         Drug drug = new Drug();
         drug.setDrug_name(dto.getDrug_name());
         drug.setAmount_in_warehouse(dto.getAmount_in_warehouse());
         drug.setPrice(dto.getPrice());
+        drug.setConsumableDays(dto.getConsumableDays());
+        return drug;
+    }
+
+    public static Drug dto(Drug drug){
+        drug.setRecipes(null);
+        drug.setStays(null);
         return drug;
     }
 }
