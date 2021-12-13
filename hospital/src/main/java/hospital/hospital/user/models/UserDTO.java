@@ -19,6 +19,7 @@ public class UserDTO implements UserDetails {
     private String username;
     private String name;
     private String surname;
+    private Long identification;
     private Date bornDate;
     private String password;
     private Set<RoleDTO> roles = new HashSet<>();

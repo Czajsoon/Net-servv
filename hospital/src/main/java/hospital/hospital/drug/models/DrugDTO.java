@@ -9,5 +9,6 @@ public class DrugDTO {
     private String drug_name;
     private Integer amount_in_warehouse;
     private Float price;
+    private Integer consumableDays;
 }
 
