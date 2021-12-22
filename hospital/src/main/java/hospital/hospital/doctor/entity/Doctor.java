@@ -58,7 +58,7 @@ public class Doctor {
     private Set<Operation> operations;
 
     @JsonIgnore
-    @OneToMany
+    @OneToMany(mappedBy = "doctor")
     private Set<Stay> stays;
 
     public static Doctor of(DoctorREQ doctorREQ){

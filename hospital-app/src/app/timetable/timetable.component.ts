@@ -75,7 +75,7 @@ export class TimetableComponent implements OnInit{
     this.doFilter('event');
   }
 
-  doFilter(event:string){
+  doFilter(event:string){//TODO zamienic na strategię
     if(event =="oldest" || event == "newest") this.sortDates(this.events,event);
 
     if(this.range.get('start')?.value || this.range.get('end')?.value){

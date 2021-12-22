@@ -27,6 +27,8 @@ import { EventTimetableComponent } from './event-timetable/event-timetable.compo
 import {MatSortModule} from "@angular/material/sort";
 import {MatRippleModule} from "@angular/material/core";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     NewDrugComponent,
     HomePageComponent,
     TimetableComponent,
-    EventTimetableComponent
+    EventTimetableComponent,
+    NavigationComponent
   ],
     imports: [
         BrowserModule,
@@ -51,6 +54,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
         MatGridListModule,
         MatSortModule,
         MatRippleModule,
+        MatSidenavModule,
 
     ],
   providers: [],

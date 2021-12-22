@@ -10,17 +10,18 @@ import lombok.Data;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Builder
-public class OperationREQ {
+public class OperationDTO {
     private String description;
     private Date date;
-    private Set<Long> Doctors;
-    private Long user;
-    private Set<Long> nurses;
-    private Long room;
-    private Long stay;
+    private List<Doctor> doctorList;
+    private List<User> nursesList;
+    private User patient;
+    private OperationRoom operationRoom;
+    private Stay hospitalization;
 
+    public static class builder {
+    }
 }

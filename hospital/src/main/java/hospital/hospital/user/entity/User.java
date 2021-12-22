@@ -40,6 +40,7 @@ public class User {
     private Long identification;
     @Column
     private Date bornDate;
+    @JsonIgnore
     @Column
     private String password;
 

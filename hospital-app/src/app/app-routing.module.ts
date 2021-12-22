@@ -7,7 +7,7 @@ import {TimetableComponent} from "./timetable/timetable.component";
 import {TimetableResolverService} from "./services/timetable-resolver.service";
 
 const routes: Routes = [
-  {path:'',pathMatch: "full",component:DrugWarehouseComponent},
+  {path:'',pathMatch: "full",component:HomePageComponent},
   {path:'login',component:LoginComponent},
   {path:'home',component:HomePageComponent},
   {path:'time-table',component:TimetableComponent,resolve:{

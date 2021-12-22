@@ -1,0 +1,73 @@
+<mat-drawer-container class="example-container " autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <h2 class="headerNav text-center" routerLink="/home">Strona Główna</h2>
+    <div class="col">
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button routerLink="/time-table">
+          Terminarz
+          <mat-icon>date_range</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Badania
+          <mat-icon>grading</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Operacje
+          <mat-icon>local_hospital</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Recepty
+          <mat-icon>medication</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Termianarz Pielęgniarski
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Termianarz Wizyt
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Termianarz Lekarski
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Panel Farmaceutki
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center">
+        <button mat-button>
+          Panel Administratora
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button aria-label="menu icon" class="navigation" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Szpital</span>
+    <span class="UserInfo">John Doe</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/login" >
+      Zaloguj się
+      <mat-icon matSuffix>login</mat-icon>
+    </button>
+  </mat-toolbar>
+  <ng-content></ng-content>
+</mat-drawer-container>
+
+
+
+

@@ -1,0 +1,44 @@
+.navigation{
+  min-height: 10%;
+}
+
+.sidenav{
+  width: 18%;
+  position: fixed;
+  button{
+    font-size: 18px;
+    height: 20%;
+    width: 95%;
+    background-color: rgb(42, 142, 219);
+    color: White;
+  }
+}
+
+.UserInfo{
+  margin-left: 20px;
+}
+
+.sidenavItem{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.headerNav{
+  padding-top: 17px;
+  background-color: rgb(42, 142, 219);
+  min-height: 64px;
+  color: White;
+}
+
+
+
+
+.toolbar{
+  background-color: rgb(42, 142, 219);
+  button{
+    font-size: 16px;
+    .mat-icon{
+      transform: scale(0.9);
+    }
+  }
+}
