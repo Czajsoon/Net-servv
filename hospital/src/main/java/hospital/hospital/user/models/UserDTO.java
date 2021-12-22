@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import hospital.hospital.jwt.model.AuthorityModel;
 import hospital.hospital.role.models.RoleDTO;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +19,7 @@ public class UserDTO implements UserDetails {
     private String username;
     private String name;
     private String surname;
+    private Long identification;
     private Date bornDate;
     private String password;
     private Set<RoleDTO> roles = new HashSet<>();

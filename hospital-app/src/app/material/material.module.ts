@@ -11,6 +11,9 @@ import {MatSnackBarConfig, MatSnackBarModule} from "@angular/material/snack-bar"
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 const MAT_DIALOG_GLOBAL_CONFIG: MatDialogConfig = {
   width: "75%",
@@ -30,10 +33,13 @@ const MAT_DIALOG_GLOBAL_CONFIG: MatDialogConfig = {
     MatInputModule,
     MatDialogModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatSnackBarModule,
     MatCheckboxModule,
     MatSelectModule,
     MatToolbarModule,
+    MatButtonToggleModule,
     MatTableModule],
   providers:[
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: MAT_DIALOG_GLOBAL_CONFIG}

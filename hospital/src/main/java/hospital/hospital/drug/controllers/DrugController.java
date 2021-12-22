@@ -30,7 +30,6 @@ public class DrugController {
         catch (NoSuchElementException ex){return ResponseEntity.ok().body(null);}
     }
 
-    //@PreAuthorize("hasRole('ADMIN')")
     @GetMapping
     public ResponseEntity<List<Drug>> drugGET(){
         log.info("GET: " + drugRepository.findAll());

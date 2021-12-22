@@ -34,6 +34,7 @@ e) Gość
 - Logowanie (K)
 
 Pomysły z zajęć: 
+-realiazaja recepty (K)
 -Apteka szpialna. (K)
 -Operacje(sala lekarze,historia). (K)
 -Rehabilitacja(rodzje).

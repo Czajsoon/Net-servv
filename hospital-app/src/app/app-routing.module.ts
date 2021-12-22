@@ -3,15 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {DrugWarehouseComponent} from "./drug-warehouse/drug-warehouse.component";
 import {HomePageComponent} from "./home-page/home-page.component";
-import {PasswordChangeComponent} from "./password-change/password-change.component";
-import {PatientlistComponent} from "./patientlist/patientlist.component";
+import {TimetableComponent} from "./timetable/timetable.component";
+import {TimetableResolverService} from "./services/timetable-resolver.service";
 
 const routes: Routes = [
   {path:'',pathMatch: "full",component:DrugWarehouseComponent},
   {path:'login',component:LoginComponent},
   {path:'home',component:HomePageComponent},
-  {path:'password-change',component:PasswordChangeComponent},
-  {path:'patient-list', component:PatientlistComponent}
+  {path:'time-table',component:TimetableComponent,resolve:{
+    time_table: TimetableResolverService
+    }}
 ];
 
 @NgModule({
