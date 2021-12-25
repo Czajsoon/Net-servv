@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,20 +20,31 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MaterialModule} from "./material/material.module";
 import { HomePageComponent } from './home-page/home-page.component';
-import { NurseTimetableComponent } from './nurse-timetable/nurse-timetable.component';
-import { PasswordChangeComponent } from './password-change/password-change.component';
-import { PatientlistComponent } from './patientlist/patientlist.component';
+import { TimetableComponent } from './timetable/timetable.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatGridListModule} from "@angular/material/grid-list";
+import { TimeTableHighlightDirective } from './directives/time-table-highlight.directive';
+import { EventTimetableComponent } from './event-timetable/event-timetable.component';
+import {MatSortModule} from "@angular/material/sort";
+import {MatRippleModule} from "@angular/material/core";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {PasswordChangeComponent} from "./password-change/password-change.component";
+import {PatientlistComponent} from "./patientlist/patientlist.component";
+import { NewPatientComponent } from './new-patient/new-patient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    TimeTableHighlightDirective,
     DrugWarehouseComponent,
     NewDrugComponent,
     HomePageComponent,
-    NurseTimetableComponent,
+    TimetableComponent,
+    EventTimetableComponent,
     PasswordChangeComponent,
-    PatientlistComponent
+    PatientlistComponent,
+    NewPatientComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +54,11 @@ import { PatientlistComponent } from './patientlist/patientlist.component';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    MatGridListModule,
+    MatSortModule,
+    MatRippleModule,
+
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
