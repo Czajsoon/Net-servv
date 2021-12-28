@@ -1,18 +1,20 @@
 package hospital.hospital.blood.entity;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import hospital.hospital.blood.models.BloodBase;
 import hospital.hospital.blood.models.BloodREQ;
 import hospital.hospital.user.entity.User;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
-import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 @Entity
 @Table(name = "BLOOD_RESULTS")
 @Data
-public class Blood {
+public class Blood extends BloodBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

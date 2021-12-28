@@ -1,6 +1,6 @@
 <app-navigation>
   <div class="content-cards" *ngIf="eventOrigin.length != 0">
-    <mat-grid-list [cols]="3" rowHeight="2:1" >
+    <mat-grid-list [cols]="3" rowHeight="2.1:1.1">
       <mat-grid-tile *ngFor="let event of eventOrigin" [ngClass]="{
        'visit' : event.type === 'Wizyta',
        'stay' : event.type === 'Pobyt'}">

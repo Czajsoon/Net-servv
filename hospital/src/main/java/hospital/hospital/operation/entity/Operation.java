@@ -1,6 +1,9 @@
 package hospital.hospital.operation.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.operation.models.OperationDTO;
@@ -16,6 +19,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
+@JsonIdentityInfo(property = "id", generator = ObjectIdGenerators.PropertyGenerator.class)
 @Entity
 @Table(name = "OPERATION")
 @Data
@@ -75,6 +79,15 @@ public class Operation {
             operation.getStay().setDoctor(null);
             operation.getStay().setUser(null);
         }
+        return operation;
+    }
+
+    public static Operation dtoIdentity(Operation operation){
+        operation.setOperationRoom(null);
+        operation.setUser(null);
+        operation.setNurses(null);
+        operation.setStay(null);
+        operation.setDoctors(null);
         return operation;
     }
 }
