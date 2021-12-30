@@ -5,5 +5,5 @@ export interface Patient{
   surname: string;
   identification: number;
   bornDate: Date;
-  age: number;
+
 }

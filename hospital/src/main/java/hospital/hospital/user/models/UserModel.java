@@ -11,6 +11,7 @@ import java.util.Set;
 @Data
 @Builder
 public class UserModel {
+    private Long id;
     private String username;
     private String name;
     private String surname;

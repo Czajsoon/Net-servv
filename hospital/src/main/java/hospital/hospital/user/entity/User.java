@@ -44,7 +44,7 @@ public class User {
     private String password;
 
     @JsonManagedReference//helps avoid circular dependency in bidirectional mapping
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.DETACH)
     @JoinTable(name = "USER_ROLE")
     private Set<Role> role = new HashSet<>();
 

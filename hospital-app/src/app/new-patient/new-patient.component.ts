@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {DrugServiceService} from "../services/drug-service.service";
+import {PatientlistService} from "../services/patientlist.service";
 
 @Component({
   selector: 'app-new-patient',
@@ -9,20 +9,27 @@ import {DrugServiceService} from "../services/drug-service.service";
 
 export class NewPatientComponent implements OnInit {
 
-  @ViewChild('patientName') patientUserName: ElementRef | any;
+  @ViewChild('patientUserName') patientUserName: ElementRef | any;
   @ViewChild('patientFirstname') patientFirstname: ElementRef | any;
   @ViewChild('patientSurname') patientSurname: ElementRef | any;
   @ViewChild('patientIdentification') patientIdentification: ElementRef | any;
   @ViewChild('patientBornDate') patientBornDate: ElementRef | any;
-  @ViewChild('patientAge') patientAge: ElementRef | any;
+  @ViewChild('patientPassword') patientPassword: ElementRef | any;
   constructor(
-    private drugService: DrugServiceService) {
+    private patientService: PatientlistService) {
   }
 
   ngOnInit(): void {
   }
 
   addPatient(){
-    console.log("addpatient");
+    this.patientService.postPatient(
+                                    this.patientPassword.nativeElement.value,
+                                    this.patientUserName.nativeElement.value,
+                                    this.patientFirstname.nativeElement.value,
+                                    this.patientSurname.nativeElement.value,
+                                    this.patientIdentification.nativeElement.value,
+                                    this.patientBornDate.nativeElement.value,
+      ).then(r=>console.log(r));
   }
 }
