@@ -35,6 +35,16 @@
       <mat-icon matSuffix>login</mat-icon>
     </button>
   </mat-toolbar>
+  <div class="col">
+    <div class="row scroll-to-top">
+      <button *ngIf="!drawer.opened && scrolled" mat-fab (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-fab *ngIf="scrolled" (click)="onActivate($event)">
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
+    </div>
+  </div>
   <ng-content></ng-content>
 </mat-drawer-container>
 

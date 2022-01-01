@@ -18,7 +18,7 @@ export class AuthService {
   // @ts-ignore
   private token: {token:string};
   // @ts-ignore
-  private _user : User = {name:"John", surname:"Doe"};
+  private _user : User = {id:1,name:"John", surname:"Doe"};
 
   constructor(private bc: BackendConnectService,
               private http: HttpClient) {

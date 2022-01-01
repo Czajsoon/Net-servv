@@ -14,6 +14,7 @@ public class UserModel {
     private String username;
     private String name;
     private String surname;
+    private String sex;
     private Date bornDate;
     private String password;
     private Set<RoleDTO> roles = new HashSet<>();

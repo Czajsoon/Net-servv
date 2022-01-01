@@ -1,0 +1,50 @@
+.homeNavigation{
+  width: 80%;
+  text-align: center;
+  .mat-card{
+    color: Black;
+    transition: ease-in-out 0.4s;
+    background-color: #48cae4;
+    border: #48cae4 2px solid;
+    width: 90%;
+    height: 85%;
+  }
+  .mat-card:hover{
+    color: white;
+    cursor: pointer;
+    background-color: #2eb4ce;
+
+  }
+}
+
+.bloodResults{
+  background-color: #caf0f8;
+  border: solid 2px #48cae4;
+  border-radius: 5px;
+  position: absolute;
+  .mat-icon{
+    transform: scale(0.8);
+  }
+  .amountResult{
+    text-align: right;
+    right: 5%;
+  }
+  width: 20%;
+  height: 670px;
+  right: 10px;
+  top: 80px;
+  .resultOK{
+    background-color: rgba(176, 238, 176,0.3);
+    .mat-icon{
+      color: #59de59;
+    }
+  }
+  .resultWrong{
+    color: #491313;
+    background-color: rgba(220, 51, 51, 0.3);
+    .mat-icon{
+      color: #e82b2b;
+    }
+  }
+  //text-align: left;
+}

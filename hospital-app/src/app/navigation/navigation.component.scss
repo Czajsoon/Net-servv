@@ -1,3 +1,5 @@
+
+
 .navigation{
   min-height: 10%;
 }
@@ -35,6 +37,10 @@
   }
 }
 
+.mat-drawer-container{
+  background-color: white;
+}
+
 .headerNav{
   padding-top: 17px;
   background-color: #2eb4ce;
@@ -57,4 +63,22 @@
       transform: scale(0.9);
     }
   }
+}
+
+.scroll-to-top {
+  position: fixed;
+  transform: translateX(-50%) !important;
+  bottom: 10px;
+  z-index: 2;
+  left: 50%;
+  .mat-fab{
+    background-color: #2eb4ce;
+  }
+  button{
+    margin-right: 20px;
+  }
+}
+.show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
 }

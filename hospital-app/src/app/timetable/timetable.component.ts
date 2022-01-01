@@ -74,8 +74,8 @@ export class TimetableComponent implements OnInit{
     this.range.get('end')?.setValue(null);
     this.doFilter('event');
   }
-
-  doFilter(event:string){//TODO zamienic na strategię
+  //TODO Pozamieniac na zapytania do servera z filtrami TAK NIE MOŻE BYĆ!!!!
+  doFilter(event:string){
     if(event =="oldest" || event == "newest") this.sortDates(this.events,event);
 
     if(this.range.get('start')?.value || this.range.get('end')?.value){
