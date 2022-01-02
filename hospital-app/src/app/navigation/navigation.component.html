@@ -8,7 +8,7 @@
           <mat-icon>home</mat-icon>
         </button>
       </div>
-      <div class="sidenavItem row justify-content-center" routerLinkActive="activeItem">
+      <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
         <button mat-button routerLink="/time-table">
           Terminarz
           <mat-icon>date_range</mat-icon>
@@ -30,9 +30,21 @@
     <span *ngIf="!drawer.opened">Szpital</span>
     <span class="UserInfo" *ngIf="logged">{{user.name}} {{user.surname}}</span>
     <span class="spacer"></span>
-    <button mat-button routerLink="/login" >
+    <button *ngIf="!auth.isLoggedIn()" mat-button routerLink="/login" >
       Zaloguj się
       <mat-icon matSuffix>login</mat-icon>
+    </button>
+    <button *ngIf="auth.isLoggedIn()" mat-button>
+      Ustawienia
+      <mat-icon>settings</mat-icon>
+    </button>
+    <button *ngIf="auth.isLoggedIn()" mat-button>
+      GitHub
+      <img src="assets/images/github.png" alt="github-icon">
+    </button>
+    <button *ngIf="auth.isLoggedIn()" mat-button>
+      Wyloguj
+      <mat-icon>logout</mat-icon>
     </button>
   </mat-toolbar>
   <div class="col">

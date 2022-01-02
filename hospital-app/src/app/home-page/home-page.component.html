@@ -1,7 +1,7 @@
 <app-navigation>
   <div class="home">
     <mat-grid-list [ngClass]="{'guest': !auth.isLoggedIn(),'homeNavigation': auth.isLoggedIn()}" [cols]="3" rowHeight="2:1">
-      <mat-grid-tile><mat-card routerLink="/time-table"><mat-card-title>Terminarz</mat-card-title></mat-card></mat-grid-tile>
+      <mat-grid-tile *ngIf="auth.isLoggedIn()"><mat-card routerLink="/time-table"><mat-card-title>Terminarz</mat-card-title></mat-card></mat-grid-tile>
       <mat-grid-tile><mat-card><mat-card-title>Badania</mat-card-title></mat-card></mat-grid-tile>
       <mat-grid-tile><mat-card><mat-card-title>Recepty</mat-card-title></mat-card></mat-grid-tile>
       <mat-grid-tile><mat-card><mat-card-title>Lekarze</mat-card-title></mat-card></mat-grid-tile>
