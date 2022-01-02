@@ -32,9 +32,10 @@ public class BloodController {
         else return ResponseEntity.ok("error");
     }
 
+    //TODO zmienic dla uzytkownika ktory poda token!!!
     @GetMapping
     public ResponseEntity<BloodResults> blood(){
-        User user = userRepository.getById(1L);
+        User user = userRepository.getById(1L);//tutaj uzytkownik
         Blood blood = bloodRepository.max(user);
         if(blood != null){
             BloodResults results = new BloodResults();

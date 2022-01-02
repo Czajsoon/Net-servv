@@ -17,7 +17,7 @@ export class NavigationComponent implements OnInit {
   public logged !: boolean;
   public scrolled !: boolean;
 
-  constructor(private auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
     this.user = this.auth.user;
