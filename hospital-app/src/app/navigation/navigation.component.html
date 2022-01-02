@@ -1,0 +1,53 @@
+<mat-drawer-container class="example-container " autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <h2 class="headerNav text-center">Szpital</h2>
+    <div class="col">
+      <div class="sidenavItem row justify-content-center" routerLinkActive="activeItem">
+        <button mat-button  routerLink="/home" >
+          Strona Główna
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center" routerLinkActive="activeItem">
+        <button mat-button routerLink="/time-table">
+          Terminarz
+          <mat-icon>date_range</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem closeNav row justify-content-center">
+        <button mat-button (click)="drawer.toggle()">
+          Zamknij
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button aria-label="menu icon" class="navigation" (click)="drawer.toggle()">
+      <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
+      <mat-icon *ngIf="drawer.opened">close</mat-icon>
+    </button>
+    <span *ngIf="!drawer.opened">Szpital</span>
+    <span class="UserInfo" *ngIf="logged">{{user.name}} {{user.surname}}</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/login" >
+      Zaloguj się
+      <mat-icon matSuffix>login</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="col">
+    <div class="row scroll-to-top">
+      <button *ngIf="!drawer.opened && scrolled" mat-fab (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-fab *ngIf="scrolled" (click)="onActivate($event)">
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</mat-drawer-container>
+
+
+
+

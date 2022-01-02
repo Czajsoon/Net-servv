@@ -1,5 +1,6 @@
 package hospital.hospital.stay.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.operation.entity.Operation;
@@ -37,6 +38,7 @@ public class Stay {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "stay")
     private Set<Operation> operations;
 
@@ -51,12 +53,6 @@ public class Stay {
     }
 
     public static Stay dto(Stay stay){
-        if(stay.getOperations() != null)stay.getOperations().forEach(operation -> {
-            operation.setOperationRoom(null);
-            operation.setDoctors(null);
-            operation.setUser(null);
-            operation.setNurses(null);
-        });
         stay.getDoctor().setVisits(null);
         stay.getDoctor().setRecipes(null);
         stay.getDoctor().getSpecialisation().forEach(specialisation -> specialisation.setDoctor(null));
@@ -71,6 +67,7 @@ public class Stay {
         stay.getUser().setInOperations(null);
         stay.getUser().setResults(null);
         stay.getUser().setTakeOperations(null);
+        //if(stay.getOperations()!=null) stay.setOperations(stay.getOperations().stream().map(Operation::dtoIdentity).collect(Collectors.toSet()));
         return stay;
     }
 }

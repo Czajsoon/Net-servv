@@ -1,17 +1,33 @@
 import { Injectable } from '@angular/core';
 import {BackendConnectService} from "./backend-connect.service";
 import {HttpClient} from "@angular/common/http";
+import {User} from "../models/user";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  get user(): User {
+    return this._user;
+  }
+
+  set user(value: User) {
+    this._user = value;
+  }
 
   // @ts-ignore
   private token: {token:string};
+  // @ts-ignore
+  private _user : User = {id:1,name:"John", surname:"Doe"};
 
   constructor(private bc: BackendConnectService,
               private http: HttpClient) {
+  }
+
+
+  isLoggedIn():boolean{
+    // return false;
+    return !!this._user;
   }
 
   login(username:string,password:string){

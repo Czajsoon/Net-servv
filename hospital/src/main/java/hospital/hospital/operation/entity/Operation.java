@@ -1,18 +1,25 @@
 package hospital.hospital.operation.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.doctor.entity.Doctor;
+import hospital.hospital.operation.models.OperationDTO;
 import hospital.hospital.operation.models.OperationREQ;
 import hospital.hospital.operationRoom.entity.OperationRoom;
 import hospital.hospital.stay.entity.Stay;
 import hospital.hospital.user.entity.User;
 import lombok.Data;
+import org.hibernate.mapping.Collection;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
+@JsonIdentityInfo(property = "id", generator = ObjectIdGenerators.PropertyGenerator.class)
 @Entity
 @Table(name = "OPERATION")
 @Data
@@ -28,43 +35,59 @@ public class Operation {
     private String description;
 
     @ManyToMany(mappedBy = "operations")
-    private Set<Doctor> doctors;
+    private List<Doctor> doctors;
 
+    @JsonIgnore
     @ManyToOne
     private User user;
 
     @ManyToMany
-    private Set<User> nurses;
+    private List<User> nurses;
 
+    @JsonIgnore
     @ManyToOne
     private OperationRoom operationRoom;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "stay_id")
     private Stay stay;
 
-    public static Operation of(OperationREQ req,
-                               OperationRoom operationRoom,
-                               User user,
-                               Set<User> nurses,
-                               Set<Doctor> docotrs){
+    public static Operation of(OperationDTO req){
         Operation operation = new Operation();
         operation.setDescription(req.getDescription());
         operation.setDate(req.getDate());
-        operation.setOperationRoom(operationRoom);
-        operation.setUser(user);
-        operation.setNurses(nurses);
-        operation.setDoctors(docotrs);
+        operation.setOperationRoom(req.getOperationRoom());
+        operation.setUser(req.getPatient());
+        operation.setNurses(req.getNursesList());
+        operation.setDoctors(req.getDoctorList());
+        operation.setStay(req.getHospitalization());
         return operation;
     }
 
     public static Operation dto(Operation operation){
-        operation.getDoctors().forEach(doctor -> doctor.getSpecialisation().forEach(specialisation -> specialisation.setDoctor(null)));
+        operation.getDoctors().forEach(doctor -> {
+            doctor.getSpecialisation().forEach(specialisation -> specialisation.setDoctor(null));
+            doctor.setVisits(null);
+            doctor.setRefferalAbsentions(null);
+            doctor.setRecipes(null);
+            doctor.setOperations(null);
+            doctor.setStays(null);
+        });
         if(operation.getStay() != null){
             operation.getStay().setOperations(null);
             operation.getStay().setDoctor(null);
             operation.getStay().setUser(null);
         }
+        return operation;
+    }
+
+    public static Operation dtoIdentity(Operation operation){
+        operation.setOperationRoom(null);
+        operation.setUser(null);
+        operation.setNurses(null);
+        operation.setStay(null);
+        operation.setDoctors(null);
         return operation;
     }
 }

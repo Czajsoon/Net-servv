@@ -38,9 +38,6 @@ public class Drug {
     @ManyToMany(mappedBy = "drugs")
     private Set<Recipe> recipes;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "doctor")
-    private Set<Stay> stays;//TODO cos tutaj jest nie tak
 
     public static Drug of(DrugDTO dto){
         Drug drug = new Drug();
@@ -53,7 +50,6 @@ public class Drug {
 
     public static Drug dto(Drug drug){
         drug.setRecipes(null);
-        drug.setStays(null);
         return drug;
     }
 }
