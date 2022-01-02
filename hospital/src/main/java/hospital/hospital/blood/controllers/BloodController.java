@@ -36,9 +36,11 @@ public class BloodController {
     public ResponseEntity<BloodResults> blood(){
         User user = userRepository.getById(1L);
         Blood blood = bloodRepository.max(user);
-        BloodResults results = new BloodResults();
-        results = results.buildResults(blood,blood.getUser().getSex());
-        return ResponseEntity.ok(results);
-        //return ResponseEntity.ok(bloodRepository.findAll().stream().map(blood -> results.buildResults(blood,blood.getUser().getSex())).collect(Collectors.toList()));
+        if(blood != null){
+            BloodResults results = new BloodResults();
+            results = results.buildResults(blood,blood.getUser().getSex());
+            return ResponseEntity.ok(results);
+        }
+        else return ResponseEntity.ok(null);
     }
 }

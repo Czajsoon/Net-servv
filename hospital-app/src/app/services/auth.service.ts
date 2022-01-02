@@ -26,6 +26,7 @@ export class AuthService {
 
 
   isLoggedIn():boolean{
+    // return false;
     return !!this._user;
   }
 

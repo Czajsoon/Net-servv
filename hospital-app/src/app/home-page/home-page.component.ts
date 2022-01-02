@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BloodResult, BloodResults} from "../models/BloodResults";
 import {ActivatedRoute} from "@angular/router";
+import {AuthService} from "../services/auth.service";
 
 let results:BloodResult[] = [];
 
@@ -15,12 +16,16 @@ export class HomePageComponent implements OnInit {
   public bloodResults = [...results];
 
   constructor(private http:HttpClient,
-              private act:ActivatedRoute) {
-    this.http.get("http://localhost:8080/api/blood").subscribe(results =>{
-      console.log(results);
-      // @ts-ignore
-      this.bloodResults = [...results.bloodElements]
-    });
+              private act:ActivatedRoute,
+              public auth:AuthService) {
+    if(auth.isLoggedIn()){
+      this.http.get("http://localhost:8080/api/blood").subscribe(results =>{
+        console.log(results);
+        if(results!=null)
+          // @ts-ignore
+          this.bloodResults = [...results.bloodElements]
+      });
+    }
   }
 
   ngOnInit(): void {

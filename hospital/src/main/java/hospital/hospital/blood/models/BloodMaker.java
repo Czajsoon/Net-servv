@@ -12,49 +12,49 @@ abstract class BloodMaker {
         else if (sex.equals("Woman")) womanResults(bloodResults,blood);
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("leukocyty, WBC").amount(blood.getLeukocytes()).result(checkLeukocites(blood.getLeukocytes())).unit("x 10^9/l").build());
+                        .name("Leukocyty, WBC").amount(blood.getLeukocytes()).result(checkLeukocites(blood.getLeukocytes())).unit(" x 10^9/l").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("Bazofile").amount(blood.getBasophils()).result(checkBazofiles(blood.getBasophils())).unit("x 10^9/l").build());
+                        .name("Bazofile").amount(blood.getBasophils()).result(checkBazofiles(blood.getBasophils())).unit(" x 10^9/l").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("Eozynofile").amount(blood.getEosinophils()).result(checkEnzofils(blood.getEosinophils())).unit("x 10^9/l").build());
+                        .name("Eozynofile").amount(blood.getEosinophils()).result(checkEnzofils(blood.getEosinophils())).unit(" x 10^9/l").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("Neutrofile").amount(blood.getNeutrophils()).result(checkNeutrophils(blood.getNeutrophils())).unit("x 10^9/l").build());
+                        .name("Neutrofile").amount(blood.getNeutrophils()).result(checkNeutrophils(blood.getNeutrophils())).unit(" x 10^9/l").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("Limfocyty").amount(blood.getLymphocytes()).result(checkLymphocytes(blood.getLymphocytes())).unit("x 10^9/l").build());
+                        .name("Limfocyty").amount(blood.getLymphocytes()).result(checkLymphocytes(blood.getLymphocytes())).unit(" x 10^9/l").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("Monocyty").amount(blood.getMonocytes()).result(checkMonocytes(blood.getMonocytes())).unit("x 10^9/l").build());
+                        .name("Monocyty").amount(blood.getMonocytes()).result(checkMonocytes(blood.getMonocytes())).unit(" x 10^9/l").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("trombocyty, PLT").amount(blood.getThrombocytes()).result(checkThrombocytes(blood.getThrombocytes())).unit("x 10^9/l").build());
+                        .name("Trombocyty, PLT").amount(blood.getThrombocytes()).result(checkThrombocytes(blood.getThrombocytes())).unit(" x 10^9/l").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("RDW").amount(blood.getRedCellVolume()).result(checkRDW(blood.getRedCellVolume())).unit("%").build());
+                        .name("RDW").amount(blood.getRedCellVolume()).result(checkRDW(blood.getRedCellVolume())).unit(" %").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("MCH").amount(blood.getAverageHemoglobinContent()).result(checkMCH(blood.getAverageHemoglobinContent())).unit("pg").build());
+                        .name("MCH").amount(blood.getAverageHemoglobinContent()).result(checkMCH(blood.getAverageHemoglobinContent())).unit(" pg").build());
         bloodResults.getBloodElements()
                 .add(BloodElement.builder()
-                        .name("MCHC").amount(blood.getHemoglobinConcentration()).result(checkMCHC(blood.getHemoglobinConcentration())).unit("g/dl").build());
+                        .name("MCHC").amount(blood.getHemoglobinConcentration()).result(checkMCHC(blood.getHemoglobinConcentration())).unit(" g/dl").build());
         return bloodResults;
     }
 
     private void manResults(BloodResults bloodResult,Blood blood){
-        bloodResult.getBloodElements().add(BloodElement.builder().name("erytrocyty, RBC").amount(blood.getErythrocytes()).result(checkErythrocytesMan(blood.getErythrocytes())).unit("x 10^12/l").build());
-        bloodResult.getBloodElements().add(BloodElement.builder().name("HCT").amount(blood.getHematocrit()).result(checkHematritMan(blood.getHematocrit())).unit("%").build());
-        bloodResult.getBloodElements().add(BloodElement.builder().name("HGB, Hb").amount(blood.getHemoglobin()).result(checkHemoglobinMan(blood.getHemoglobin())).unit("g/dl").build());
-        bloodResult.getBloodElements().add(BloodElement.builder().name("MCV, ŚOK").amount(blood.getAverageVolumeCell()).result(checkMCVMan(blood.getAverageVolumeCell())).unit("fl").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("Erytrocyty, RBC").amount(blood.getErythrocytes()).result(checkErythrocytesMan(blood.getErythrocytes())).unit(" x 10^12/l").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("HCT").amount(blood.getHematocrit()).result(checkHematritMan(blood.getHematocrit())).unit(" %").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("HGB, Hb").amount(blood.getHemoglobin()).result(checkHemoglobinMan(blood.getHemoglobin())).unit(" g/dl").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("MCV, ŚOK").amount(blood.getAverageVolumeCell()).result(checkMCVMan(blood.getAverageVolumeCell())).unit(" fl").build());
     }
 
     private void womanResults(BloodResults bloodResult,Blood blood){
-        bloodResult.getBloodElements().add(BloodElement.builder().name("erytrocyty, RBC").amount(blood.getErythrocytes()).result(checkErythrocytesWoman(blood.getErythrocytes())).unit("x 10^12/l").build());
-        bloodResult.getBloodElements().add(BloodElement.builder().name("HCT").amount(blood.getHematocrit()).result(checkHematritWoman(blood.getHematocrit())).unit("%").build());
-        bloodResult.getBloodElements().add(BloodElement.builder().name("HGB, Hb").amount(blood.getHemoglobin()).result(checkHemoglobinWoman(blood.getHemoglobin())).unit("g/dl").build());
-        bloodResult.getBloodElements().add(BloodElement.builder().name("MCV, ŚOK").amount(blood.getAverageVolumeCell()).result(checkMCVWoman(blood.getAverageVolumeCell())).unit("fl").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("Erytrocyty, RBC").amount(blood.getErythrocytes()).result(checkErythrocytesWoman(blood.getErythrocytes())).unit(" x 10^12/l").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("HCT").amount(blood.getHematocrit()).result(checkHematritWoman(blood.getHematocrit())).unit(" %").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("HGB, Hb").amount(blood.getHemoglobin()).result(checkHemoglobinWoman(blood.getHemoglobin())).unit(" g/dl").build());
+        bloodResult.getBloodElements().add(BloodElement.builder().name("MCV, ŚOK").amount(blood.getAverageVolumeCell()).result(checkMCVWoman(blood.getAverageVolumeCell())).unit(" fl").build());
     }
 
     private boolean checkHematritMan(Float hermatrit){
