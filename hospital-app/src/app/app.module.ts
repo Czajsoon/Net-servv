@@ -31,6 +31,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import { NumberPatientComponent } from './number-patient/number-patient.component';
+import { IssuingPrescriptionsComponent } from './issuing-prescriptions/issuing-prescriptions.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {MatExpansionModule} from "@angular/material/expansion";
     TimetableComponent,
     EventTimetableComponent,
     NavigationComponent,
-    ReceptionistPanelComponent
+    ReceptionistPanelComponent,
+    NumberPatientComponent,
+    IssuingPrescriptionsComponent
   ],
   imports: [
     BrowserModule,

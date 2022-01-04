@@ -1,0 +1,48 @@
+<div id="main">
+  <td>
+    <div id="x">
+      <h2>Formularz kontaktowy</h2>
+
+      <div id="name">
+        <form>
+          <mat-form-field>
+            <mat-label>Imie</mat-label>
+            <input matInput placeholder="Np. Jan">
+          </mat-form-field>
+        </form>
+      </div>
+      <div id="surname">
+        <form>
+          <mat-form-field>
+            <mat-label>Nazwisko</mat-label>
+
+            <input matInput placeholder="Np. Kowalski">
+          </mat-form-field>
+        </form>
+      </div>
+      <div id="email">
+        <form>
+          <mat-form-field appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="np. ex@gmail.pl">
+          </mat-form-field>
+        </form>
+      </div>
+
+      <div id="message">
+
+        <mat-form-field class="example-full-width" hintLabel="Max 250 slow" appearance="fill">
+          <mat-label>Wpisz wiadomosc</mat-label>
+
+          <textarea maxlength="250" matInput placeholder="Wpisz tresc do wyslania"> </textarea>
+
+        </mat-form-field>
+
+
+      </div>
+      <div id="button">
+        <button  type="submit"  class="btn btn-primary" mat-raised-button>WYŚLIJ</button>
+      </div>
+    </div>
+  </td>
+</div>
