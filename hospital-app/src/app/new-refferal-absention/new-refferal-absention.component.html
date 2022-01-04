@@ -1,0 +1,78 @@
+<div class="new-refferal">
+  <mat-card class="refferal-card">
+  <h2 mat-card-title class="text-center">Dodaj nowe zwolnienie/skierowanie</h2>
+
+    <form>
+      <div class="col">
+        <div class="row">
+          <h4>Data rozpoczęcia</h4>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="legacy">
+            <input #StartDate matInput type="date">
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <h4>Data konca/waznosci</h4>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="legacy">
+            <input #EndDate matInput type="date">
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <h4 class="text-center">Opis</h4>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="legacy" class="justify-content-center">
+            <textarea #description matInput
+                      cdkTextareaAutosize
+                      cdkAutosizeMinRows="1"
+                      cdkAutosizeMaxRows="5"></textarea>
+          </mat-form-field>
+
+        </div>
+
+        <div class="row">
+          <h4 class="text-center">Lekarz:</h4>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="legacy" class="justify-content-center">
+            <input #doctor matInput type="number">
+          </mat-form-field>
+
+        </div>
+        <div class="row">
+          <h4 class="text-center">Pacjent:</h4>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="legacy" class="justify-content-center">
+            <input #user matInput type="number">
+          </mat-form-field>
+
+        </div>
+        <div class="row">
+          <h4 class="text-center">Wizyta:</h4>
+        </div>
+        <div class="row">
+          <mat-form-field appearance="legacy" class="justify-content-center">
+            <input #visit matInput type="number">
+          </mat-form-field>
+
+        </div>
+
+      </div>
+
+    </form>
+    <div class="row">
+      <button mat-raised-button color="primary" class="login-button" (click)="addRefferall()">Dodaj</button>
+    </div>
+
+
+  </mat-card>
+
+
+</div>
+

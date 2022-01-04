@@ -31,6 +31,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {PasswordChangeComponent} from "./password-change/password-change.component";
 import {PatientlistComponent} from "./patientlist/patientlist.component";
 import { NewPatientComponent } from './new-patient/new-patient.component';
+import { NewRefferalAbsentionComponent } from './new-refferal-absention/new-refferal-absention.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NewPatientComponent } from './new-patient/new-patient.component';
     EventTimetableComponent,
     PasswordChangeComponent,
     PatientlistComponent,
-    NewPatientComponent
+    NewPatientComponent,
+    NewRefferalAbsentionComponent
   ],
   imports: [
     BrowserModule,

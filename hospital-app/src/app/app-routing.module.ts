@@ -7,6 +7,7 @@ import {TimetableComponent} from "./timetable/timetable.component";
 import {TimetableResolverService} from "./services/timetable-resolver.service";
 import {PasswordChangeComponent} from "./password-change/password-change.component";
 import {PatientlistComponent} from "./patientlist/patientlist.component";
+import {NewRefferalAbsentionComponent} from "./new-refferal-absention/new-refferal-absention.component";
 
 const routes: Routes = [
   {path:'',pathMatch: "full",component:DrugWarehouseComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
     time_table: TimetableResolverService
     }},
   {path:'password-change',component:PasswordChangeComponent},
-  {path:'patientList', component:PatientlistComponent}
+  {path:'patientList', component:PatientlistComponent},
+  {path:'new-ref',component:NewRefferalAbsentionComponent}
 ];
 
 @NgModule({

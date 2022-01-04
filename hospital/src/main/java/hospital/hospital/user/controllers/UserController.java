@@ -1,10 +1,7 @@
 package hospital.hospital.user.controllers;
 
-
 import hospital.hospital.jwt.controllers.JwtController;
 import hospital.hospital.user.entity.User;
-
-import hospital.hospital.user.models.UserDTO;
 import hospital.hospital.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

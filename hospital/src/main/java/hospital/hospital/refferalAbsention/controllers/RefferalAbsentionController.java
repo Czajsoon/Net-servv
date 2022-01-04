@@ -28,6 +28,8 @@ public class RefferalAbsentionController {
     @Autowired
     private VisitRepository visitRepository;
 
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public ResponseEntity<?>RefAbs(){
         List<RefferalAbsention> referals= refferalAbsentionRepository.findAll();
@@ -39,6 +41,7 @@ public class RefferalAbsentionController {
         return ResponseEntity.ok(referals);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public ResponseEntity<?> ra(@RequestBody RefferalAbsentionREQ req){
         Optional<User> user = userRepository.findById(req.getUser());
