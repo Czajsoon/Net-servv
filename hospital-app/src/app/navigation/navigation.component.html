@@ -14,6 +14,12 @@
           <mat-icon>date_range</mat-icon>
         </button>
       </div>
+      <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+        <button mat-button routerLink="/receptionist-panel">
+          Panel Recepcjonisty
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
       <div class="sidenavItem closeNav row justify-content-center">
         <button mat-button (click)="drawer.toggle()">
           Zamknij
@@ -38,10 +44,12 @@
       Ustawienia
       <mat-icon>settings</mat-icon>
     </button>
-    <button *ngIf="auth.isLoggedIn()" mat-button>
-      GitHub
-      <img src="assets/images/github.png" alt="github-icon">
-    </button>
+    <a href="https://github.com/Czajsoon/Szpital" target="_blank">
+      <button *ngIf="auth.isLoggedIn()" mat-button >
+        GitHub
+        <img src="assets/images/github.png" alt="github-icon">
+      </button>
+    </a>
     <button *ngIf="auth.isLoggedIn()" mat-button>
       Wyloguj
       <mat-icon>logout</mat-icon>

@@ -5,14 +5,13 @@ import {DrugWarehouseComponent} from "./drug-warehouse/drug-warehouse.component"
 import {HomePageComponent} from "./home-page/home-page.component";
 import {TimetableComponent} from "./timetable/timetable.component";
 import {TimetableResolverService} from "./services/timetable-resolver.service";
-import {UserBloodResultResolverService} from "./services/user-blood-result-resolver.service";
+import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-panel.component";
 
 const routes: Routes = [
   {path:'',pathMatch: "full",component:HomePageComponent},
   {path:'login',component:LoginComponent},
-  {path:'home',component:HomePageComponent,resolve:{
-    bloodResults: UserBloodResultResolverService
-    }},
+  {path:'home',component:HomePageComponent},
+  {path:'receptionist-panel',component:ReceptionistPanelComponent},
   {path:'time-table',component:TimetableComponent,resolve:{
     time_table: TimetableResolverService
     }}

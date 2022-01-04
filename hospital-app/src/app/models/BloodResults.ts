@@ -1,3 +1,5 @@
+import {BloodResult} from "./BloodResult";
+
 export interface BloodResults {
   date: Date | null;
   hematocrit: BloodResult | null;
@@ -14,12 +16,4 @@ export interface BloodResults {
   MCV: BloodResult | null;
   MCH: BloodResult | null;
   MCHC: BloodResult | null;
-}
-
-export interface BloodResult{
-  name: string | null;
-  amount: number | null;
-  result: boolean | null;
-  unit: string | null;
-  //TODO make unit!!!
 }

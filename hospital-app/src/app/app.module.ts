@@ -29,6 +29,8 @@ import {MatRippleModule} from "@angular/material/core";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { NavigationComponent } from './navigation/navigation.component';
+import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -40,23 +42,25 @@ import { NavigationComponent } from './navigation/navigation.component';
     HomePageComponent,
     TimetableComponent,
     EventTimetableComponent,
-    NavigationComponent
+    NavigationComponent,
+    ReceptionistPanelComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        NgbModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MaterialModule,
-        MatGridListModule,
-        MatSortModule,
-        MatRippleModule,
-        MatSidenavModule,
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule,
+    MatGridListModule,
+    MatSortModule,
+    MatRippleModule,
+    MatSidenavModule,
+    MatExpansionModule,
 
-    ],
+  ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
