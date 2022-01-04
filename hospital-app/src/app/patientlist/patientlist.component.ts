@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Patient} from "../models/patient";
 import {MatDialog} from "@angular/material/dialog";
 import {NewPatientComponent} from "../new-patient/new-patient.component";
-import {HttpClient} from "@angular/common/http";
 import {PatientlistService} from "../services/patientlist.service";
 
 

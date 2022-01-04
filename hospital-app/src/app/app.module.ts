@@ -32,6 +32,7 @@ import {PasswordChangeComponent} from "./password-change/password-change.compone
 import {PatientlistComponent} from "./patientlist/patientlist.component";
 import { NewPatientComponent } from './new-patient/new-patient.component';
 import { NewRefferalAbsentionComponent } from './new-refferal-absention/new-refferal-absention.component';
+import { ReferralslistComponent } from './referralslist/referralslist.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { NewRefferalAbsentionComponent } from './new-refferal-absention/new-reff
     PasswordChangeComponent,
     PatientlistComponent,
     NewPatientComponent,
-    NewRefferalAbsentionComponent
+    NewRefferalAbsentionComponent,
+    ReferralslistComponent
   ],
   imports: [
     BrowserModule,
