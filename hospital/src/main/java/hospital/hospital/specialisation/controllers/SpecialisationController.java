@@ -21,6 +21,11 @@ public class SpecialisationController {
         return ResponseEntity.ok("Specialisation created!");
     }
 
+    @GetMapping
+    public ResponseEntity<?> specialization(){
+        return ResponseEntity.ok(specialisationRepository.findAll().stream().map(Specialisation::dto));
+    }
+
     @PostConstruct
     public void init(){
         SpecialisationREQ spec1 = SpecialisationREQ.builder().name("Chirurg").build();

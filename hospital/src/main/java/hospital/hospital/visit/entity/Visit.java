@@ -8,8 +8,13 @@ import hospital.hospital.user.entity.User;
 import hospital.hospital.visit.models.VisitREQ;
 import hospital.hospital.visitType.entity.VisitType;
 import lombok.Data;
+import org.joda.time.DateTime;
+import org.joda.time.JodaTimePermission;
+import org.joda.time.LocalDate;
+import org.joda.time.format.ISODateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,7 +28,7 @@ public class Visit {
     private Long id;
 
     @Column
-    private Date startDate;
+    private LocalDateTime startDate;
 
     @Column
     private String description;

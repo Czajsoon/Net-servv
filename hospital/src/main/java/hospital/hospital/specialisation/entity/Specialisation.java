@@ -28,4 +28,10 @@ public class Specialisation {
         specialisation.setName(specialisationREQ.getName());
         return specialisation;
     }
+
+    public static Specialisation dto(Specialisation specialisation){
+        specialisation.setDoctor(null);
+        specialisation.setId(null);
+        return specialisation;
+    }
 }
