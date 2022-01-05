@@ -1,0 +1,61 @@
+<app-navigation>
+  <mat-grid-list [cols] = "4" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-card>
+        Doktorzy
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        Doktorzy2
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        Doktorzy3
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div>
+    <mat-card class="filters">
+      <mat-card-title>
+        FILTRY
+      </mat-card-title>
+      <mat-card-content>
+        <div class="col">
+          <div class="row justify-content-center header">
+            Specjalizacja lekarza:
+          </div>
+          <div class="row">
+            <mat-radio-group aria-label="Select an option">
+              <div class="row">
+                <mat-radio-button value="1">Chirurg</mat-radio-button>
+              </div>
+              <div class="row">
+                <mat-radio-button value="2">Kardiolog</mat-radio-button>
+              </div>
+              <div class="row">
+                <mat-radio-button value="3">Onkolog</mat-radio-button>
+              </div>
+              <div class="row">
+                <mat-radio-button value="4">Okulista</mat-radio-button>
+              </div>
+              <div class="row">
+                <mat-radio-button value="5" checked>Wszyscy lekarze</mat-radio-button>
+              </div>
+            </mat-radio-group>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="row justify-content-center">
+          <button mat-raised-button>Zatwierdz filtry</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</app-navigation>
+
+
+
+
