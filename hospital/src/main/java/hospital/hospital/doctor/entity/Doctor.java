@@ -65,6 +65,7 @@ public class Doctor {
         Doctor doctor = new Doctor();
         doctor.setName(doctorREQ.getName());
         doctor.setSurname(doctorREQ.getSurname());
+        doctor.setRoom(doctorREQ.getRoom());
         return doctor;
     }
 

@@ -31,6 +31,9 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import { VisitDetailsComponent } from './visit-details/visit-details.component';
+import { AddVisitComponent } from './add-visit/add-visit.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -43,24 +46,26 @@ import {MatExpansionModule} from "@angular/material/expansion";
     TimetableComponent,
     EventTimetableComponent,
     NavigationComponent,
-    ReceptionistPanelComponent
+    ReceptionistPanelComponent,
+    VisitDetailsComponent,
+    AddVisitComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgbModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MaterialModule,
-    MatGridListModule,
-    MatSortModule,
-    MatRippleModule,
-    MatSidenavModule,
-    MatExpansionModule,
-
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgbModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MaterialModule,
+        MatGridListModule,
+        MatSortModule,
+        MatRippleModule,
+        MatSidenavModule,
+        MatExpansionModule,
+        MatStepperModule,
+    ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

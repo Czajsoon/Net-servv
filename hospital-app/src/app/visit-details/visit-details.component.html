@@ -1,0 +1,37 @@
+<div class="visitDetails">
+  <mat-dialog-content>
+    <div class="col">
+      <div class="row justify-content-center">
+        <h1>Wizyta</h1>
+      </div>
+      <mat-form-field appearance="outline">
+        <mat-label>Input type time</mat-label>
+        <input type="time" matInput name="week" min="09:00" max="18:00">
+      </mat-form-field>
+      <div class="row">
+        <p><b>Data: </b>{{visit.startDate | date:"medium"}}</p>
+      </div>
+      <div class="row">
+        <p><b>Lekarz: </b>{{visit.doctor.name}} {{visit.doctor.surname}}</p>
+      </div>
+      <div class="row">
+        <p><b>Specjalizacje lekarza: </b><span *ngFor="let spec of visit.doctor.specialisation">{{spec.name}},</span></p>
+      </div>
+      <div class="row">
+        <p><b>Gabinet: </b>{{visit.doctor.room}}</p>
+      </div>
+      <div class="row">
+        <p><b>Pacient: </b>{{visit.user.name}} {{visit.user.surname}}</p>
+      </div>
+      <div class="row">
+        <p><b>PESEL pacienta: </b>{{visit.user.identification}}</p>
+      </div>
+      <div class="row">
+        <p><b>Płeć pacienta: </b>{{visit.user.sex}}</p>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="justify-content-center">
+    <button mat-flat-button mat-dialog-close color="warn">Zamknij</button>
+  </mat-dialog-actions>
+</div>
