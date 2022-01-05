@@ -34,6 +34,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { VisitDetailsComponent } from './visit-details/visit-details.component';
 import { AddVisitComponent } from './add-visit/add-visit.component';
 import {MatStepperModule} from "@angular/material/stepper";
+import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import {MatStepperModule} from "@angular/material/stepper";
     NavigationComponent,
     ReceptionistPanelComponent,
     VisitDetailsComponent,
-    AddVisitComponent
+    AddVisitComponent,
+    ViewdoctorsComponent
   ],
     imports: [
         BrowserModule,
@@ -65,6 +68,7 @@ import {MatStepperModule} from "@angular/material/stepper";
         MatSidenavModule,
         MatExpansionModule,
         MatStepperModule,
+        MatRadioModule,
     ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
