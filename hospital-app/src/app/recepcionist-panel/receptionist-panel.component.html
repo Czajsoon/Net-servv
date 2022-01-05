@@ -54,7 +54,7 @@
   <div *ngIf="this.visits.length != 0" class="visits">
     <mat-grid-list [cols]="4" rowHeight="2:1" >
       <mat-grid-tile *ngFor="let visit of this.visits">
-        <mat-card>
+        <mat-card (click)="openVisit(visit)">
           <mat-card-title>
             {{visit.startDate | date:"medium"}}
           </mat-card-title>
@@ -82,6 +82,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="newVisit">
+    <button (click)="openNewVisit()" mat-fab color="primary"><mat-icon>add</mat-icon></button>
   </div>
 </app-navigation>
 
