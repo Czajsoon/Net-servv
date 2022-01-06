@@ -28,12 +28,16 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
 
+
     @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/{id}")
     public ResponseEntity<List<User>> userDELETE(@PathVariable Long id){
         userRepository.deleteById(id);
         return ResponseEntity.ok().body(userRepository.findAll());
     }
+
+
+
 
 
 

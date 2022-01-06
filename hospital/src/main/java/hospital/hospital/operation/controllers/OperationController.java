@@ -3,10 +3,13 @@ package hospital.hospital.operation.controllers;
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.doctor.repository.DoctorRepository;
 import hospital.hospital.operation.entity.Operation;
+import hospital.hospital.operation.models.OperationDTO;
 import hospital.hospital.operation.models.OperationREQ;
 import hospital.hospital.operation.repository.OperationRepository;
 import hospital.hospital.operationRoom.entity.OperationRoom;
 import hospital.hospital.operationRoom.repository.OperationRoomRepository;
+import hospital.hospital.stay.entity.Stay;
+import hospital.hospital.stay.repository.StayRepository;
 import hospital.hospital.user.entity.User;
 import hospital.hospital.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +19,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/operation")
@@ -31,25 +33,31 @@ public class OperationController {
     private UserRepository userRepository;
     @Autowired
     private DoctorRepository doctorRepository;
+    @Autowired
+    private StayRepository stayRepository;
 
     @PostMapping
     public ResponseEntity<?> operation(@RequestBody OperationREQ req){
-        Set<User> nurses = new HashSet<>();
-        Set<Doctor> doctors = new HashSet<>();
+        List<Doctor> doctorsSet = new ArrayList<>();
+        List<User> nurses = new ArrayList<>();
+        req.getDoctors().forEach(doctors -> doctorRepository.findById(doctors).ifPresent(doctorsSet::add));
+        req.getNurses().forEach(nurse -> userRepository.findById(nurse).ifPresent(nurses::add));
         Optional<User> user = userRepository.findById(req.getUser());
         Optional<OperationRoom> room = operationRoomRepository.findById(req.getRoom());
-        req.getDoctors().forEach(doctor ->{
-            Optional<Doctor> doctorOptional = doctorRepository.findById(doctor);
-            doctorOptional.ifPresent(doctors::add);
-        });
-        req.getNurses().forEach(nurse ->{
-            Optional<User> optionalUser = userRepository.findById(nurse);
-            optionalUser.ifPresent(nurses::add);
-        });
-        if(user.isPresent() && room.isPresent()){
-            Operation save = operationRepository.save(Operation.of(req, room.get(), user.get(), nurses, doctors));
+        Optional<Stay> stay = stayRepository.findById(req.getStay());
+        if(user.isPresent() && room.isPresent() && stay.isPresent()){
+            OperationDTO dto = OperationDTO.builder()
+                    .date(req.getDate())
+                    .description(req.getDescription())
+                    .doctorList(doctorsSet)
+                    .nursesList(nurses)
+                    .patient(user.get())
+                    .operationRoom(room.get())
+                    .hospitalization(stay.get())
+                    .build();
+            Operation save = operationRepository.save(Operation.of(dto));
             return ResponseEntity.ok(Operation.dto(save));
         }
-        else return ResponseEntity.ok("error");
+        return ResponseEntity.ok("Error");
     }
 }

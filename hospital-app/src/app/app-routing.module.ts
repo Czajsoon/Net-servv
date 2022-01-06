@@ -9,11 +9,16 @@ import {PasswordChangeComponent} from "./password-change/password-change.compone
 import {PatientlistComponent} from "./patientlist/patientlist.component";
 import {NewRefferalAbsentionComponent} from "./new-refferal-absention/new-refferal-absention.component";
 import {ReferralslistComponent} from "./referralslist/referralslist.component";
+import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-panel.component";
+import {ViewdoctorsComponent} from "./viewdoctors/viewdoctors.component";
+
 
 const routes: Routes = [
-  {path:'',pathMatch: "full",component:DrugWarehouseComponent},
+  {path:'',pathMatch: "full",component:HomePageComponent},
   {path:'login',component:LoginComponent},
   {path:'home',component:HomePageComponent},
+  {path:'receptionist-panel',component:ReceptionistPanelComponent},
+  {path:'view-doctors',component:ViewdoctorsComponent},
   {path:'time-table',component:TimetableComponent,resolve:{
     time_table: TimetableResolverService
     }},

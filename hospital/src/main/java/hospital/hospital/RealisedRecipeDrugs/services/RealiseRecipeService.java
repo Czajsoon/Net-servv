@@ -50,9 +50,7 @@ public class RealiseRecipeService {
                         }
                         else{
                             if(realisedDrug.getDrugId().equals(drug.get().getId())){
-                                realisedDrug.setRealised(false);
                                 realisedRecipeDTO.getNoRealisedDrugs().add(Drug.dto(drug.get()));
-                                realiseDrugRepository.save(realisedDrug);
                             }
                         }
                     });

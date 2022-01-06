@@ -7,12 +7,19 @@ import hospital.hospital.user.repositories.UserRepository;
 import hospital.hospital.visit.entity.Visit;
 import hospital.hospital.visit.models.VisitREQ;
 import hospital.hospital.visit.repository.VisitRepository;
+import hospital.hospital.visit.services.VisitService;
 import hospital.hospital.visitType.entity.VisitType;
 import hospital.hospital.visitType.repository.VisitTypeRepository;
+import lombok.NonNull;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.support.NullValue;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -29,6 +36,8 @@ public class VisitController {
     private DoctorRepository doctorRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private VisitService visitService;
 
     @PostMapping
     public ResponseEntity<?> visits(@RequestBody VisitREQ visitREQ){
@@ -51,4 +60,13 @@ public class VisitController {
         return ResponseEntity.ok(visits);
     }
 
+    @GetMapping("/receptionist")
+    public ResponseEntity<?> receptionistVisits(
+            @RequestParam String spec,
+            @RequestParam(required = false) String doctorSurname,
+            @RequestParam(required = false) String userSurname,
+            @RequestParam(required = false) String date,
+            @RequestParam(required = false) String endDate){
+        return ResponseEntity.ok(visitService.filterVisits(spec, doctorSurname, userSurname, date, endDate));
+    }
 }

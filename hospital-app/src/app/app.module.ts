@@ -33,6 +33,16 @@ import {PatientlistComponent} from "./patientlist/patientlist.component";
 import { NewPatientComponent } from './new-patient/new-patient.component';
 import { NewRefferalAbsentionComponent } from './new-refferal-absention/new-refferal-absention.component';
 import { ReferralslistComponent } from './referralslist/referralslist.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import { NavigationComponent } from './navigation/navigation.component';
+import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import { VisitDetailsComponent } from './visit-details/visit-details.component';
+import { AddVisitComponent } from './add-visit/add-visit.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
+import {MatRadioModule} from "@angular/material/radio";
+
 
 @NgModule({
   declarations: [
@@ -64,6 +74,15 @@ import { ReferralslistComponent } from './referralslist/referralslist.component'
     MatRippleModule,
 
   ],
+
+    NavigationComponent,
+    ReceptionistPanelComponent,
+    VisitDetailsComponent,
+    AddVisitComponent,
+    ViewdoctorsComponent
+  ],
+   
+
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

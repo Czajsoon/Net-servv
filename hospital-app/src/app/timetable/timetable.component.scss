@@ -1,8 +1,8 @@
 .filters{
   position: fixed;
-  width: 25%;
+  width: 20%;
   height: 94%;
-  top: 3%;
+  top: 10%;
   right: 1.5%;
   text-align: center;
   .header{
@@ -38,8 +38,9 @@ mat-checkbox{
   width: 70%;
   justify-content: center;
   text-align: center;
-  position: absolute;
-  top: 3%;
+  //position: fixed;
+  margin-top: 3%;
+  top: 10%;
   .mat-card{
     width: 90%;
     transition: 2s;
@@ -51,6 +52,7 @@ mat-checkbox{
     border: 2px solid #ff3f3f;
   }
 }
+
 
 
 ::ng-deep .mat-focused .mat-form-field-label {
@@ -72,7 +74,7 @@ mat-checkbox{
 }
 
 .content-cards{
-  width: 70%;
+  width: 73%;
   .mat-card{
     border: 2px solid;
   }
@@ -80,7 +82,7 @@ mat-checkbox{
 
 .action-card{
   width: 90%;
-  height: 90%;
+  height: 95%;
 }
 
 .test {
@@ -144,3 +146,54 @@ mat-checkbox{
   background-color: #48cae4;
   color: white;
 }
+
+
+////////////////////////
+
+.navigation{
+  min-height: 10%;
+}
+
+.sidenav{
+  width: 18%;
+  position: fixed;
+  button{
+    font-size: 18px;
+    height: 20%;
+    width: 95%;
+    background-color: rgb(42, 142, 219);
+    color: White;
+  }
+}
+
+.UserInfo{
+  margin-left: 20px;
+}
+
+.sidenavItem{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.headerNav{
+  padding-top: 17px;
+  background-color: rgb(42, 142, 219);
+  min-height: 64px;
+  color: White;
+}
+
+
+
+
+.toolbar{
+  background-color: rgb(42, 142, 219);
+  button{
+    font-size: 16px;
+    .mat-icon{
+      transform: scale(0.9);
+    }
+  }
+}
+
+
+

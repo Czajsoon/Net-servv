@@ -58,13 +58,14 @@ public class Doctor {
     private Set<Operation> operations;
 
     @JsonIgnore
-    @OneToMany
+    @OneToMany(mappedBy = "doctor")
     private Set<Stay> stays;
 
     public static Doctor of(DoctorREQ doctorREQ){
         Doctor doctor = new Doctor();
         doctor.setName(doctorREQ.getName());
         doctor.setSurname(doctorREQ.getSurname());
+        doctor.setRoom(doctorREQ.getRoom());
         return doctor;
     }
 

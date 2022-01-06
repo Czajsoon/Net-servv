@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class BackendConnectService {
   getEndpoint():string{
     return this.url;
   }
+
 
   setToken(token:string){
     this.token = token;

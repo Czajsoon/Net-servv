@@ -1,0 +1,53 @@
+.filters{
+  margin-top: 30px;
+  width: 85%;
+  ::ng-deep .mat-focused .mat-form-field-label {
+    color: Black !important;
+  }
+  ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+    background-color: #48cae4 !important;
+  }
+  .mat-form-field{
+    margin-right: 5%;
+    text-align: center;
+  }
+  .searchButton{
+    width: 40%;
+    background-color: #2eb4ce;
+    color: White;
+  }
+  .clearButton{
+    margin-right: 10%;
+    width: 20%;
+    background-color: #48cae4;
+    color: White;
+  }
+}
+.mat-card{
+  background-color: #90e0ef;
+  border: 2px solid #48cae4;
+  cursor: pointer;
+}
+.mat-expansion-panel{
+  background-color: #90e0ef;
+  border: 2px solid #48cae4;
+  margin-bottom: 30px;
+}
+
+.noVisits{
+  margin-top: 30px;
+  .mat-card{
+    width: 85%;
+    background-color: #ffc4c4;
+    border: solid 2px #bb6f6f;
+  }
+}
+
+.newVisit{
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  .mat-fab{
+    background-color: #48cae4;
+  }
+}

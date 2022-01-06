@@ -37,9 +37,12 @@ public class User {
     @Column
     private String surname;
     @Column
+    private String sex;
+    @Column
     private Long identification;
     @Column
     private Date bornDate;
+    @JsonIgnore
     @Column
     private String password;
 
@@ -92,6 +95,7 @@ public class User {
 
     public static User of(UserDTO userDTO){
         User user = new User();
+        user.setSex(userDTO.getSex());
         user.setUsername(userDTO.getUsername());
         user.setName(userDTO.getName());
         user.setSurname(userDTO.getSurname());
@@ -102,6 +106,7 @@ public class User {
 
     public static User of(UserModel userModel){
         User user = new User();
+        user.setSex(userModel.getSex());
         user.setUsername(userModel.getUsername());
         user.setName(userModel.getName());
         user.setSurname(userModel.getSurname());
