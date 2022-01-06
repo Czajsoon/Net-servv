@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -27,6 +28,11 @@ import { EventTimetableComponent } from './event-timetable/event-timetable.compo
 import {MatSortModule} from "@angular/material/sort";
 import {MatRippleModule} from "@angular/material/core";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {PasswordChangeComponent} from "./password-change/password-change.component";
+import {PatientlistComponent} from "./patientlist/patientlist.component";
+import { NewPatientComponent } from './new-patient/new-patient.component';
+import { NewRefferalAbsentionComponent } from './new-refferal-absention/new-refferal-absention.component';
+import { ReferralslistComponent } from './referralslist/referralslist.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
@@ -36,6 +42,7 @@ import { AddVisitComponent } from './add-visit/add-visit.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
+
 
 @NgModule({
   declarations: [
@@ -47,29 +54,35 @@ import {MatRadioModule} from "@angular/material/radio";
     HomePageComponent,
     TimetableComponent,
     EventTimetableComponent,
+    PasswordChangeComponent,
+    PatientlistComponent,
+    NewPatientComponent,
+    NewRefferalAbsentionComponent,
+    ReferralslistComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule,
+    MatGridListModule,
+    MatSortModule,
+    MatRippleModule,
+
+  ],
+
     NavigationComponent,
     ReceptionistPanelComponent,
     VisitDetailsComponent,
     AddVisitComponent,
     ViewdoctorsComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        NgbModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MaterialModule,
-        MatGridListModule,
-        MatSortModule,
-        MatRippleModule,
-        MatSidenavModule,
-        MatExpansionModule,
-        MatStepperModule,
-        MatRadioModule,
-    ],
+   
+
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
