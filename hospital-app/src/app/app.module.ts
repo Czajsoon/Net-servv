@@ -58,7 +58,12 @@ import {MatRadioModule} from "@angular/material/radio";
     PatientlistComponent,
     NewPatientComponent,
     NewRefferalAbsentionComponent,
-    ReferralslistComponent
+    ReferralslistComponent,
+    NavigationComponent,
+    ReceptionistPanelComponent,
+    VisitDetailsComponent,
+    AddVisitComponent,
+    ViewdoctorsComponent
   ],
   imports: [
     BrowserModule,
@@ -72,16 +77,23 @@ import {MatRadioModule} from "@angular/material/radio";
     MatGridListModule,
     MatSortModule,
     MatRippleModule,
-
+    MatFormFieldModule,
+    MatIconModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatInputModule
   ],
 
-    NavigationComponent,
-    ReceptionistPanelComponent,
-    VisitDetailsComponent,
-    AddVisitComponent,
-    ViewdoctorsComponent
-  ],
-   
+
+
+
 
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
