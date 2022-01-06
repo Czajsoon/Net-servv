@@ -19,14 +19,15 @@ export class PatientlistService{
     return this.http.get(this.configUrl).toPromise();
   }
 
-  postPatient(password:string,username:string, name:string, surname:string,identification:string,bornDate:string):Promise<any>{
+  postPatient(password:string,username:string,name:string, sex:string, surname:string,identification:string,bornDate:string):Promise<any>{
     return this.http.post(this.configUrlRegister,
       {
-        password:password,
         username:username,
+        password:password,
         name:name,
         surname:surname,
         bornDate:bornDate,
+        sex:sex,
         identification:identification,
       }).toPromise();
   }

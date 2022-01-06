@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Patient} from "../models/patient";
+
 import {MatDialog} from "@angular/material/dialog";
 import {NewPatientComponent} from "../new-patient/new-patient.component";
 import {PatientlistService} from "../services/patientlist.service";
+import {Patient} from "../models/Patient";
 
 
 let Patients: Patient[]=[];
@@ -12,7 +13,7 @@ let Patients: Patient[]=[];
   styleUrls: ['./patientlist.component.scss']
 })
 export class PatientlistComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'username', 'firstname', 'surname','identification','bornDate','delete'];
+  displayedColumns: string[] = ['id', 'name', 'surname','sex', 'identification','bornDate','delete'];
   Patient_Table = [...Patients];
 
   constructor(private dialog: MatDialog,private patientService: PatientlistService) {
@@ -28,9 +29,9 @@ export class PatientlistComponent implements OnInit {
       this.Patient_Table= [...this.Patient_Table,
         {
           id:response[i].id,
-          username:response[i].username,
-          firstname:response[i].name,
+          name:response[i].name,
           surname:response[i].surname,
+          sex:response[i].sex,
           identification:response[i].identification,
           bornDate:response[i].bornDate
         }]
