@@ -1,8 +1,10 @@
 package hospital.hospital.visit.services;
 
+import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.visit.entity.Visit;
 import hospital.hospital.visit.repository.VisitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -11,6 +13,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class VisitService {
+    @Value("${clinic.visit.time}")
+    private Long visitTime;
+    @Value("${clinic.open.hour}")
+    private Integer clinicStart;
+    @Value("${clinic.close.hour}")
+    private Integer clinicEnd;
     @Autowired
     private VisitRepository visitRepository;
 
@@ -51,5 +59,16 @@ public class VisitService {
                     .filter((visit -> visit.getUser().getSurname().contains(userSurname)))
                     .collect(Collectors.toList());
         return visits.stream().map(Visit::dto).collect(Collectors.toList());
+    }
+
+    private LocalDateTime findMaxDateVisit(Doctor doctor,LocalDateTime date){
+        while(visitRepository.visitDoctorBeetweenDate(doctor.getId(),date,date.plusMinutes(visitTime).minusSeconds(1)).size() > 0){
+            date = date.plusMinutes(visitTime).minusSeconds(1);
+        }
+        return date.plusSeconds(1);
+    }
+
+    public LocalDateTime nearestVisitDate(Doctor doctor,LocalDateTime dateTime){
+        return findMaxDateVisit(doctor,dateTime);
     }
 }
