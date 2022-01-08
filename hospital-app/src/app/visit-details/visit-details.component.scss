@@ -1,0 +1,29 @@
+.editVisit{
+  margin-bottom: 20px;
+}
+
+.cancelVisit{
+  margin-bottom: 30px;
+}
+
+.editTime{
+  button{
+    background-color: #2eb4ce;
+  }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: Black !important;
+}
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background-color: #48cae4 !important;
+}
+
+::ng-deep .mat-datepicker-toggle {
+  color: #48cae4;
+}
+
+::ng-deep .mat-datepicker{
+  background-color: #48cae4;
+  color: #48cae4;
+}

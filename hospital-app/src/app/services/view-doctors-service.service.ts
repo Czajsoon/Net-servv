@@ -5,7 +5,7 @@ import {BackendConnectService} from "./backend-connect.service";
 @Injectable({
   providedIn: 'root'
 })
-export class ViewdoctorsServiceService {
+export class ViewDoctorsServiceService {
 
   constructor(
     private http:HttpClient,
@@ -14,6 +14,10 @@ export class ViewdoctorsServiceService {
 
   getDoctors(spec:string) {
     return this.http.get(this.backendconnect.getEndpoint()+"api/doctors?spec="+spec).toPromise();
+  }
+
+  getVisitTypes(){
+    return this.http.get(this.backendconnect.getEndpoint() + "api/visitType").toPromise();
   }
 
 }

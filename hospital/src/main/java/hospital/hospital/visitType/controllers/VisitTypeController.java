@@ -24,7 +24,7 @@ public class VisitTypeController {
 
     @GetMapping
     public ResponseEntity<?> visitType(){
-        return ResponseEntity.ok(visitTypeRepository.findAll().stream().map(VisitType::response));
+        return ResponseEntity.ok(visitTypeRepository.findAll());
     }
 
     @GetMapping("/{id}")

@@ -6,6 +6,7 @@ import {Visit} from "../models/Visit";
 import {MatDialog} from '@angular/material/dialog';
 import {VisitDetailsComponent} from "../visit-details/visit-details.component";
 import {AddVisitComponent} from "../add-visit/add-visit.component";
+import {ViewDoctorsServiceService} from "../services/view-doctors-service.service";
 
 let specsTable:Specialization[] = [];
 let visitsTable:Visit[] = [];
@@ -54,6 +55,7 @@ export class ReceptionistPanelComponent implements OnInit {
     this.range.get('end')?.setValue(null);
     this.surnamePatient = "";
     this.surnameDoctor = "";
+    this.search();
   }
 
   search(){
@@ -73,13 +75,17 @@ export class ReceptionistPanelComponent implements OnInit {
     this.dialog.open(VisitDetailsComponent,{
       width: '50%',
       data:visit
-    })
+    }).afterClosed().subscribe(() =>{
+      this.search();
+    });
   }
 
   openNewVisit(){
     this.dialog.open(AddVisitComponent,{
-      width: "40%",
+      width: "60%",
       data: this.specializations
+    }).afterClosed().subscribe(() =>{
+      this.search();
     });
   }
 
