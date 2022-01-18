@@ -1,48 +1,32 @@
-<div id="main">
-  <td>
-    <div id="x">
-      <h2>Formularz kontaktowy</h2>
+<app-navigation>
+<div id="body">
 
-      <div id="name">
-        <form>
-          <mat-form-field>
-            <mat-label>Imie</mat-label>
-            <input matInput placeholder="Np. Jan">
-          </mat-form-field>
-        </form>
-      </div>
-      <div id="surname">
-        <form>
-          <mat-form-field>
-            <mat-label>Nazwisko</mat-label>
+  <div id="naglowek">
 
-            <input matInput placeholder="Np. Kowalski">
-          </mat-form-field>
-        </form>
-      </div>
-      <div id="email">
-        <form>
-          <mat-form-field appearance="fill">
-            <mat-label>E-mail</mat-label>
-            <input matInput placeholder="np. ex@gmail.pl">
-          </mat-form-field>
-        </form>
-      </div>
+<p class="h4 mb-4">
+    <img src="https://img.icons8.com/ios/50/000000/new-message.png"/> Formularz kontaktowy</p>
+  </div>
+<div id="stopka">
 
-      <div id="message">
+  <input  type="text"  id="defaultContactFormName"
+         class="form-control mb-4" placeholder="Imie i Nazwisko">
 
-        <mat-form-field class="example-full-width" hintLabel="Max 250 slow" appearance="fill">
-          <mat-label>Wpisz wiadomosc</mat-label>
+  <input type="email"  id="defaultContactFormEmail"
+         class="form-control mb-4" placeholder="E-mail">
 
-          <textarea maxlength="250" matInput placeholder="Wpisz tresc do wyslania"> </textarea>
-
-        </mat-form-field>
-
-
-      </div>
-      <div id="button">
-        <button  type="submit"  class="btn btn-primary" mat-raised-button>WYŚLIJ</button>
-      </div>
-    </div>
-  </td>
+  <select   class="browser-default custom-select mb-4">
+    <option value="" disabled selected>wybierz interesującą sekcję</option>
+    <option value="1">Recepcja</option>
+    <option value="2">Wyniki Badań</option>
+    <option value="3">Lekarz pierwszego-kontaktu</option>
+  </select>
+  <div class="form-group">
+    <textarea class="form-control rounded-0" id="exampleFormControlTextarea2"
+              rows="3" placeholder="Wiadomość"></textarea>
+  </div>
+  <div id="guzik" class="button">
+    <button type="submit" class="btn btn-outline-primary">Wyslij wiadomość </button>
+  </div>
 </div>
+</div>
+</app-navigation>
