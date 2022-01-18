@@ -5,9 +5,9 @@ import {Specialization} from "../models/specialization";
 import {ViewDoctorsServiceService} from "../services/view-doctors-service.service";
 import {Doctor} from "../models/Doctor";
 import {VisitType} from "../models/VisitType";
-import {VisitReq} from "../models/VisitReq";
 import {ReceptionistService} from "../services/receptionist.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {VisitReq} from "../models/VisitReq";
 
 @Component({
   selector: 'app-add-visit',
