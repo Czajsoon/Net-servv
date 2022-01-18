@@ -7,6 +7,8 @@ import {TimetableComponent} from "./timetable/timetable.component";
 import {TimetableResolverService} from "./services/timetable-resolver.service";
 import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-panel.component";
 import {ViewdoctorsComponent} from "./viewdoctors/viewdoctors.component";
+import {AddTestResultsComponent} from "./add-test-results/add-test-results.component";
+import {PatientCardComponent} from "./patient-card/patient-card.component";
 
 const routes: Routes = [
   {path:'',pathMatch: "full",component:HomePageComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path:'home',component:HomePageComponent},
   {path:'receptionist-panel',component:ReceptionistPanelComponent},
   {path:'view-doctors',component:ViewdoctorsComponent},
+  {path:'add-test-results',component:AddTestResultsComponent},
+  {path:'patient-card',component:PatientCardComponent},
   {path:'time-table',component:TimetableComponent,resolve:{
     time_table: TimetableResolverService
     }}

@@ -36,6 +36,8 @@ import { AddVisitComponent } from './add-visit/add-visit.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
+import { AddTestResultsComponent } from './add-test-results/add-test-results.component';
+import { PatientCardComponent } from './patient-card/patient-card.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import {MatRadioModule} from "@angular/material/radio";
     ReceptionistPanelComponent,
     VisitDetailsComponent,
     AddVisitComponent,
-    ViewdoctorsComponent
+    ViewdoctorsComponent,
+    AddTestResultsComponent,
+    PatientCardComponent
   ],
     imports: [
         BrowserModule,
