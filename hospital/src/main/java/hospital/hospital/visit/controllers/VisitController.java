@@ -71,7 +71,7 @@ public class VisitController {
         if(visitType.isPresent() && doctor.isPresent() && user.isPresent()){
             if (visitREQ.getDate().isBefore(LocalDateTime.of(visitREQ.getDate().toLocalDate(), LocalTime.of(clinicStart,0,0))) ||
                     visitREQ.getDate().isAfter(LocalDateTime.of(visitREQ.getDate().toLocalDate(), LocalTime.of(clinicEnd,0,0)))){
-                return ResponseEntity.status(201).body("Clinic is closed! Clinic is open " + clinicStart + ":00-" + clinicEnd + ":00");
+                return ResponseEntity.ok().body("Clinic is closed! Clinic is open " + clinicStart + ":00-" + clinicEnd + ":00");
             }
             else{
                 Optional<Visit> optionalVisit = visitRepository.findVisitByStartDateAndAndDoctor(visitREQ.getDate(), doctor.get());
