@@ -28,8 +28,8 @@ export class NewPatientComponent implements OnInit {
                                     this.patientPassword.nativeElement.value,
                                     this.patientUserName.nativeElement.value,
                                     this.patientFirstname.nativeElement.value,
-                                    this.patientSurname.nativeElement.value,
                                     this.patientSex.nativeElement.value,
+                                    this.patientSurname.nativeElement.value,
                                     this.patientIdentification.nativeElement.value,
                                     this.patientBornDate.nativeElement.value,
       ).then(r=>console.log(r));
