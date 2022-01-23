@@ -15,6 +15,7 @@ export class NewPatientComponent implements OnInit {
   @ViewChild('patientIdentification') patientIdentification: ElementRef | any;
   @ViewChild('patientBornDate') patientBornDate: ElementRef | any;
   @ViewChild('patientPassword') patientPassword: ElementRef | any;
+  @ViewChild('patientSex') patientSex: ElementRef | any;
   constructor(
     private patientService: PatientlistService) {
   }
@@ -28,6 +29,7 @@ export class NewPatientComponent implements OnInit {
                                     this.patientUserName.nativeElement.value,
                                     this.patientFirstname.nativeElement.value,
                                     this.patientSurname.nativeElement.value,
+                                    this.patientSex.nativeElement.value,
                                     this.patientIdentification.nativeElement.value,
                                     this.patientBornDate.nativeElement.value,
       ).then(r=>console.log(r));

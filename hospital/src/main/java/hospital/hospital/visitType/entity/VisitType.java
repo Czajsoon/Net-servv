@@ -1,5 +1,6 @@
 package hospital.hospital.visitType.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import hospital.hospital.visit.entity.Visit;
 import hospital.hospital.visitType.models.VisitTypeREQ;
@@ -22,6 +23,7 @@ public class VisitType {
     @Column
     private String name;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "visitType")
     private Set<Visit> visits;
 

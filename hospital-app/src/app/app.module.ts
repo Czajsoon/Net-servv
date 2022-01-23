@@ -44,7 +44,6 @@ import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,8 +77,21 @@ import {MatRadioModule} from "@angular/material/radio";
     MatGridListModule,
     MatSortModule,
     MatRippleModule,
-
+    MatFormFieldModule,
+    MatIconModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatInputModule
   ],
+
+
 
 
 

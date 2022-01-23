@@ -5,10 +5,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class VisitREQ {
+public class VisitREQPut {
+    private Long id;
     private LocalDateTime date;
-    private String description;
-    private Long visitType;
-    private Long doctor;
-    private Long user;
 }
