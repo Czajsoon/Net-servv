@@ -1,9 +1,7 @@
 package hospital.hospital.user.controllers;
 
 
-import hospital.hospital.drug.entity.Drug;
-import hospital.hospital.drug.models.DrugDTO;
-import hospital.hospital.user.entity.User;
+
 import hospital.hospital.user.models.ChangePasswordDTO;
 import hospital.hospital.user.repositories.UserRepository;
 import hospital.hospital.user.services.ChangePasswordService;

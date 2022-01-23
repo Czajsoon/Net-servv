@@ -1,8 +1,9 @@
 export interface Patient{
-  id:number;
-  name:string;
-  surname:string;
-  sex:string;
-  identification:string;
-  bornDate:Date;
+  id: number;
+  username: string;
+  firstname: string;
+  surname: string;
+  identification: number;
+  bornDate: Date;
+
 }

@@ -44,6 +44,7 @@ import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,12 @@ import {MatRadioModule} from "@angular/material/radio";
     PatientlistComponent,
     NewPatientComponent,
     NewRefferalAbsentionComponent,
-    ReferralslistComponent
+    ReferralslistComponent,
+    NavigationComponent,
+    ReceptionistPanelComponent,
+    VisitDetailsComponent,
+    AddVisitComponent,
+    ViewdoctorsComponent
   ],
   imports: [
     BrowserModule,
@@ -75,13 +81,7 @@ import {MatRadioModule} from "@angular/material/radio";
 
   ],
 
-    NavigationComponent,
-    ReceptionistPanelComponent,
-    VisitDetailsComponent,
-    AddVisitComponent,
-    ViewdoctorsComponent
-  ],
-   
+
 
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
