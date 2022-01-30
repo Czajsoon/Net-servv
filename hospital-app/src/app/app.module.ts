@@ -42,6 +42,8 @@ import { AddVisitComponent } from './add-visit/add-visit.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -63,7 +65,8 @@ import {MatRadioModule} from "@angular/material/radio";
     ReceptionistPanelComponent,
     VisitDetailsComponent,
     AddVisitComponent,
-    ViewdoctorsComponent
+    ViewdoctorsComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +91,8 @@ import {MatRadioModule} from "@angular/material/radio";
     MatDialogModule,
     MatDatepickerModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
 
 
