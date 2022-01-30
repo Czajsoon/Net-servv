@@ -2,7 +2,6 @@ package hospital.hospital.refferalAbsention.controllers;
 
 import hospital.hospital.doctor.entity.Doctor;
 import hospital.hospital.doctor.repository.DoctorRepository;
-import hospital.hospital.recipe.entity.Recipe;
 import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
 import hospital.hospital.refferalAbsention.models.RefferalAbsentionREQ;
 import hospital.hospital.refferalAbsention.repository.RefferalAbsentionRepository;
@@ -12,11 +11,9 @@ import hospital.hospital.visit.entity.Visit;
 import hospital.hospital.visit.repository.VisitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -31,6 +28,20 @@ public class RefferalAbsentionController {
     @Autowired
     private VisitRepository visitRepository;
 
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping
+    public ResponseEntity<?>RefAbs(){
+        List<RefferalAbsention> referals= refferalAbsentionRepository.findAll();
+        referals.forEach(refferalAbsention -> {
+            refferalAbsention.setVisit(null);
+            refferalAbsention.setUser(null);
+            refferalAbsention.setDoctor(null);
+        });
+        return ResponseEntity.ok(referals);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public ResponseEntity<?> ra(@RequestBody RefferalAbsentionREQ req){
         Optional<User> user = userRepository.findById(req.getUser());
@@ -41,5 +52,11 @@ public class RefferalAbsentionController {
             return ResponseEntity.ok(RefferalAbsention.dto(save));
         }
         else return ResponseEntity.ok("error");//TODO
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> refAbsDELETE(@PathVariable Long id){
+        refferalAbsentionRepository.deleteById(id);
+        return ResponseEntity.ok("usunieto");
     }
 }

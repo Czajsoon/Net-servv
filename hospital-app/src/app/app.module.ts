@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -27,6 +28,11 @@ import { EventTimetableComponent } from './event-timetable/event-timetable.compo
 import {MatSortModule} from "@angular/material/sort";
 import {MatRippleModule} from "@angular/material/core";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {PasswordChangeComponent} from "./password-change/password-change.component";
+import {PatientlistComponent} from "./patientlist/patientlist.component";
+import { NewPatientComponent } from './new-patient/new-patient.component';
+import { NewRefferalAbsentionComponent } from './new-refferal-absention/new-refferal-absention.component';
+import { ReferralslistComponent } from './referralslist/referralslist.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
@@ -40,6 +46,7 @@ import { AddTestResultsComponent } from './add-test-results/add-test-results.com
 import { PatientCardComponent } from './patient-card/patient-card.component';
 import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal-medical-leave.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +57,11 @@ import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal
     HomePageComponent,
     TimetableComponent,
     EventTimetableComponent,
+    PasswordChangeComponent,
+    PatientlistComponent,
+    NewPatientComponent,
+    NewRefferalAbsentionComponent,
+    ReferralslistComponent,
     NavigationComponent,
     ReceptionistPanelComponent,
     VisitDetailsComponent,
@@ -59,23 +71,36 @@ import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal
     PatientCardComponent,
     RefferalMedicalLeaveComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        NgbModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MaterialModule,
-        MatGridListModule,
-        MatSortModule,
-        MatRippleModule,
-        MatSidenavModule,
-        MatExpansionModule,
-        MatStepperModule,
-        MatRadioModule,
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule,
+    MatGridListModule,
+    MatSortModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatInputModule
+  ],
+
+
+
+
+
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

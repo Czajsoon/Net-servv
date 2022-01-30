@@ -1,0 +1,37 @@
+.new-patient{
+  width: 100%;
+}
+.patient-dialog{
+  display: flex;
+  position: center;
+  justify-content: center;
+  alignment: center;
+}
+
+.row{
+  position: center;
+  justify-content: center;
+}
+
+.col{
+  margin: 0 5px 0 5px;
+}
+
+form{
+  display: flex;
+  position: center;
+  justify-content: center;
+  alignment: center;
+}
+
+mat-dialog-actions{
+  justify-content: center;
+}
+
+h2{
+  margin-bottom: 1px;
+}
+
+button{
+  margin: 1px;
+}

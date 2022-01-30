@@ -30,5 +30,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
   flex: 1 1 auto;
 }
 
+.success{
+  background-color: #59de59;
+  color: #181818;
+}
+
+.failure{
+  background-color: #ff3f3f;
+  color: #181818;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
