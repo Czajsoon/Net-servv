@@ -33,6 +33,7 @@ import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-pa
 import {MatExpansionModule} from "@angular/material/expansion";
 import { NumberPatientComponent } from './number-patient/number-patient.component';
 import { IssuingPrescriptionsComponent } from './issuing-prescriptions/issuing-prescriptions.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -49,22 +50,23 @@ import { IssuingPrescriptionsComponent } from './issuing-prescriptions/issuing-p
     NumberPatientComponent,
     IssuingPrescriptionsComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgbModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MaterialModule,
-    MatGridListModule,
-    MatSortModule,
-    MatRippleModule,
-    MatSidenavModule,
-    MatExpansionModule,
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgbModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MaterialModule,
+        MatGridListModule,
+        MatSortModule,
+        MatRippleModule,
+        MatSidenavModule,
+        MatExpansionModule,
+        MatStepperModule,
 
-  ],
+    ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

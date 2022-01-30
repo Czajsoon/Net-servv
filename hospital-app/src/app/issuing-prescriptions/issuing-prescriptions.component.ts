@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./issuing-prescriptions.component.scss']
 })
 export class IssuingPrescriptionsComponent implements OnInit {
+  secondFormGroup: any;
 
   constructor() { }
 
@@ -13,3 +14,4 @@ export class IssuingPrescriptionsComponent implements OnInit {
   }
 
 }
+
