@@ -11,6 +11,12 @@ import {AuthService} from "../services/auth.service";
 })
 export class SettingsComponent implements OnInit {
 
+  get results(): any {
+    return this._results;
+  }
+
+
+
   private readonly configUrl:string;
 
 
@@ -21,7 +27,8 @@ export class SettingsComponent implements OnInit {
 
   }
 
-  results:any;
+  private _results:any;
+
 
   ngOnInit(): void {
 
@@ -29,7 +36,7 @@ export class SettingsComponent implements OnInit {
     console.log(token.token);
     this.getCurrent().then(result=>{
       console.log(result);
-      this.results=result;
+      this._results=result;
     })
   }
 
