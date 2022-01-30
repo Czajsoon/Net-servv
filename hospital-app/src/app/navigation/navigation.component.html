@@ -40,7 +40,7 @@
       Zaloguj się
       <mat-icon matSuffix>login</mat-icon>
     </button>
-    <button *ngIf="auth.isLoggedIn()" mat-button>
+    <button *ngIf="auth.isLoggedIn()" routerLink="/settings" mat-button>
       Ustawienia
       <mat-icon>settings</mat-icon>
     </button>

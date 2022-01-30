@@ -11,6 +11,7 @@ import {NewRefferalAbsentionComponent} from "./new-refferal-absention/new-reffer
 import {ReferralslistComponent} from "./referralslist/referralslist.component";
 import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-panel.component";
 import {ViewdoctorsComponent} from "./viewdoctors/viewdoctors.component";
+import {SettingsComponent} from "./settings/settings.component";
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path:'password-change',component:PasswordChangeComponent},
   {path:'patientList', component:PatientlistComponent},
   {path:'new-ref',component:NewRefferalAbsentionComponent},
-  {path:'list-ref',component:ReferralslistComponent}
+  {path:'list-ref',component:ReferralslistComponent},
+  {path:'settings',component:SettingsComponent}
 ];
 
 @NgModule({

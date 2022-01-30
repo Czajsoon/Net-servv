@@ -7,6 +7,9 @@ import {User} from "../models/user";
   providedIn: 'root'
 })
 export class AuthService {
+  get token(): { token: string } {
+    return this._token;
+  }
   get user(): User {
     return this._user;
   }
@@ -16,7 +19,7 @@ export class AuthService {
   }
 
   // @ts-ignore
-  private token: {token:string};
+  private _token: {token:string};
   // @ts-ignore
   private _user : User = {id:1,name:"John", surname:"Doe"};
 
@@ -33,8 +36,8 @@ export class AuthService {
   login(username:string,password:string){
     return this.http.post("http://localhost:8080/login",{userName:username,password:password}).toPromise().then(data =>{
       // @ts-ignore
-      this.token = JSON.parse(JSON.stringify(data));
-      this.bc.setToken(this.token.token);
+      this._token = JSON.parse(JSON.stringify(data));
+      this.bc.setToken(this._token.token);
     }).catch(data =>{
       //TODO exception handle!
       console.log(data);
