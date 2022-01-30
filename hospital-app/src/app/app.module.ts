@@ -38,6 +38,7 @@ import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
 import { AddTestResultsComponent } from './add-test-results/add-test-results.component';
 import { PatientCardComponent } from './patient-card/patient-card.component';
+import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal-medical-leave.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PatientCardComponent } from './patient-card/patient-card.component';
     AddVisitComponent,
     ViewdoctorsComponent,
     AddTestResultsComponent,
-    PatientCardComponent
+    PatientCardComponent,
+    RefferalMedicalLeaveComponent
   ],
     imports: [
         BrowserModule,
