@@ -8,24 +8,24 @@
   </div>
 <div id="stopka">
 
-  <input  type="text"  id="defaultContactFormName"
-         class="form-control mb-4" placeholder="Imie i Nazwisko">
+  <input type="text" id="defaultContactFormName"
+         class="form-control mb-4" placeholder="Imie i Nazwisko"  [(ngModel)]="descInput" >
 
   <input type="email"  id="defaultContactFormEmail"
-         class="form-control mb-4" placeholder="E-mail">
+         class="form-control mb-4" placeholder="E-mail"  [(ngModel)]="descInput2" >
 
-  <select   class="browser-default custom-select mb-4">
+  <select   class="browser-default custom-select mb-4"  [(ngModel)]="descInput3">
     <option value="" disabled selected>wybierz interesującą sekcję</option>
-    <option value="1">Recepcja</option>
-    <option value="2">Wyniki Badań</option>
-    <option value="3">Lekarz pierwszego-kontaktu</option>
+    <option value="Recepcja">Recepcja</option>
+    <option value="Wyniki Badań">Wyniki Badań</option>
+    <option value="Lekarz pierwszego-kontaktu">Lekarz pierwszego-kontaktu</option>
   </select>
   <div class="form-group">
     <textarea class="form-control rounded-0" id="exampleFormControlTextarea2"
-              rows="3" placeholder="Wiadomość"></textarea>
+              rows="3" placeholder="Wiadomość"  [(ngModel)]="descInput4"></textarea>
   </div>
   <div id="guzik" class="button">
-    <button type="submit" class="btn btn-outline-primary">Wyslij wiadomość </button>
+    <button type="submit" class="btn btn-outline-primary" (click)="getUserInput()">Wyslij wiadomość </button>
   </div>
 </div>
 </div>
