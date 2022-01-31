@@ -43,6 +43,7 @@ import {MatStepperModule} from "@angular/material/stepper";
 import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
 import { SettingsComponent } from './settings/settings.component';
+import { DoctorPanelComponent } from './doctor-panel/doctor-panel.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { SettingsComponent } from './settings/settings.component';
     VisitDetailsComponent,
     AddVisitComponent,
     ViewdoctorsComponent,
-    SettingsComponent
+    SettingsComponent,
+    DoctorPanelComponent
   ],
   imports: [
     BrowserModule,
