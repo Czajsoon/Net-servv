@@ -9,6 +9,8 @@ import {PatientlistComponent} from "./patientlist/patientlist.component";
 import {NewRefferalAbsentionComponent} from "./new-refferal-absention/new-refferal-absention.component";
 import {ReferralslistComponent} from "./referralslist/referralslist.component";
 import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-panel.component";
+import {NumberPatientComponent} from "./number-patient/number-patient.component";
+import {IssuingPrescriptionsComponent} from "./issuing-prescriptions/issuing-prescriptions.component";
 import {ViewdoctorsComponent} from "./viewdoctors/viewdoctors.component";
 import {AdminPanelComponent} from "./admin-panel/admin-panel.component";
 import {SettingsComponent} from "./settings/settings.component";
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path:'',pathMatch: "full",component:HomePageComponent},
   {path:'login',component:LoginComponent},
   {path:'home',component:HomePageComponent},
+  {path:'number-patient', component:NumberPatientComponent},
+  {path:'issuing-prescriptions', component:IssuingPrescriptionsComponent},
   {path:'receptionist-panel',component:ReceptionistPanelComponent},
   {path:'view-doctors',component:ViewdoctorsComponent},
   {path:'add-test-results',component:AddTestResultsComponent},

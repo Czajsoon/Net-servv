@@ -21,6 +21,11 @@
         </button>
       </div>
       <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+
+        <button mat-button routerLink="/number-patient">
+          Kontakt
+          <mat-icon>mail_outline</mat-icon>
+
         <button mat-button routerLink="/view-doctors">
           Lista Lekarzy:
           <mat-icon>account_circle</mat-icon>
@@ -36,6 +41,7 @@
         <button mat-button routerLink="/add-test-results">
           Dodawanie wyników badań:
           <mat-icon>note_add</mat-icon>
+
         </button>
       </div>
       <div class="sidenavItem closeNav row justify-content-center">

@@ -10,5 +10,4 @@ export interface Visit{
   visitType:VisitType;
   doctor:Doctor;
   user:Patient;
-
 }

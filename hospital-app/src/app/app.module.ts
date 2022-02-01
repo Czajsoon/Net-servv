@@ -37,6 +37,9 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import { NumberPatientComponent } from './number-patient/number-patient.component';
+import { IssuingPrescriptionsComponent } from './issuing-prescriptions/issuing-prescriptions.component';
+import {MatStepperModule} from "@angular/material/stepper";
 import { VisitDetailsComponent } from './visit-details/visit-details.component';
 import { AddVisitComponent } from './add-visit/add-visit.component';
 import {MatStepperModule} from "@angular/material/stepper";
@@ -53,7 +56,6 @@ import { AddTestResultsComponent } from './add-test-results/add-test-results.com
 import { PatientCardComponent } from './patient-card/patient-card.component';
 import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal-medical-leave.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 
 @NgModule({
   declarations: [
@@ -72,19 +74,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReferralslistComponent,
     NavigationComponent,
     ReceptionistPanelComponent,
-    VisitDetailsComponent,
-    AddVisitComponent,
-    ViewdoctorsComponent,
-    AdminPanelComponent,
-    UserDetailsComponent,
-    AddUserComponent,
-    SettingsComponent,
-    DoctorPanelComponent,
-    AddTestResultsComponent,
-    PatientCardComponent,
-    RefferalMedicalLeaveComponent,
-    PageNotFoundComponent
-
+    NumberPatientComponent,
+    IssuingPrescriptionsComponent
+  ],
   ],
   imports: [
     BrowserModule,
