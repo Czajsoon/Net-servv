@@ -4,6 +4,9 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from "@angular/forms";
 import {MustMatch} from "../validators/MustMatch";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {PasswordChangeService} from "../services/password-change.service";
+import {SettingsComponent} from "../settings/settings.component";
+import {AuthService} from "../services/auth.service";
 
 
 @Component({
@@ -15,15 +18,20 @@ export class PasswordChangeComponent implements OnInit {
   visibility = false;
   @ViewChild('repPassword1') newPasswordInput: ElementRef | any;
   @ViewChild('repPassword2') repNewPasswordInput: ElementRef | any;
+  @ViewChild('password') oldPasswordInput: ElementRef | any;
   form: FormGroup | any;
 
   constructor(private formBuilder: FormBuilder,
-              private toast: MatSnackBar) {
+              private toast: MatSnackBar,
+              private pass_serv: PasswordChangeService,
+              private auth: AuthService
+              ) {
 
   }
 
   ngOnInit(): void {
   this.buildForm();
+
   }
 
   buildForm(){
@@ -41,6 +49,12 @@ export class PasswordChangeComponent implements OnInit {
   }
 
   changePassword(){
-      console.log("changepass");
+    console.log("ajdi:"+this.pass_serv.getCurrent());
+
+      this.pass_serv.postChange(
+        "1",
+        this.oldPasswordInput.nativeElement.value,
+        this.newPasswordInput.nativeElement.value
+      )
     }
 }

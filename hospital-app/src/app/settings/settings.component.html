@@ -1,0 +1,14 @@
+<app-navigation>
+  <mat-card>
+    <p><b>name:</b> {{results.name | json}}</p>
+    <p><b>surname:</b> {{results.surname | json}}</p>
+    <p><b>sex:</b> {{results.sex | json}}</p>
+    <p><b>identification:</b> {{results.identification | json}}</p>
+    <p><b>bornDate:</b> {{results.bornDate | json}}</p>
+
+  </mat-card>
+
+  <mat-card routerLink="/password-change"><mat-card-title>Zmiana hasła</mat-card-title></mat-card>
+
+</app-navigation>
+

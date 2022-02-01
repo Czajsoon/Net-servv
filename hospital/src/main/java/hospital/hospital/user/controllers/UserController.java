@@ -1,6 +1,5 @@
 package hospital.hospital.user.controllers;
 
-import hospital.hospital.jwt.controllers.JwtController;
 import hospital.hospital.user.entity.User;
 import hospital.hospital.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,7 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private JwtController jwtController;
+
 
     @GetMapping
     public ResponseEntity<?> users(){
