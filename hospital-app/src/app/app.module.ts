@@ -72,12 +72,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AddVisitComponent,
     ViewdoctorsComponent,
     SettingsComponent,
-    DoctorPanelComponent
+    DoctorPanelComponent,
     AddTestResultsComponent,
     PatientCardComponent,
     RefferalMedicalLeaveComponent,
     PageNotFoundComponent
-  
+
 
   ],
   imports: [

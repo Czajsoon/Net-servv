@@ -18,11 +18,6 @@ import {PatientCardComponent} from "./patient-card/patient-card.component";
 import {RefferalMedicalLeaveComponent} from "./refferal-medical-leave/refferal-medical-leave.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
-
-
-
-
-
 const routes: Routes = [
   {path:'',pathMatch: "full",component:HomePageComponent},
   {path:'login',component:LoginComponent},
@@ -32,9 +27,6 @@ const routes: Routes = [
   {path:'add-test-results',component:AddTestResultsComponent},
   {path:'patient-card',component:PatientCardComponent},
   {path:'refferal-medical-leave',component:RefferalMedicalLeaveComponent},
-
-  {path:'**',component:PageNotFoundComponent},
-
   {path:'time-table',component:TimetableComponent,resolve:{
     time_table: TimetableResolverService
     }},
@@ -43,7 +35,8 @@ const routes: Routes = [
   {path:'new-ref',component:NewRefferalAbsentionComponent},
   {path:'list-ref',component:ReferralslistComponent},
   {path:'settings',component:SettingsComponent},
-  {path:'doctor-panel',component:DoctorPanelComponent}
+  {path:'doctor-panel',component:DoctorPanelComponent},
+  {path:'**',component:PageNotFoundComponent}
 ];
 
 @NgModule({
