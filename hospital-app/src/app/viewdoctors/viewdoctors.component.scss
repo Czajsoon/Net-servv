@@ -1,0 +1,163 @@
+.filters{
+  position: fixed;
+  width: 20%;
+  height: 94%;
+  top: 10%;
+  right: 1.5%;
+  text-align: center;
+  .header{
+    color: #48cae4 !important;
+    font-size: 15px;
+  }
+  mat-card-title{
+    justify-items: center;
+  }
+  button{
+    background-color: #48cae4 !important;
+    color: white;
+    bottom: 10%;
+    width: 90%;
+  }
+  mat-form-field{
+    input{
+      text-align: center;
+    }
+    width: 90%;
+    text-align: center;
+  }
+
+  background-color: #eefaff;
+
+}
+
+mat-checkbox{
+  margin-left: 5%;
+}
+
+.noEvents{
+  width: 70%;
+  justify-content: center;
+  text-align: center;
+  //position: fixed;
+  margin-top: 3%;
+  top: 10%;
+  .mat-card{
+    width: 90%;
+    transition: 2s;
+    background-color: #ffc4c4;
+    border: 2px solid #ff3f3f;
+  }
+  .mat-card:hover{
+    background-color: #ff3f3f;
+    border: 2px solid #ff3f3f;
+  }
+}
+
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #48cae4 !important;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background-color: #48cae4;
+}
+
+::ng-deep .mat-checkbox-checked .mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #48cae4 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #48cae4;
+}
+
+.content-cards{
+  width: 73%;
+  .mat-card{
+    border: 2px solid;
+  }
+}
+
+.action-card{
+  width: 90%;
+  height: 95%;
+}
+
+.test {
+  .mat-card{
+    cursor: pointer;
+    border-color: #ade8f4;
+    background-color: #caf0f8;
+    transition: 1s;
+  }
+
+}
+
+.test:hover{
+  .mat-card{
+    background-color: #ade8f4;
+  }
+
+}
+
+
+
+
+.mat-button-toggle-checked{
+  background-color: #48cae4;
+  color: white;
+}
+
+
+////////////////////////
+
+.navigation{
+  min-height: 10%;
+}
+
+.sidenav{
+  width: 18%;
+  position: fixed;
+  button{
+    font-size: 18px;
+    height: 20%;
+    width: 95%;
+    background-color: rgb(42, 142, 219);
+    color: White;
+  }
+}
+
+.UserInfo{
+  margin-left: 20px;
+}
+
+.sidenavItem{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.headerNav{
+  padding-top: 17px;
+  background-color: rgb(42, 142, 219);
+  min-height: 64px;
+  color: White;
+}
+
+
+
+
+.toolbar{
+  background-color: rgb(42, 142, 219);
+  button{
+    font-size: 16px;
+    .mat-icon{
+      transform: scale(0.9);
+    }
+  }
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+

@@ -18,7 +18,6 @@ export class HomePageComponent implements OnInit {
               public auth:AuthService) {
     if(auth.isLoggedIn()){
       this.http.get("http://localhost:8080/api/blood").subscribe(results =>{
-        console.log(results);
         if(results!=null)
           // @ts-ignore
           this.bloodResults = [...results.bloodElements]

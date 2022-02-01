@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -27,6 +28,11 @@ import { EventTimetableComponent } from './event-timetable/event-timetable.compo
 import {MatSortModule} from "@angular/material/sort";
 import {MatRippleModule} from "@angular/material/core";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {PasswordChangeComponent} from "./password-change/password-change.component";
+import {PatientlistComponent} from "./patientlist/patientlist.component";
+import { NewPatientComponent } from './new-patient/new-patient.component';
+import { NewRefferalAbsentionComponent } from './new-refferal-absention/new-refferal-absention.component';
+import { ReferralslistComponent } from './referralslist/referralslist.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { NavigationComponent } from './navigation/navigation.component';
 import { ReceptionistPanelComponent } from './recepcionist-panel/receptionist-panel.component';
@@ -34,6 +40,22 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { NumberPatientComponent } from './number-patient/number-patient.component';
 import { IssuingPrescriptionsComponent } from './issuing-prescriptions/issuing-prescriptions.component';
 import {MatStepperModule} from "@angular/material/stepper";
+import { VisitDetailsComponent } from './visit-details/visit-details.component';
+import { AddVisitComponent } from './add-visit/add-visit.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
+import {MatRadioModule} from "@angular/material/radio";
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import {DatePipe} from "@angular/common";
+import { SettingsComponent } from './settings/settings.component';
+import { DoctorPanelComponent } from './doctor-panel/doctor-panel.component';
+import { AddTestResultsComponent } from './add-test-results/add-test-results.component';
+import { PatientCardComponent } from './patient-card/patient-card.component';
+import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal-medical-leave.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -45,29 +67,45 @@ import {MatStepperModule} from "@angular/material/stepper";
     HomePageComponent,
     TimetableComponent,
     EventTimetableComponent,
+    PasswordChangeComponent,
+    PatientlistComponent,
+    NewPatientComponent,
+    NewRefferalAbsentionComponent,
+    ReferralslistComponent,
     NavigationComponent,
     ReceptionistPanelComponent,
     NumberPatientComponent,
     IssuingPrescriptionsComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        NgbModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MaterialModule,
-        MatGridListModule,
-        MatSortModule,
-        MatRippleModule,
-        MatSidenavModule,
-        MatExpansionModule,
-        MatStepperModule,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MaterialModule,
+    MatGridListModule,
+    MatSortModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatRadioModule,
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatInputModule,
+    MatPaginatorModule
+  ],
 
-    ],
-  providers: [],
+  providers: [DatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

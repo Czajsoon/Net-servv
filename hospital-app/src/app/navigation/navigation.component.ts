@@ -1,6 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 import {User} from "../models/user";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navigation',
@@ -17,7 +18,8 @@ export class NavigationComponent implements OnInit {
   public logged !: boolean;
   public scrolled !: boolean;
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService,
+              private _router: Router) { }
 
   ngOnInit(): void {
     this.user = this.auth.user;
@@ -26,6 +28,11 @@ export class NavigationComponent implements OnInit {
 
   scrollPage(){
     this.scrolled = document.body.scrollTop>60;
+  }
+
+  logout(){
+    this._router.navigateByUrl("/home")
+    this.auth.Logut();
   }
 
   onActivate(event:any) {

@@ -1,0 +1,242 @@
+<app-navigation>
+  <mat-card class="filtr">
+    <label for="demo-optional-label-group">Wybierz typ badania:</label>
+    <div>
+      <mat-radio-group
+        id="demo-optional-label-group"
+        class="demo-radio-group"
+        [(ngModel)]="optionalLabelText"
+        (ngModelChange)="updateOptionalLabel()">
+        <mat-radio-button
+          class="demo-radio-button"
+          *ngFor="let optionalLabelTextChoice of optionalLabelTextChoices"
+          [value]="optionalLabelTextChoice">
+          {{optionalLabelTextChoice}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </mat-card>
+
+  <mat-card class="pole">
+    <mat-stepper class="demo-stepper" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Wprowadź PESEL pacjenta:</ng-template>
+          <mat-form-field class="demo-form-field" appearance="fill">
+            <mat-label></mat-label>
+            <input
+              matInput
+              formControlName="firstCtrl"
+
+            />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Następny</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step
+        [stepControl]="secondFormGroup"
+        label="Wprowadź wyniki badań:"
+        optional>
+        <form [formGroup]="secondFormGroup">
+          <!--   TO DO   DO ZROBIENIA W PETLI -->
+          <div *ngIf="optionalLabelText == 'Morfologia krwii'" class="col">
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Hematokryt</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Hemoglobina</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Krwinki białe</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Bazofile</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Eozynofile</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Neutrofile</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Limfocyty</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Monocyty</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Krwinki czerwone</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Płytki krwi</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Rozkład objętości krwinek czerwonych</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Średnia objętość krwinek czerwonych</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Średnia zawartość hemoglobiny</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Średnie stężenie hemoglobiny</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div *ngIf="optionalLabelText == 'CRP'" class="col">
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Tekst</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div *ngIf="optionalLabelText == 'APTT'" class="col">
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Tekst</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div *ngIf="optionalLabelText == 'INR'" class="col">
+            <div class="row">
+              <mat-form-field appearance="fill">
+                <mat-label>Tekst</mat-label>
+                <input
+                  matInput
+                  formControlName="secondCtrl"
+                  placeholder=""
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>Wróć</button>
+            <button mat-button matStepperNext>Następny</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Gotowe</ng-template>
+        <p>To już wszystko.</p>
+        <button class="dodajButton" mat-button> Dodaj wyniki badań </button>
+        <div>
+          <button mat-button matStepperPrevious>Wróć</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </mat-card>
+</app-navigation>

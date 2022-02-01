@@ -1,0 +1,89 @@
+<div class="visitDetails">
+  <mat-dialog-content>
+    <div class="col">
+      <div class="row justify-content-center">
+        <h1>Wizyta</h1>
+      </div>
+      <div class="row">
+        <p><b>Data: </b>{{visit.startDate | date:"medium"}}</p>
+      </div>
+      <div class="row">
+        <p><b>Lekarz: </b>{{visit.doctor.name}} {{visit.doctor.surname}}</p>
+      </div>
+      <div class="row">
+        <p><b>Specjalizacje lekarza: </b><span *ngFor="let spec of visit.doctor.specialisation">{{spec.name}},</span></p>
+      </div>
+      <div class="row">
+        <p><b>Gabinet: </b>{{visit.doctor.room}}</p>
+      </div>
+      <div class="row">
+        <p><b>Pacient: </b>{{visit.user.name}} {{visit.user.surname}}</p>
+      </div>
+      <div class="row">
+        <p><b>PESEL pacienta: </b>{{visit.user.identification}}</p>
+      </div>
+      <div class="row">
+        <p><b>Płeć pacienta: </b>{{visit.user.sex}}</p>
+      </div>
+      <div class="row justify-content-center text-center editTime">
+        <mat-accordion class="editVisit">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-center justify-content-center">
+                Edytuj datę wizyty
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="col" [formGroup]="editDate">
+              <div class="row">
+                <mat-form-field class="text-center">
+                  <mat-label>Wybierz datę</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="text-center">
+                  <mat-label>Wybierz godzinę</mat-label>
+                  <mat-select formControlName="hour">
+                    <mat-option *ngFor="let hour of visitHour" [value]="hour">
+                      {{hour}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="text-center">
+                  <mat-label>Wybierz minuty</mat-label>
+                  <mat-select formControlName="minutes">
+                    <mat-option *ngFor="let minutes of visitMinutes" [value]="minutes">
+                      {{minutes}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="row text-center justify-content-center">
+                <button [disabled]="!editDate.valid" mat-flat-button color="primary" (click)="changeVisitDate()">Zmień datę wizyty</button>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="row justify-content-center text-center cancelVisit">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-center justify-content-center">
+                Anulowanie wizyty
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="col">
+              <div class="row text-center justify-content-center">
+                <button mat-flat-button mat-dialog-close color="warn" (click)="this.cancelVisit()">Anuluj Wizytę</button>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="justify-content-center">
+    <button mat-flat-button mat-dialog-close color="warn">Zamknij</button>
+  </mat-dialog-actions>
+</div>

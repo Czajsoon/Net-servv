@@ -3,6 +3,10 @@ import {ReceptionistService} from "../services/receptionist.service";
 import {Specialization} from "../models/specialization";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Visit} from "../models/Visit";
+import {MatDialog} from '@angular/material/dialog';
+import {VisitDetailsComponent} from "../visit-details/visit-details.component";
+import {AddVisitComponent} from "../add-visit/add-visit.component";
+import {ViewDoctorsServiceService} from "../services/view-doctors-service.service";
 
 let specsTable:Specialization[] = [];
 let visitsTable:Visit[] = [];
@@ -24,7 +28,8 @@ export class ReceptionistPanelComponent implements OnInit {
   public specializations = [...specsTable];
   public visits = [...visitsTable];
 
-  constructor(private reception:ReceptionistService) {
+  constructor(private reception:ReceptionistService,
+              private dialog:MatDialog) {
     reception.getSpecialisations()
       .then(result =>{
       // @ts-ignore
@@ -50,6 +55,7 @@ export class ReceptionistPanelComponent implements OnInit {
     this.range.get('end')?.setValue(null);
     this.surnamePatient = "";
     this.surnameDoctor = "";
+    this.search();
   }
 
   search(){
@@ -63,6 +69,24 @@ export class ReceptionistPanelComponent implements OnInit {
       // @ts-ignore
       this.visits = visits
     })
+  }
+
+  openVisit(visit:Visit){
+    this.dialog.open(VisitDetailsComponent,{
+      width: '50%',
+      data:visit
+    }).afterClosed().subscribe(() =>{
+      this.search();
+    });
+  }
+
+  openNewVisit(){
+    this.dialog.open(AddVisitComponent,{
+      width: "60%",
+      data: this.specializations
+    }).afterClosed().subscribe(() =>{
+      this.search();
+    });
   }
 
 }

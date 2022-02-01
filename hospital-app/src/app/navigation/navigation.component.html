@@ -21,9 +21,27 @@
         </button>
       </div>
       <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+
         <button mat-button routerLink="/number-patient">
           Kontakt
           <mat-icon>mail_outline</mat-icon>
+
+        <button mat-button routerLink="/view-doctors">
+          Lista Lekarzy:
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+                  <button mat-button routerLink="/patient-card">
+                    Karta Pacjenta:
+                    <mat-icon>person</mat-icon>
+                  </button>
+                </div>
+      <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+        <button mat-button routerLink="/add-test-results">
+          Dodawanie wyników badań:
+          <mat-icon>note_add</mat-icon>
+
         </button>
       </div>
       <div class="sidenavItem closeNav row justify-content-center">
@@ -46,7 +64,7 @@
       Zaloguj się
       <mat-icon matSuffix>login</mat-icon>
     </button>
-    <button *ngIf="auth.isLoggedIn()" mat-button>
+    <button *ngIf="auth.isLoggedIn()" routerLink="/settings" mat-button>
       Ustawienia
       <mat-icon>settings</mat-icon>
     </button>
@@ -56,7 +74,7 @@
         <img src="assets/images/github.png" alt="github-icon">
       </button>
     </a>
-    <button *ngIf="auth.isLoggedIn()" mat-button>
+    <button *ngIf="auth.isLoggedIn()" (click)="logout()" mat-button>
       Wyloguj
       <mat-icon>logout</mat-icon>
     </button>

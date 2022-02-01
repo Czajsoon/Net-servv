@@ -2,7 +2,6 @@
   margin-top: 30px;
   width: 85%;
   ::ng-deep .mat-focused .mat-form-field-label {
-    /*change color of label*/
     color: Black !important;
   }
   ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
@@ -41,5 +40,14 @@
     width: 85%;
     background-color: #ffc4c4;
     border: solid 2px #bb6f6f;
+  }
+}
+
+.newVisit{
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  .mat-fab{
+    background-color: #48cae4;
   }
 }

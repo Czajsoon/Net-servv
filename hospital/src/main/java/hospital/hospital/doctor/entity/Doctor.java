@@ -9,6 +9,7 @@ import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
 import hospital.hospital.specialisation.entity.Specialisation;
 import hospital.hospital.stay.entity.Stay;
 import hospital.hospital.visit.entity.Visit;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -65,6 +66,7 @@ public class Doctor {
         Doctor doctor = new Doctor();
         doctor.setName(doctorREQ.getName());
         doctor.setSurname(doctorREQ.getSurname());
+        doctor.setRoom(doctorREQ.getRoom());
         return doctor;
     }
 

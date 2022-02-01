@@ -1,10 +1,8 @@
 package hospital.hospital.visit.models;
 
 import lombok.Data;
-import org.joda.time.DateTime;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 public class VisitREQ {

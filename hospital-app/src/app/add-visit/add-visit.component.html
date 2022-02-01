@@ -1,0 +1,109 @@
+<mat-dialog-content>
+  <div class="col">
+    <div class="row justify-content-center title">
+      <h1>Dodaj wizytę</h1>
+    </div>
+    <mat-stepper linear #stepper>
+      <mat-step [stepControl]="firstFormGroup" [editable]="false">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Wybór specjalizacji Lekarza</ng-template>
+          <div class="col">
+            <div class="row justify-content-center">
+              <mat-form-field>
+                <mat-select class="text-center" [(value)]="specOption" formControlName="specialization">
+                <mat-option class="text-center" value="">Brak</mat-option>
+                  <mat-option  class="text-center" *ngFor="let spec of this.specializations" [value]="spec.name">
+                    {{spec.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="row justify-content-center">
+              <div>
+                <button [disabled]="specOption.length==0" mat-button matStepperNext (click)="getDoctors(specOption)">Zatwierdź</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" [editable]="false">
+        <form [formGroup]="secondFormGroup" class="justify-content-center">
+          <ng-template matStepLabel>Wybór Lekarza i daty</ng-template>
+          <div class="col">
+            <div class="text-center">
+              <p>Lekarz</p>
+            </div>
+            <div class="row justify-content-center">
+              <mat-form-field class="justify-content-center text-center">
+                <mat-label>Wybierz lekarza</mat-label>
+                <mat-select class="text-center" [(value)]="docOption" formControlName="doctor">
+                  <mat-option class="text-center" *ngFor="let doc of this.doctors" [value]="doc.id">
+                    {{doc.name}} {{doc.surname}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="text-center">
+              <p>Data Wizyty</p>
+            </div>
+            <div class="row justify-content-center spacing">
+              <mat-form-field class="text-center">
+                <mat-label>Wybierz datę</mat-label>
+                <input matInput [matDatepicker]="picker" #datePick formControlName="visitDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field class="text-center">
+                <mat-label>Wybierz godzinę</mat-label>
+                <mat-select formControlName="hour">
+                  <mat-option *ngFor="let hour of visitHour" [value]="hour">
+                    {{hour}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="text-center">
+                <mat-label>Wybierz minuty</mat-label>
+                <mat-select formControlName="minutes">
+                  <mat-option *ngFor="let minutes of visitMinutes" [value]="minutes">
+                    {{minutes}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="row text-center justify-content-center">
+              <p>Rodzaj wizyty</p>
+            </div>
+            <div class="row justify-content-center text-center">
+              <mat-form-field class="text-center">
+                <mat-label>Typ wizyty</mat-label>
+                <mat-select [(value)]="visitOption" formControlName="visitType">
+                  <mat-option   *ngFor="let visit of this.visitTypes" [value]="visit.id">
+                    {{visit.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="justify-content-center text-center">
+              <p>Dane Pacjenta</p>
+            </div>
+            <div class="row justify-content-center">
+              <mat-form-field class="text-center">
+                <mat-label>PESEL Pacjenta</mat-label>
+                <input matInput type="number" #userIdentification formControlName="identification">
+              </mat-form-field>
+            </div>
+            <div class="row justify-content-center">
+              <button mat-button (click)="stepper.reset()">Cofnij</button>
+              <button mat-button (click)="this.addVisit()" [disabled]="!secondFormGroup.valid">Dodaj</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-center">
+  <button mat-dialog-close color="warn" mat-flat-button>
+    Zamknij
+  </button>
+</mat-dialog-actions>

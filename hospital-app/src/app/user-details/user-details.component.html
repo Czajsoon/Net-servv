@@ -1,0 +1,82 @@
+<div class="userDetails">
+  <mat-dialog-content>
+    <h1><b>Szczegóły użytkownika</b></h1>
+    <div class="detailpositioning">
+      <div class="userDetail" [formGroup]="detailsForm">
+        <mat-grid-list [cols]="2" rowHeight="6:1">
+          <mat-grid-tile><h2>Id użytkownika</h2></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Id</mat-label>
+              <input matInput placeholder="Id" disabled value="{{user.id}}">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile><h2>Imię</h2></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Imię</mat-label>
+              <input matInput placeholder="Imię" formControlName="name">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile><h2>Nazwisko</h2></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Nazwisko</mat-label>
+              <input matInput placeholder="Nazwisko" formControlName="surname">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile><h2>Data Urodzenia</h2></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Data Urodzenia</mat-label>
+              <input matInput  [matDatepicker]="picker" formControlName="bornDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile><h2>PESEL</h2></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>PESEL</mat-label>
+              <input matInput placeholder="PESEL"  formControlName="identification">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile><h2>Login</h2></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Login</mat-label>
+              <input matInput placeholder="Login"  formControlName="login">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile><h2>Płeć</h2></mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Płeć</mat-label>
+              <input matInput placeholder="Płeć"  formControlName="sex">
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <button [disabled]="!detailsForm.dirty" (click)="updateUser()" mat-flat-button>Zapisz zmiany</button>
+      </div>
+    </div>
+    <mat-expansion-panel hideToggle class="text-center">
+      <mat-expansion-panel-header>
+        Usuń konto
+      </mat-expansion-panel-header>
+      <button mat-flat-button color="warn" (click)="deleteUser()">Usuń to konto!</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel hideToggle [expanded]="true" class="text-center">
+      <mat-expansion-panel-header class="justify-content-center text-center">
+        Zmień hasło
+      </mat-expansion-panel-header>
+      <mat-form-field [formGroup]="passwordChange">
+        <mat-label>Wpisz hasło</mat-label>
+        <input matInput placeholder="nowe hasło" formControlName="password">
+      </mat-form-field>
+      <button [disabled]="!passwordChange.valid" (click)="changePassword()" mat-flat-button>Zmien hasło!</button>
+    </mat-expansion-panel>
+  </mat-dialog-content>
+  <mat-dialog-actions class="justify-content-center">
+    <button mat-raised-button color="warn"  mat-dialog-close>Zamknij</button>
+  </mat-dialog-actions>
+</div>

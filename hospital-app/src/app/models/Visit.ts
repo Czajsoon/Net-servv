@@ -4,6 +4,7 @@ import {Patient} from "./Patient";
 
 
 export interface Visit{
+  id: number;
   startDate:Date;
   description:string;
   visitType:VisitType;
