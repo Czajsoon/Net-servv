@@ -48,6 +48,7 @@ import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +73,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PatientCardComponent,
     RefferalMedicalLeaveComponent,
     PageNotFoundComponent
+  
+
   ],
   imports: [
     BrowserModule,
