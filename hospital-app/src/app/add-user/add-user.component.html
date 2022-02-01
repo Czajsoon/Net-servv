@@ -1,0 +1,63 @@
+<mat-dialog-content [formGroup]="newUserForm">
+  <h1 class="text-center">Dodaj użytkownika</h1>
+  <mat-grid-list [cols]="2" rowHeight="8:1" >
+    <mat-grid-tile><h2>Imię</h2></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Imię</mat-label>
+        <input matInput placeholder="Imię" formControlName="name">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile><h2>Nazwisko</h2></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Nazwisko</mat-label>
+        <input matInput placeholder="Nazwisko" formControlName="surname">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile><h2>Login</h2></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Login</mat-label>
+        <input matInput placeholder="Login" formControlName="login">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile><h2>Hasło</h2></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Hasło</mat-label>
+        <input matInput type="password" placeholder="Hasło" formControlName="password">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile><h2>Data Urodzenia</h2></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Data Urodzenia</mat-label>
+        <input matInput  [matDatepicker]="picker" formControlName="birthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile><h2>PESEL</h2></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>PESEL</mat-label>
+        <input type="number" matInput placeholder="PESEL" formControlName="identification">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile><h2>Płeć</h2></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Płeć</mat-label>
+        <input matInput placeholder="Płeć" formControlName="sex">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-radio-group formControlName="selectedRole">
+    <mat-radio-button *ngFor="let role of roles" value="{{role.id}}">{{role.name}}</mat-radio-button>
+  </mat-radio-group>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-center">
+  <button mat-dialog-close mat-flat-button color="warn">Zamknij</button>
+  <button mat-dialog-close mat-flat-button [disabled]="newUserForm.invalid" (click)="addUser()">Dodaj</button>
+</mat-dialog-actions>

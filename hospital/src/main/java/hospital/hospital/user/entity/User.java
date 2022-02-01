@@ -115,4 +115,13 @@ public class User {
         return user;
     }
 
+    public static User put(UserDTO dto,User targetUser){
+        targetUser.setName(dto.getName());
+        targetUser.setSurname(dto.getSurname());
+        targetUser.setUsername(dto.getUsername());
+        targetUser.setSex(dto.getSex());
+        targetUser.setBornDate(dto.getBornDate());
+        return targetUser;
+    }
+
 }

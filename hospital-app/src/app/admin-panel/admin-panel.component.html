@@ -1,0 +1,63 @@
+<app-navigation>
+  <div class="buttonsOfRoles justify-content-center">
+    <h1 class="heading"><b>Role</b></h1>
+    <mat-grid-list  [cols]="rolesList.length/2" rowHeight="14:1">
+      <mat-grid-tile *ngFor="let role of rolesList">
+        <button mat-flat-button (click)="displayUsers(role.id)">{{role.name}}</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="usersTable justify-content-center ">
+    <div class="filter">
+      <mat-form-field class="justify-content-center">
+        <mat-label>Filtry</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Wpisz frazę..." #input>
+      </mat-form-field>
+    </div>
+    <div class="displayUsers">
+      <div class="users mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Imię </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="surname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nazwisko </th>
+            <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="details">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> szczegóły </th>
+            <td mat-cell *matCellDef="let element"> <button mat-flat-button (click)="openDetails(element)"><mat-icon>info</mat-icon></button> </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">Nie ma danych zgodnych z filtrem "{{input.value}}"</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+<!--    <div class="paginatorPosition">-->
+<!--      <mat-paginator [pageSizeOptions]="[5, 10, 20]"-->
+<!--                     showFirstLastButtons-->
+<!--                     aria-label="Select page of periodic elements">-->
+<!--      </mat-paginator>-->
+<!--    </div>-->
+
+  </div>
+  <div class="addUser">
+    <button mat-fab (click)="openAddUser()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</app-navigation>
+

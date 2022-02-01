@@ -1,0 +1,117 @@
+.adminNavigation{
+  height: 20%;
+  .mat-card{
+    cursor: pointer;
+    background-color: #2eb4ce;
+    color: White;
+    border-radius: 8px;
+    margin-top: 0;
+    height: 90%;
+    text-align: center;
+    width: 90%;
+    .mat-icon{
+      transform: scale(5) translateY(30%);
+      top: 50%;
+      left: 50%;
+    }
+    @media screen and (max-width: 1290px){
+      .mat-icon{
+        display: none;
+      }
+    }
+  }
+}
+
+.buttonsOfRoles{
+  .heading{
+    margin-top: 10px;
+    text-align: center;
+  }
+  button{
+    border: 2px solid #2eb4ce;
+    color: #181818;
+    width: 90%;
+    text-align: center;
+    background-color: #90e0ef;
+    transition: 0.5s ease-in-out;
+  }
+  button:hover{
+    color: #caf0f8;
+    width: 90%;
+    text-align: center;
+    background-color: #2eb4ce;
+
+  }
+}
+
+.usersTable{
+ .filter{
+   text-align: center;
+
+ }
+  .mat-form-field{
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+  }
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #2eb4ce !important;
+}
+
+::ng-deep .mat-form-field-label{
+  color: #2eb4ce !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label{
+  color: #2eb4ce !important;
+}
+
+::ng-deep .mat-form-field-underline{
+  background-color: #2eb4ce !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background-color: #48cae4 !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-underline{
+  background-color: #2eb4ce !important;
+}
+
+.displayUsers{
+  display: flex;
+  justify-content: center;
+}
+
+.users{
+  width: 80%;
+  table{
+    width: 100%;
+    button{
+      background-color: #48cae4;
+      color: White;
+    }
+  }
+  .mat-form-field{
+    width: 80%;
+  }
+}
+
+.paginatorPosition{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.addUser{
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  .mat-fab{
+    background-color: #48cae4;
+  }
+}

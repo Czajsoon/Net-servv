@@ -11,6 +11,7 @@ import {NewRefferalAbsentionComponent} from "./new-refferal-absention/new-reffer
 import {ReferralslistComponent} from "./referralslist/referralslist.component";
 import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-panel.component";
 import {ViewdoctorsComponent} from "./viewdoctors/viewdoctors.component";
+import {AdminPanelComponent} from "./admin-panel/admin-panel.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {DoctorPanelComponent} from "./doctor-panel/doctor-panel.component";
 import {AddTestResultsComponent} from "./add-test-results/add-test-results.component";
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'patientList', component:PatientlistComponent},
   {path:'new-ref',component:NewRefferalAbsentionComponent},
   {path:'list-ref',component:ReferralslistComponent},
+  {path:'adminPanel',component:AdminPanelComponent}
   {path:'settings',component:SettingsComponent},
   {path:'doctor-panel',component:DoctorPanelComponent},
   {path:'**',component:PageNotFoundComponent}

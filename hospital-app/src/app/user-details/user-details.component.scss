@@ -1,0 +1,33 @@
+.userDetails{
+  .mat-expansion-panel{
+    margin-bottom: 20px;
+  }
+  h1{
+    position: fixed;
+    text-align: center;
+    background-color: white;
+    justify-content: center;
+  }
+  mat-grid-list{
+    margin-top: 40px;
+  }
+  .mat-dialog-content{
+    height: 100%;
+  }
+  .userDetail{
+    button{
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    input{
+      text-align: center;
+    }
+    width: 50%;
+  }
+}
+
+.detailpositioning{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
