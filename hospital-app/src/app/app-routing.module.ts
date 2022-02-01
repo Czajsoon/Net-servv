@@ -11,16 +11,13 @@ import {NewRefferalAbsentionComponent} from "./new-refferal-absention/new-reffer
 import {ReferralslistComponent} from "./referralslist/referralslist.component";
 import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-panel.component";
 import {ViewdoctorsComponent} from "./viewdoctors/viewdoctors.component";
+import {AdminPanelComponent} from "./admin-panel/admin-panel.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {DoctorPanelComponent} from "./doctor-panel/doctor-panel.component";
 import {AddTestResultsComponent} from "./add-test-results/add-test-results.component";
 import {PatientCardComponent} from "./patient-card/patient-card.component";
 import {RefferalMedicalLeaveComponent} from "./refferal-medical-leave/refferal-medical-leave.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-
-
-
-
 
 
 const routes: Routes = [
@@ -42,6 +39,7 @@ const routes: Routes = [
   {path:'patientList', component:PatientlistComponent},
   {path:'new-ref',component:NewRefferalAbsentionComponent},
   {path:'list-ref',component:ReferralslistComponent},
+  {path:'adminPanel',component:AdminPanelComponent}
   {path:'settings',component:SettingsComponent},
   {path:'doctor-panel',component:DoctorPanelComponent}
 ];

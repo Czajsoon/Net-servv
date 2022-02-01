@@ -42,13 +42,17 @@ import { AddVisitComponent } from './add-visit/add-visit.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import {DatePipe} from "@angular/common";
 import { SettingsComponent } from './settings/settings.component';
 import { DoctorPanelComponent } from './doctor-panel/doctor-panel.component';
 import { AddTestResultsComponent } from './add-test-results/add-test-results.component';
 import { PatientCardComponent } from './patient-card/patient-card.component';
 import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal-medical-leave.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 
 
 @NgModule({
@@ -71,14 +75,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     VisitDetailsComponent,
     AddVisitComponent,
     ViewdoctorsComponent,
+    AdminPanelComponent,
+    UserDetailsComponent,
+    AddUserComponent
     SettingsComponent,
     DoctorPanelComponent
     AddTestResultsComponent,
     PatientCardComponent,
     RefferalMedicalLeaveComponent,
     PageNotFoundComponent
-  
-
   ],
   imports: [
     BrowserModule,
@@ -103,14 +108,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatDialogModule,
     MatDatepickerModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ],
 
-
-
-
-
-  providers: [],
+  providers: [DatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
