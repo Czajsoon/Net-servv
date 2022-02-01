@@ -49,10 +49,8 @@ export class PasswordChangeComponent implements OnInit {
   }
 
   changePassword(){
-    console.log("ajdi:"+this.pass_serv.getCurrent());
-
-      this.pass_serv.postChange(
-        "1",
+let id1=this.auth.user.id.toString();
+      this.pass_serv.postChange(id1,
         this.oldPasswordInput.nativeElement.value,
         this.newPasswordInput.nativeElement.value
       )

@@ -39,12 +39,12 @@ export class PasswordChangeService {
   }
 
   postChange(id:string,oldPassword:string,newPassword:string):Promise<any>{
-    let id1= this.auth.user.id;
-    console.log("xd"+id1);
+    var id1= this.auth.user.id;
+    console.log("id usera "+id1);
 
     return this.http.post(this.configUrl1,
       {
-        id1,
+        id:id,
         oldPassword:oldPassword,
         newPassword:newPassword
       }).toPromise();
