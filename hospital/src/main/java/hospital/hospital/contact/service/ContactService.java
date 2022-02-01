@@ -18,7 +18,7 @@ public class ContactService {
         SimpleMailMessage mail = new SimpleMailMessage();
 
         mail.setFrom("hospita.pip@gmail.com");
-        mail.setTo(contact.getUserMailAddress());
+        mail.setTo("hospita.pip@gmail.com");
         mail.setSubject(contact.getMessageTitle());
         mail.setText("User email: " + contact.getUserMailAddress() + "\n" +contact.getDescription() + "\n" +contact.getNameusername());
         javaMailSender.send(mail);

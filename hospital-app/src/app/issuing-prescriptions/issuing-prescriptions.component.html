@@ -1,40 +1,42 @@
 <app-navigation>
 <div id="body">
-  <form>
+
             <div class="row form-group">
               <div id="x">
       <div  class="col-sm-2,5">
-        <input type="text" class="form-control" matInput placeholder="Imie pacjenta">
+        <input [(ngModel)]="descInput1" name="first" type="text" class="form-control" matInput placeholder="Imie pacjenta" >
       </div>
       <div  class="col-sm-2,5">
-        <input type="text" class="form-control" matInput placeholder="Nazwisko pacjenta">
+        <input [(ngModel)]="descInput2"  name="second" type="text" class="form-control" matInput placeholder="Nazwisko pacjenta" >
       </div>
       <div  class="col-sm-2,5">
-        <input type="text" class="form-control" matInput placeholder="Nazwisko rodowe Matki">
+        <input [(ngModel)]="descInput3" name="third" type="text" class="form-control" matInput placeholder="Nazwisko rodowe Matki" >
       </div>
       <div  class="col-sm-2,5">
-        <input type="text" class="form-control" matInput placeholder="Pesel pacjenta">
+        <input  [(ngModel)]="descInput4" name="fourth" type="text" class="form-control" matInput placeholder="Pesel pacjenta" >
       </div>
       <div class="col-sm-2,5">
-        <input type="text" class="form-control"  matInput placeholder="Miejscowość">
+        <input [(ngModel)]="descInput5" name="fifth" type="text" class="form-control"  matInput placeholder="Miejscowość" >
       </div>
       <div  class="col-sm-2,5">
-        <input type="text" class="form-control" matInput placeholder="Ulica">
+        <input  [(ngModel)]="descInput6" name="fsixth" type="text" class="form-control" matInput placeholder="Ulica" >
       </div>
+       <div  class="col-sm-2,5">
+             <input  [(ngModel)]="descInput7" name="seventh" type="number" class="form-control" matInput placeholder="Nr mieszkania" >
+       </div>
               </div>
     </div>
     <div id="lek">
       <mat-form-field  appearance="outline">
-        <mat-label>Rodzaje leków</mat-label>
-        <textarea matInput> </textarea>
+        <mat-label >Rodzaje leków</mat-label>
+        <textarea matInput [(ngModel)]="descInput8" name="eighth" > </textarea>
       </mat-form-field>
     </div>
 
     <div class="button">
-      <button type="submit" matInput class="btn btn-primary">Wyslij receptę </button>
+      <button type="submit"  class="btn btn-primary" (click)="gets()">Wyslij receptę </button>
     </div>
 
-  </form>
 </div>
 </app-navigation>
 

@@ -4,10 +4,7 @@ import hospital.hospital.contact.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/contact")
@@ -15,7 +12,7 @@ public class ContactController {
 
     @Autowired
     ContactService contactService;
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public ResponseEntity postContact(@RequestBody Contact contact){
         try{
