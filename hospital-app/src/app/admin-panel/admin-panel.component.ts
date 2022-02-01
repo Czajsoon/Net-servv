@@ -6,6 +6,10 @@ import {MatTableDataSource} from "@angular/material/table";
 import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {MatSort, Sort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
+import {MatDialog} from "@angular/material/dialog";
+import {UserDetailsComponent} from "../user-details/user-details.component";
+import {AuthService} from "../services/auth.service";
+import {AddUserComponent} from "../add-user/add-user.component";
 
 @Component({
   selector: 'app-admin-panel',
@@ -25,7 +29,8 @@ export class AdminPanelComponent implements OnInit {
 
 
   constructor(private adminService:AdminPanelService,
-              private _liveAnnouncer: LiveAnnouncer) {}
+              private dialog: MatDialog,
+              private auth: AuthService) {}
 
   ngOnInit(): void {
     this.adminService.getRoles().then(result => {
@@ -38,6 +43,7 @@ export class AdminPanelComponent implements OnInit {
     this.adminService.getUsersWithRole(id).then(result => {
       // @ts-ignore
       this.usersList = result;
+      this.usersList = this.usersList.filter(user => user.id != this.auth.user.id)
       this.dataSource = new MatTableDataSource<User>(this.usersList);
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
@@ -47,5 +53,20 @@ export class AdminPanelComponent implements OnInit {
   applyFilter(event: Event){
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  openDetails(user:User){
+    this.dialog.open(UserDetailsComponent,{
+      data: user,
+      width: "90%",
+      height: "90%"
+    })
+  }
+
+  openAddUser(){
+    this.dialog.open(AddUserComponent,{
+      width: "80%",
+      height: "80%"
+    })
   }
 }

@@ -44,6 +44,9 @@ import { ViewdoctorsComponent } from './viewdoctors/viewdoctors.component';
 import {MatRadioModule} from "@angular/material/radio";
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import {DatePipe} from "@angular/common";
 
 
 @NgModule({
@@ -66,7 +69,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     VisitDetailsComponent,
     AddVisitComponent,
     ViewdoctorsComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    UserDetailsComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -95,11 +100,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatPaginatorModule
   ],
 
-
-
-
-
-  providers: [],
+  providers: [DatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
