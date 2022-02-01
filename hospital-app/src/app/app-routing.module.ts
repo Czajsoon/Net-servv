@@ -13,6 +13,14 @@ import {ReceptionistPanelComponent} from "./recepcionist-panel/receptionist-pane
 import {ViewdoctorsComponent} from "./viewdoctors/viewdoctors.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {DoctorPanelComponent} from "./doctor-panel/doctor-panel.component";
+import {AddTestResultsComponent} from "./add-test-results/add-test-results.component";
+import {PatientCardComponent} from "./patient-card/patient-card.component";
+import {RefferalMedicalLeaveComponent} from "./refferal-medical-leave/refferal-medical-leave.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+
+
+
+
 
 
 const routes: Routes = [
@@ -21,6 +29,12 @@ const routes: Routes = [
   {path:'home',component:HomePageComponent},
   {path:'receptionist-panel',component:ReceptionistPanelComponent},
   {path:'view-doctors',component:ViewdoctorsComponent},
+  {path:'add-test-results',component:AddTestResultsComponent},
+  {path:'patient-card',component:PatientCardComponent},
+  {path:'refferal-medical-leave',component:RefferalMedicalLeaveComponent},
+
+  {path:'**',component:PageNotFoundComponent},
+
   {path:'time-table',component:TimetableComponent,resolve:{
     time_table: TimetableResolverService
     }},

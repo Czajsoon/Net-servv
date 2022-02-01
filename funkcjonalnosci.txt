@@ -36,10 +36,10 @@ e) Gość
 Pomysły z zajęć: 
 -realiazaja recepty (K)
 -Apteka szpialna. (K)
--Operacje(sala lekarze,historia). (K)
+-Operacje(sala lekarze,historia). 
 -Rehabilitacja(rodzje).
 -Posiłaki 9karta pacjenta z dietą).
--Wysłanie karetki na wskazany adres. (K)
+-Wysłanie karetki na wskazany adres. 
 -Izba porodowa + krematorium.
 -Program staży i szkoleń.
 -Prześwietlenia badania...
