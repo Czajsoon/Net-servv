@@ -9,6 +9,7 @@ import hospital.hospital.refferalAbsention.entity.RefferalAbsention;
 import hospital.hospital.specialisation.entity.Specialisation;
 import hospital.hospital.stay.entity.Stay;
 import hospital.hospital.visit.entity.Visit;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;

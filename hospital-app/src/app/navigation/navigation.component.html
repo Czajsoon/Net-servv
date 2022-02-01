@@ -20,6 +20,24 @@
           <mat-icon>edit</mat-icon>
         </button>
       </div>
+      <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+        <button mat-button routerLink="/view-doctors">
+          Lista Lekarzy:
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+      <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+                  <button mat-button routerLink="/patient-card">
+                    Karta Pacjenta:
+                    <mat-icon>person</mat-icon>
+                  </button>
+                </div>
+      <div class="sidenavItem row justify-content-center" *ngIf="auth.isLoggedIn()" routerLinkActive="activeItem">
+        <button mat-button routerLink="/add-test-results">
+          Dodawanie wyników badań:
+          <mat-icon>note_add</mat-icon>
+        </button>
+      </div>
       <div class="sidenavItem closeNav row justify-content-center">
         <button mat-button (click)="drawer.toggle()">
           Zamknij
@@ -40,7 +58,7 @@
       Zaloguj się
       <mat-icon matSuffix>login</mat-icon>
     </button>
-    <button *ngIf="auth.isLoggedIn()" mat-button>
+    <button *ngIf="auth.isLoggedIn()" routerLink="/settings" mat-button>
       Ustawienia
       <mat-icon>settings</mat-icon>
     </button>
