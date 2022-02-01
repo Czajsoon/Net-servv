@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {BackendConnectService} from "./backend-connect.service";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../models/user";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +22,16 @@ export class AuthService {
   // @ts-ignore
   private _token: {token:string};
   // @ts-ignore
-  private _user : User = {id:1,name:"John", surname:"Doe"};
+  private _user : User = null;
 
   constructor(private bc: BackendConnectService,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private _router: Router) {
   }
 
+  Logut(){
+    window.location.reload();
+  }
 
   isLoggedIn():boolean{
     // return false;
@@ -38,6 +43,14 @@ export class AuthService {
       // @ts-ignore
       this._token = JSON.parse(JSON.stringify(data));
       this.bc.setToken(this._token.token);
+      console.log(this._token);
+      let headers= new HttpHeaders().set("Authorization","Bearer " + this._token.token);
+      this.http.get("http://localhost:8080/currentUser", {headers}).toPromise().then(result => {
+        console.log(result);
+          // @ts-ignore
+        this._user = result;
+        this._router.navigateByUrl("/home");
+      })
     }).catch(data =>{
       //TODO exception handle!
       console.log(data);

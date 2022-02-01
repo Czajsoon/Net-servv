@@ -77,7 +77,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ViewdoctorsComponent,
     AdminPanelComponent,
     UserDetailsComponent,
-    AddUserComponent
+    AddUserComponent,
     SettingsComponent,
     DoctorPanelComponent,
     AddTestResultsComponent,

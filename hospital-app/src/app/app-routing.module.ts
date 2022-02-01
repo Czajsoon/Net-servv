@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./login/login.component";
-import {DrugWarehouseComponent} from "./drug-warehouse/drug-warehouse.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {TimetableComponent} from "./timetable/timetable.component";
 import {TimetableResolverService} from "./services/timetable-resolver.service";
@@ -35,7 +34,7 @@ const routes: Routes = [
   {path:'patientList', component:PatientlistComponent},
   {path:'new-ref',component:NewRefferalAbsentionComponent},
   {path:'list-ref',component:ReferralslistComponent},
-  {path:'adminPanel',component:AdminPanelComponent}
+  {path:'adminPanel',component:AdminPanelComponent},
   {path:'settings',component:SettingsComponent},
   {path:'doctor-panel',component:DoctorPanelComponent},
   {path:'**',component:PageNotFoundComponent}

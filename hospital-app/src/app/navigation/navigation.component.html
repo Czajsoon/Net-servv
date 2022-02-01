@@ -68,7 +68,7 @@
         <img src="assets/images/github.png" alt="github-icon">
       </button>
     </a>
-    <button *ngIf="auth.isLoggedIn()" mat-button>
+    <button *ngIf="auth.isLoggedIn()" (click)="logout()" mat-button>
       Wyloguj
       <mat-icon>logout</mat-icon>
     </button>
