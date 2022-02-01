@@ -45,6 +45,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import { AddTestResultsComponent } from './add-test-results/add-test-results.component';
 import { PatientCardComponent } from './patient-card/patient-card.component';
 import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal-medical-leave.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { RefferalMedicalLeaveComponent } from './refferal-medical-leave/refferal
     ViewdoctorsComponent,
     AddTestResultsComponent,
     PatientCardComponent,
-    RefferalMedicalLeaveComponent
+    RefferalMedicalLeaveComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
