@@ -1,3 +1,5 @@
+import {Roles} from "./Roles";
+
 export interface User{
   id:number;
   name:string;
@@ -7,4 +9,5 @@ export interface User{
   identification:string;
   bornDate:Date;
   token:string;
+  roles:[Roles];
 }

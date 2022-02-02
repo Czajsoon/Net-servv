@@ -2,10 +2,10 @@
   <div class="home">
     <mat-grid-list [ngClass]="{'guest': !auth.isLoggedIn(),'homeNavigation': auth.isLoggedIn()}" [cols]="3" rowHeight="2:1">
       <mat-grid-tile *ngIf="auth.isLoggedIn()"><mat-card routerLink="/time-table"><mat-card-title>Terminarz</mat-card-title></mat-card></mat-grid-tile>
-      <mat-grid-tile><mat-card><mat-card-title>Badania</mat-card-title></mat-card></mat-grid-tile>
+      <mat-grid-tile><mat-card routerLink="/add-test-results"><mat-card-title>Badania</mat-card-title></mat-card></mat-grid-tile>
       <mat-grid-tile><mat-card routerLink="/issuing-prescriptions"><mat-card-title>Recepty</mat-card-title></mat-card></mat-grid-tile>
-      <mat-grid-tile><mat-card><mat-card-title>Lekarze</mat-card-title></mat-card></mat-grid-tile>
-      <mat-grid-tile><mat-card routerLink="/number-patient"><mat-card-title>Kontakt</mat-card-title></mat-card></mat-grid-tile>
+      <mat-grid-tile><mat-card routerLink="/view-doctors"><mat-card-title>Lekarze</mat-card-title></mat-card></mat-grid-tile>
+      <mat-grid-tile><mat-card routerLink="/contact"><mat-card-title>Kontakt</mat-card-title></mat-card></mat-grid-tile>
       <mat-grid-tile><mat-card routerLink="/receptionist-panel"><mat-card-title>Panel Recepcjonistki</mat-card-title></mat-card></mat-grid-tile>
       <mat-grid-tile><mat-card><mat-card-title>Panel Lekarza</mat-card-title></mat-card></mat-grid-tile>
       <mat-grid-tile><mat-card><mat-card-title>Panel Farmaceutki</mat-card-title></mat-card></mat-grid-tile>

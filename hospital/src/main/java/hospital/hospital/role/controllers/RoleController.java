@@ -42,10 +42,12 @@ public class RoleController {
         RoleDTO user = RoleDTO.builder().name("USER").build();
         RoleDTO doctor = RoleDTO.builder().name("DOCTOR").build();
         RoleDTO headingDoctor = RoleDTO.builder().name("HEADING DOCTOR").build();
+        RoleDTO receptionist = RoleDTO.builder().name("RECEPTIONIST").build();
         createRole(admin);
         createRole(user);
         createRole(doctor);
         createRole(headingDoctor);
+        createRole(receptionist);
     }
 
 }
